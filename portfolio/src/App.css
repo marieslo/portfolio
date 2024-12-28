@@ -1,22 +1,131 @@
-@import url('https://fonts.googleapis.com/css2?family=Prosto+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 #root {
-  font-family: "Prosto One", serif;
-  color: rgb(44, 22, 9);
-  font-size: 2em;
+  font-family: "Inter", serif;
+  font-optical-sizing: auto;
+  letter-spacing: -1px;
+  font-weight: 400;
+  font-style: normal;
 }
 
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: linear-gradient(to right, #b07030, #f4cfaf);
+  background: linear-gradient(to right, #e3e628, #ffff00);
   min-height: 100vh;
   overflow-x: hidden;
+  padding: 1rem;
+  margin: 1rem; 
 }
 
 .container {
   text-align: center;
-  padding: 2rem;
-  margin: 1rem;
   color: rgb(44, 22, 9);
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: solid 4px #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+.profile-photo img {
+  width: 100px; 
+  height: 100px; 
+  border-radius: 50%; 
+}
+
+/* Slider styles */
+.slider {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 20px 0;
+}
+
+.slider-track {
+  display: flex;
+  gap: 20px;
+  animation: scroll-left 20s linear infinite;
+  will-change: transform;
+}
+
+.slider-item {
+  flex: 0 0 auto;
+  width: 300px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.slider-item:hover {
+  transform: scale(1.05);
+
+}
+
+.slider-item img {
+  width: 100%;
+  height: auto;
+  border: solid 4px #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease; 
+}
+
+.slider-item img:hover {
+  transform: scale(1.05); 
+}
+
+@keyframes scroll-left{
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Pause animation on hover */
+.slider-track:hover {
+  animation-play-state: paused;
+}
+
+#footer {
+  font-size: 10px !important;
+}
+
+.toggle-button {
+  font-size: 14px;
+  width: fit-content;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.toggle-button:hover {
+  cursor: pointer; 
+  color: #bfff00;
+}
+
+.footer-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* background-color: rgba(123, 150, 71, 0.1); 
+  border-radius: 10px; */
+  padding: 1rem;
+  font-size: 14px;
+}
+
+.icons-by-icons8{
+  color: #726350;
+  font-style: italic;
+}
+
+.my-projects {
+  margin: 2rem 0;
+  text-align: center;
 }
