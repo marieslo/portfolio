@@ -1,5 +1,5 @@
 # personal-website-FE
 
-## Techogies used:
+## Techologies used:
 - Tailwind
 - Google fonts
