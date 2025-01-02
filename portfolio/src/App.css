@@ -129,3 +129,25 @@ body {
   margin: 2rem 0;
   text-align: center;
 }
+
+/* 3D effect */
+.icon-3d {
+  transition: transform 0.3s;
+}
+.icon-3d:hover {
+  transform: rotateY(20deg) rotateX(10deg) scale(1.1);
+}
+
+.shadow-3d {
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4), -5px -5px 15px rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s;
+}
+
+.shadow-3d:hover {
+  transform: translateZ(10px);
+}
+
+.slider-item:hover {
+  transform: rotateY(15deg) rotateX(10deg) scale(1.1);
+  transition: transform 0.3s;
+}
