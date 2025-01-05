@@ -1,30 +1,35 @@
-@import url('https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap');
 
-#root {
-  font-family: "Press Start 2P", serif;
-  font-weight: 400;
+#root {  
+  font-family: "Funnel Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
   font-style: normal;
-  font-size: 1.5rem;
-  letter-spacing: -0.8px;
-  color: #413620;
-  position: relative;
-  overflow: hidden; 
+  color: #505A5B;
 }
 
-body {
-  margin: 0;
-  background: linear-gradient(to bottom, #C2DFE3, #9DB4C0);
+  body {
+  background: linear-gradient(to bottom, #94B0DA, #DCEDFF);
   min-height: 100vh;
   overflow-x: hidden;
-  padding: 1rem;
-  margin: 1rem;
+  padding: 1%;
+  margin: 1%;
+  cursor: none; 
 }
 
-.dot {
+.my-projects {
+  margin: 2rem 0;
+  text-align: center;
+  font-weight: 800;
+  color: #343F3E;
+  letter-spacing: 3rem;
+}
+
+/* .dot {
   position: absolute;
-  width: 15px;
-  height: 15px;
-  background-color: rgba(255, 255, 255, 0.8);
+  width: 10px;
+  height: 10px;
+  background-color: #fca311;
   border-radius: 50%;
   animation: fly 5s linear infinite;
 }
@@ -99,34 +104,28 @@ body {
   100% {
     transform: translate(0, 0);
   }
-}
+} */
 
 .container {
   text-align: center;
 }
 
 .header-container {
-  font-family: "Funnel Display", serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 1.2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  color: #5C6B73;
   border-radius: 10px;
   padding: 1rem;
-  background-color: #E0FBFC;
+  /* background-color: #fca311; */
 }
 
-.profile-photo img {
+/* .profile-photo img {
   width: 100px; 
   height: 100px; 
   border-radius: 50%;   
   border: solid 2px #e3d0d8;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
+} */
 
 /* Slider styles */
 .slider {
@@ -148,7 +147,6 @@ body {
   width: 300px;
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease; 
-  color: #E0FBFC;
 }
 
 .slider-item:hover {
@@ -158,7 +156,7 @@ body {
 .slider-item img {
   width: 100%;
   height: auto;
-  border: solid 0.2px #CEE5F2;
+  /* border: solid 0.2px #CEE5F2; */
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease; 
@@ -185,22 +183,45 @@ body {
 
 .footer-container {
   display: flex;
-  font-family: "Funnel Display", serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
   align-items: center;
   justify-content: space-between;
-  color: #E0FBFC;
-  padding: 0.5rem;
-  font-size: 1rem;
+  letter-spacing: -0.6px;
 }
 
 .icons-by-icons8{
-  color: #7c98b3;
+  color: #505A5B;
 }
 
-.my-projects {
-  margin: 2rem 0;
-  text-align: center;
-  color: #253237
+.cursor-dot {
+  position: fixed;
+  width: 2rem;
+  height: 2rem;
+  background: linear-gradient(
+    120deg,
+    #94B0DA, 
+    #DCEDFF,
+    #ffffff
+  );
+  box-shadow: #343F3E;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transition: transform 0.001s ease-out, background-color 0.2s ease-out;
+  animation: blobRadius 5s  ease infinite, blobBackground 15s ease infinite;
+}
+
+@keyframes blobRadius {
+  0%,
+  100% {
+    border-radius: 45% 75% 75% 45% / 45% 45% 75% 75%;
+  }
+  25% {
+    border-radius: 47% 73% 70% 50% / 47% 75% 60% 70%;
+  }
+  50% {
+    border-radius: 50% 70% 65% 55% / 50% 65% 60% 75%;
+  }
+  75% {
+    border-radius: 47% 73% 70% 50% / 47% 75% 60% 70%;
+  }
 }
