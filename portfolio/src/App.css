@@ -1,111 +1,30 @@
-@import url('https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap');
 
-#root {  
-  font-family: "Funnel Display", serif;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#root, button {  
+  font-family: "Red Hat Display", serif;
   font-optical-sizing: auto;
-  font-weight: 300;
-  font-style: normal;
-  color: #505A5B;
 }
 
-  body {
-  background: linear-gradient(to bottom, #94B0DA, #DCEDFF);
+body {
   min-height: 100vh;
   overflow-x: hidden;
-  padding: 1%;
-  margin: 1%;
-  cursor: none; 
+  cursor: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.my-projects {
-  margin: 2rem 0;
-  text-align: center;
-  font-weight: 800;
-  color: #343F3E;
-  letter-spacing: 3rem;
+html.dark body {
+  background-color: #2c3e50;
+  color: #ecf0f1;
 }
 
-/* .dot {
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  background-color: #fca311;
-  border-radius: 50%;
-  animation: fly 5s linear infinite;
+html:not(.dark) body {
+  background-color: #f5f5f5;
+  color: #333;
 }
-
-.dot1 {
-  animation: fly1 6s ease-in-out infinite;
-  top: 20%;
-  left: 10%;
-}
-
-.dot2 {
-  animation: fly2 7s ease-in-out infinite;
-  top: 50%;
-  left: 40%;
-}
-
-.dot3 {
-  animation: fly3 8s ease-in-out infinite;
-  top: 70%;
-  left: 70%;
-}
-
-@keyframes fly1 {
-  0% {
-    transform: translate(0, 0);
-  }
-  25% {
-    transform: translate(100px, -50px);
-  }
-  50% {
-    transform: translate(-50px, 100px);
-  }
-  75% {
-    transform: translate(50px, 50px);
-  }
-  100% {
-    transform: translate(0, 0);
-  }
-}
-
-@keyframes fly2 {
-  0% {
-    transform: translate(0, 0);
-  }
-  25% {
-    transform: translate(-80px, 30px);
-  }
-  50% {
-    transform: translate(50px, -70px);
-  }
-  75% {
-    transform: translate(-40px, 80px);
-  }
-  100% {
-    transform: translate(0, 0);
-  }
-}
-
-@keyframes fly3 {
-  0% {
-    transform: translate(0, 0);
-  }
-  25% {
-    transform: translate(70px, 50px);
-  }
-  50% {
-    transform: translate(-100px, -50px);
-  }
-  75% {
-    transform: translate(60px, -30px);
-  }
-  100% {
-    transform: translate(0, 0);
-  }
-} */
-
 .container {
   text-align: center;
 }
@@ -166,62 +85,13 @@
   transform: scale(1.05); 
 }
 
-/* 
-@keyframes scroll-left{
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(0);
-  }
-} */
-
-/* 
-.slider-track:hover {
-  animation-play-state: paused;
-} */
-
 .footer-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  letter-spacing: -0.6px;
+  font-weight: 200;
 }
 
 .icons-by-icons8{
   color: #505A5B;
-}
-
-.cursor-dot {
-  position: fixed;
-  width: 2rem;
-  height: 2rem;
-  background: linear-gradient(
-    120deg,
-    #94B0DA, 
-    #DCEDFF,
-    #ffffff
-  );
-  box-shadow: #343F3E;
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 9999;
-  transition: transform 0.001s ease-out, background-color 0.2s ease-out;
-  animation: blobRadius 5s  ease infinite, blobBackground 15s ease infinite;
-}
-
-@keyframes blobRadius {
-  0%,
-  100% {
-    border-radius: 45% 75% 75% 45% / 45% 45% 75% 75%;
-  }
-  25% {
-    border-radius: 47% 73% 70% 50% / 47% 75% 60% 70%;
-  }
-  50% {
-    border-radius: 50% 70% 65% 55% / 50% 65% 60% 75%;
-  }
-  75% {
-    border-radius: 47% 73% 70% 50% / 47% 75% 60% 70%;
-  }
 }

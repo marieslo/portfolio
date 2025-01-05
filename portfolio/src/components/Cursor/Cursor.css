@@ -1,0 +1,75 @@
+
+.cursor-dot {
+    position: fixed;
+    width: 2rem;
+    height: 2rem;
+    background: linear-gradient(
+      120deg,
+      #94B0DA, 
+      #DCEDFF,
+      #ffffff
+    );
+    box-shadow: #343F3E;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transition: transform 0.001s ease-out, background-color 0.2s ease-out;
+    animation: blobRadius 5s  ease infinite, blobBackground 15s ease infinite;
+  }
+  
+  @keyframes blobRadius {
+    0%,
+    100% {
+      border-radius: 45% 75% 75% 45% / 45% 45% 75% 75%;
+    }
+    25% {
+      border-radius: 47% 73% 70% 50% / 47% 75% 60% 70%;
+    }
+    50% {
+      border-radius: 50% 70% 65% 55% / 50% 65% 60% 75%;
+    }
+    75% {
+      border-radius: 47% 73% 70% 50% / 47% 75% 60% 70%;
+    }
+  }
+  
+  .link:hover {
+    cursor: none;
+  }
+  
+  .cursor {
+    pointer-events: none;
+    animation: blobRadius 5s  ease infinite, blobBackground 15s ease infinite;
+    &__ball {
+      position: fixed;
+      top: 0;
+      left: 0;
+      mix-blend-mode: difference;
+      z-index: 1000;
+      
+      circle {
+        fill: #f7f8fa;
+      }
+    }      
+  } 
+  
+  .left, .right {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .right {
+    background: #fff;
+    
+    a {
+      border-bottom: 2px solid #000;
+    }
+    
+    h1, p, a {
+      color: #000;
+    }
+  }
