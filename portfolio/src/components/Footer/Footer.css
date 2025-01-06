@@ -1,0 +1,10 @@
+.footer-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .icons-by-icons8{
+    color: #505A5B;
+  }
