@@ -4,36 +4,19 @@ import SocialMedia from '../SocialMedia/SocialMedia';
 
 export default function AboutMe() {
   return (
-    <div>
+    <div className='container-aboutme'>
     <section className="text-aboutme">
     Text about me Text about me Text about me\ 
 
     Text about me Text about me Text about me\
 
-    Text about me Text about me Text about me\ 
-
-    Text about me Text about me Text about me\
-
-    Text about me Text about me Text about me\
-
-    Text about me Text about me Text about me\
-
+    Text about me Text about me Text about me
+    <SocialMedia/>
     </section>
-            <div className="text-container mr-6">
-                  <p>
-                  <span
-                      style={{
-                        color: "green",
-                        fontSize: "2rem", 
-                        position: "relative",
-                        zIndex: 10,
-                      }}
-                    >
-                      🟢
-                    </span>{" "}
-                    Available to work
-                    </p>
-                    <SocialMedia/>
+            <div className="availabletowork-text-container">
+                  <div className='availabletowork-text'>
+                    available to work
+                    </div>
                   </div>
    
   </div>
