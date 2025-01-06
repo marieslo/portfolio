@@ -1,13 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./App.css";
 import Cursor from "./components/Cursor/Cursor";
-
-const ProjectItem = ({ project }: { project: { id: number; name: string; imageUrl: string } }) => (
-  <div className="project-item">
-    <img src={project.imageUrl} alt={project.name} className="project-image" />
-    <p>{project.name}</p>
-  </div>
-);
+import ProjectItem from "./components/ProjectItem/ProjectItem";
 
 export default function App() {
   const el = useRef<HTMLSpanElement>(null);
@@ -28,51 +22,56 @@ export default function App() {
     return () => window.removeEventListener("click", handleClick);
   }, []);
 
-  // Projects data
-  const projects = Array.from({ length: 4 }).map((_, index) => ({
-    id: index,
-    name: `Project ${index + 1}`,
-    imageUrl: `https://picsum.photos/300?random=${index + 1}`,
-  }));
 
-// Toggle dark mode
-const toggleDarkMode = () => {
-  const htmlElement = document.documentElement;
-  htmlElement.classList.toggle("dark");
-  setIsDarkMode(htmlElement.classList.contains('dark'));
- };
+  const projects = [
+    { id: 1, name: "Project 1", imageUrl: "https://picsum.photos/300?random=1", size: "big", description: "This is a big project about AI." },
+    { id: 2, name: "Project 2", imageUrl: "https://picsum.photos/300?random=2", size: "medium", description: "This is a medium project on web development." },
+    { id: 3, name: "Project 3", imageUrl: "https://picsum.photos/300?random=3", size: "small", description: "This is a small project for mobile apps." },
+    { id: 4, name: "Project 4", imageUrl: "https://picsum.photos/300?random=4", size: "medium", description: "This project focuses on UI/UX design." },
+    { id: 5, name: "Project 5", imageUrl: "https://picsum.photos/300?random=5", size: "big", description: "An advanced project about machine learning." },
+  ];
+
+
+  const toggleDarkMode = () => {
+    const htmlElement = document.documentElement;
+    htmlElement.classList.toggle("dark");
+    setIsDarkMode(htmlElement.classList.contains("dark"));
+  };
 
   return (
     <>
       <Cursor />
       <div id="root">
         <audio ref={audioRef} src="/sound/773604__kreha__smallclick.wav" />
-        <div className="bg-gradient-to-b from-[#94B0DA] to-[#DCEDFF] dark:bg-gradient-to-b dark:from-[#2c3e50] dark:to-[#34495e]">
+        <div className="bg-gradient-to-b">
           {/* Header */}
           <header>
             <div className="header-container flex items-center">
-              <div className="text-container mr-6 bg-red">
+              <div className="text-container mr-6">
                 <p className="text-[#000000] dark:text-[#ecf0f1]">Text about me Text about me Text about me</p>
+              </div>
+              <div className="text-container mr-6 bg-red">
+                <p className="text-[#000000] dark:text-[#ecf0f1]">Available to work</p>
               </div>
             </div>
             <button onClick={toggleDarkMode} className="p-2 bg-transparent">
-               {isDarkMode ? (
+              {isDarkMode ? (
                 <img
-                width="50"
-                height="50"
-                src="https://img.icons8.com/carbon-copy/50/light-on.png"
-                alt="light-on"
-                style={{ filter: isDarkMode ? 'invert(1)' : 'none' }}
-              />
-               ) : (
-                 <img 
-                 width="50" 
-                 height="50" 
-                 src="https://img.icons8.com/carbon-copy/50/light.png" 
-                 alt="light-off" 
-                 />
-               )}
-             </button>
+                  width="50"
+                  height="50"
+                  src="https://img.icons8.com/carbon-copy/50/light-on.png"
+                  alt="light-on"
+                  style={{ filter: isDarkMode ? "invert(1)" : "none" }}
+                />
+              ) : (
+                <img
+                  width="50"
+                  height="50"
+                  src="https://img.icons8.com/carbon-copy/50/light.png"
+                  alt="light-off"
+                />
+              )}
+            </button>
           </header>
 
           {/* Main Content */}
@@ -83,9 +82,7 @@ const toggleDarkMode = () => {
                 <span ref={el} />
               </h1>
             </div>
-
-            {/* Project List */}
-            <div ref={projectsRef} className="projects-list">
+            <div ref={projectsRef} className="bento-grid">
               {projects.map((project) => (
                 <ProjectItem key={project.id} project={project} />
               ))}
