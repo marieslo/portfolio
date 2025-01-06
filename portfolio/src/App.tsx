@@ -1,13 +1,33 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import "./App.css";
+
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
 import Cursor from "./components/Cursor/Cursor";
 import ProjectItem from "./components/ProjectItem/ProjectItem";
 
+// import { gsap } from "gsap";
+// import { useGSAP } from "@gsap/react";
+    
+// import { CustomEase } from "gsap/CustomEase";
+// import { RoughEase, ExpoScaleEase, SlowMo } from "gsap/EasePack";
+    
+// import { Flip } from "gsap/Flip";
+// import { ScrollTrigger } from "gsap/ScrollTrigger";
+// import { Observer } from "gsap/Observer";
+// import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+// import { Draggable } from "gsap/Draggable";
+// import { MotionPathPlugin } from "gsap/MotionPathPlugin";
+// import { EaselPlugin } from "gsap/EaselPlugin";
+// import { PixiPlugin } from "gsap/PixiPlugin";
+// import { TextPlugin } from "gsap/TextPlugin";
+
+
+// gsap.registerPlugin(useGSAP,Flip,ScrollTrigger,Observer,ScrollToPlugin,Draggable,MotionPathPlugin,EaselPlugin,PixiPlugin,TextPlugin,RoughEase,ExpoScaleEase,SlowMo,CustomEase);
+
 export default function App() {
-  const el = useRef<HTMLSpanElement>(null);
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const projectsRef = useRef<HTMLDivElement>(null);
-  const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
 
   // Handle click sound effect
   useEffect(() => {
@@ -32,90 +52,28 @@ export default function App() {
   ];
 
 
-  const toggleDarkMode = () => {
-    const htmlElement = document.documentElement;
-    htmlElement.classList.toggle("dark");
-    setIsDarkMode(htmlElement.classList.contains("dark"));
-  };
-
   return (
-    <>
+      <div>
       <Cursor />
-      <div id="root">
         <audio ref={audioRef} src="/sound/773604__kreha__smallclick.wav" />
         <div className="bg-gradient-to-b">
-          {/* Header */}
-          <header>
-            <div className="header-container flex items-center">
-              <div className="text-container mr-6">
-                <p className="text-[#000000] dark:text-[#ecf0f1]">Text about me Text about me Text about me</p>
-              </div>
-              <div className="text-container mr-6 bg-red">
-                <p className="text-[#000000] dark:text-[#ecf0f1]">Available to work</p>
-              </div>
-            </div>
-            <button onClick={toggleDarkMode} className="p-2 bg-transparent">
-              {isDarkMode ? (
-                <img
-                  width="50"
-                  height="50"
-                  src="https://img.icons8.com/carbon-copy/50/light-on.png"
-                  alt="light-on"
-                  style={{ filter: isDarkMode ? "invert(1)" : "none" }}
-                />
-              ) : (
-                <img
-                  width="50"
-                  height="50"
-                  src="https://img.icons8.com/carbon-copy/50/light.png"
-                  alt="light-off"
-                />
-              )}
-            </button>
+         
+         <header>
+          <Header/>
           </header>
-
-          {/* Main Content */}
-          <main className="text-sm w-full overflow-hidden">
-            {/* Banner */}
-            <div className="banner">
-              <h1 className="my-projects">
-                <span ref={el} />
-              </h1>
-            </div>
+         
+          <main className="w-full overflow-hidden">
             <div ref={projectsRef} className="bento-grid">
               {projects.map((project) => (
                 <ProjectItem key={project.id} project={project} />
               ))}
             </div>
           </main>
-
-          {/* Footer */}
-          <footer className="footer-container">
-            <div className="icons-by-icons8">
-              Icons by&nbsp;
-              <a href="https://icons8.com" target="_blank" rel="noopener noreferrer" className="icons-by-icons8">
-                Icons8
-              </a>
-            </div>
-            <div className="social-media">
-              <div className="flex justify-center space-x-8 mt-4">
-                <a href="https://github.com/marieslo" target="_blank" rel="noopener noreferrer">
-                  <img width="30" height="30" src="https://img.icons8.com/ios/505A5B/github.png" alt="github" />
-                </a>
-                <a href="https://linkedin.com/marie-slovokhotov" target="_blank" rel="noopener noreferrer">
-                  <img width="30" height="30" src="https://img.icons8.com/ios/505A5B/linkedin.png" alt="linkedin" />
-                </a>
-                <a href="https://t.me/marieslo" target="_blank" rel="noopener noreferrer">
-                  <img width="30" height="30" src="https://img.icons8.com/ios/505A5B/telegram.png" alt="telegram" />
-                </a>
-              </div>
-            </div>
-            <div className="text-center text-white mt-20 text-sm">
-              &copy; {new Date().getFullYear()} Marie Slovokhotov
-            </div>
+          
+          <footer >
+          <Footer/>
           </footer>
         </div>
       </div>
-    </>
   );
 }

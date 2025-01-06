@@ -1,12 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 #root, button {  
-  font-family: "Red Hat Display", serif;
-  font-optical-sizing: auto;
+  font-family: "Bebas Neue", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 2rem;
+  color: #212529;
 }
 
 body {
@@ -24,81 +27,18 @@ html:not(.dark) body {
   background-color: #f5f5f5;
   color: #333;
 }
+
 .container {
   text-align: center;
 }
 
-.header-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-radius: 10px;
-  padding: 1rem;
-  /* background-color: #fca311; */
-}
 
-/* .profile-photo img {
-  width: 100px; 
-  height: 100px; 
-  border-radius: 50%;   
-  border: solid 2px #e3d0d8;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-} */
 
-/* Slider styles */
-.slider {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-  padding: 20px 0;
-}
-
-.slider-track {
-  display: flex;
-  gap: 20px;
-  animation: scroll-left 20s linear infinite;
-  will-change: transform;
-}
-
-.slider-item {
-  flex: 0 0 auto;
-  width: 300px;
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease; 
-}
-
-.slider-item:hover {
-  transform: scale(1.05);
-}
-
-.slider-item img {
-  width: 100%;
-  height: auto;
-  /* border: solid 0.2px #CEE5F2; */
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease; 
-}
-
-.slider-item img:hover {
-  transform: scale(1.05); 
-}
-
-.footer-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-weight: 200;
-}
-
-.icons-by-icons8{
-  color: #505A5B;
-}
 
 .bg-gradient-to-b {
-  background: linear-gradient(135deg, #5c71fb, #59ffd6, #f6ff7d, #ff70cf, #d3ff72, #d6a0ff, #7bdbfb); 
+  background: linear-gradient(135deg, #adb5bd,#f8f9fa, #e9ecef, #dee2e6, #ced4da, #adb5bd); 
   background-size: 400% 400%;
-  animation: gradientAnimation 15s ease infinite;
+  animation: gradientAnimation 10s ease infinite;
   position: relative;  
   z-index: 0; 
 }
@@ -110,22 +50,22 @@ html:not(.dark) body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.2) 0px, rgba(0, 0, 0, 0.2) 0.5px, transparent 0.5px, transparent 60px), 
-              repeating-linear-gradient(90deg, rgba(0, 0, 0, 0.2) 0px, rgba(0, 0, 0, 0.2) 0.5px, transparent 0.5px, transparent 60px); 
-  background-size: 60px 60px;  
+  background: repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.2) 0px, rgba(0, 0, 0, 0.2) 0.5px, transparent 0.5px, transparent 100px), 
+              repeating-linear-gradient(90deg, rgba(0, 0, 0, 0.2) 0px, rgba(0, 0, 0, 0.2) 0.5px, transparent 0.5px, transparent 100px); 
+  background-size: 100px 100px;  
   pointer-events: none; 
 }
 
 .dark .bg-gradient-to-b {
-  background: linear-gradient(135deg, #000d5e, #007155, #385c00, #640140, #015061, #370062, #00678a); 
+  background: linear-gradient(135deg,#212529, #4d5359, #495057, #343a40, #212529); 
   background-size: 400% 400%;
-  animation: gradientAnimation 6s ease infinite;
+  animation: gradientAnimation 10s ease infinite;
 }
 
 .dark .bg-gradient-to-b::before {
-  background: repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.2) 0px, rgba(255, 255, 255, 0.2) 0.5px, transparent 0.5px, transparent 60px), 
-              repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.2) 0px, rgba(255, 255, 255, 0.2) 0.5px, transparent 0.5px, transparent 60px);
-  background-size: 60px 60px;  
+  background: repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.2) 0px, rgba(255, 255, 255, 0.2) 0.5px, transparent 0.5px, transparent 100px), 
+              repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.2) 0px, rgba(255, 255, 255, 0.2) 0.5px, transparent 0.5px, transparent 100px);
+  background-size: 100px 100px;  
 }
 
 @keyframes gradientAnimation {
@@ -142,23 +82,23 @@ html:not(.dark) body {
 
 .bento-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
+  grid-auto-rows: 1fr; 
+  gap: 20px; 
+  width: 100%; 
   padding: 20px;
   justify-items: center;
+  align-items: stretch; 
 }
 
 @media (min-width: 1200px) {
   .bento-grid {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 30px; 
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
   }
 }
 
 @media (max-width: 768px) {
   .bento-grid {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); 
   }
 }
