@@ -17,6 +17,9 @@ body {
   overflow-x: hidden;
   cursor: none;
   transition: background-color 0.3s ease, color 0.3s ease;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html.dark body {
@@ -33,10 +36,8 @@ html:not(.dark) body {
 }
 
 
-
-
 .bg-gradient-to-b {
-  background: linear-gradient(135deg, #adb5bd,#f8f9fa, #e9ecef, #dee2e6, #ced4da, #adb5bd); 
+  background: linear-gradient(135deg, #fbf8cc, #fde4cf, #ffcfd2, #f1c0e8, #cfbaf0, #a3c4f3, #90dbf4, #8eecf5, #98f5e1, #b9fbc0); 
   background-size: 400% 400%;
   animation: gradientAnimation 10s ease infinite;
   position: relative;  
@@ -57,7 +58,7 @@ html:not(.dark) body {
 }
 
 .dark .bg-gradient-to-b {
-  background: linear-gradient(135deg,#212529, #4d5359, #495057, #343a40, #212529); 
+  background: linear-gradient(135deg, #006466, #065a60, #0b525b, #144552, #1b3a4b, #212f45, #272640, #312244, #3e1f47, #4d194d); 
   background-size: 400% 400%;
   animation: gradientAnimation 10s ease infinite;
 }
@@ -80,25 +81,10 @@ html:not(.dark) body {
   }
 }
 
+
 .bento-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
-  grid-auto-rows: 1fr; 
-  gap: 20px; 
-  width: 100%; 
-  padding: 20px;
-  justify-items: center;
-  align-items: stretch; 
-}
-
-@media (min-width: 1200px) {
-  .bento-grid {
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
-  }
-}
-
-@media (max-width: 768px) {
-  .bento-grid {
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); 
-  }
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  padding: 2rem;
 }
