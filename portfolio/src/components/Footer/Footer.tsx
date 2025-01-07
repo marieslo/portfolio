@@ -5,13 +5,12 @@ export default function Footer() {
   return (
     <div className="footer-container">
       <div className="footer-content">
-        <span>
+        {/* <span>
           Icons by&nbsp;
           <a href="https://icons8.com" target="_blank" rel="noopener noreferrer" className="icons-by-icons8">
             Icons8
           </a>
-        </span>
-        <span className="footer-separator">|</span>
+        </span> */}
         <span>
           &copy; {new Date().getFullYear()} Marie Slovokhotov
         </span>

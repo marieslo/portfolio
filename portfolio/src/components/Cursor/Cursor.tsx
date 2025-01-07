@@ -1,43 +1,51 @@
 import { useEffect, useState } from "react";
-import "./Cursor.css"; 
+import "./Cursor.css";
 import React from "react";
 
-export default function Cursor () {
+export default function Cursor() {
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
-  const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       setCursorPosition({ x: e.clientX, y: e.clientY });
     };
 
-    const handleMouseEnter = () => setIsHovered(true);
-    const handleMouseLeave = () => setIsHovered(false);
-
-
-    const links = document.querySelectorAll("a");
-    links.forEach((link) => {
-      link.addEventListener("mouseenter", handleMouseEnter);
-      link.addEventListener("mouseleave", handleMouseLeave);
-    });
-
     window.addEventListener("mousemove", handleMouseMove);
 
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
-      links.forEach((link) => {
-        link.removeEventListener("mouseenter", handleMouseEnter);
-        link.removeEventListener("mouseleave", handleMouseLeave);
-      });
     };
   }, []);
 
+  const letters = "KROW OT AVAILABLE ".split("");
+
   return (
-    <div
-      className={`cursor-dot ${isHovered ? "cursor-dot--hovered" : ""}`}
-      style={{
-        transform: `translate3d(${cursorPosition.x}px, ${cursorPosition.y}px, 0)`,
-      }}
-    ></div>
+    <>
+      <div
+        className="cursor-dot"
+        style={{
+          transform: `translate3d(${cursorPosition.x}px, ${cursorPosition.y}px, 0)`,
+        }}
+      ></div>
+      <div
+        className="cursor-circle"
+        style={{
+          transform: `translate3d(${cursorPosition.x}px, ${cursorPosition.y}px, 0)`,
+        }}
+      >
+        {letters.map((letter, index) => (
+          <span
+            key={index}
+            style={{
+              transform: `rotate(${(index / letters.length) * 360}deg) translate(70px) rotate(-${
+                (index / letters.length) * 360
+              }deg)`,
+            }}
+          >
+            {letter}
+          </span>
+        ))}
+      </div>
+    </>
   );
-};
+}
