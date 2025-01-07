@@ -1,15 +1,62 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-#root, button {  
-  font-family: "Bebas Neue", serif;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 2rem;
-  color: #212529;
+:root {
+  /* Color Variables */
+  --primary-color: #dae0f2;
+  --secondary-color: #f9cff2;
+  --accent-color: #52154e;
+  --neutral-color: #efe9e7;
+
+  --background-light: #dae0f2;
+  --background-dark: #111344;
+  --text-light: #111344;
+  --text-dark: #dae0f2;
+
+  /* Semantic Colors */
+  --green-semantic: #23ce6b;
+  --red-semantic: #df2935;
+  --yellow-semantic: #fdca40;
+  --blue-semantic: #3772ff;
+
+  /* Font Variables */
+  /* --font-primary: "Bebas Neue", sans-serif; */
+  --font-primary: "Rubik Doodle Shadow", serif;
+  --font-secondary: "Fraunces", serif;
+
+  --font-size-xxl: 3rem; 
+  --font-size-xl: 2.5rem; 
+  --font-size-lg: 2rem; 
+  --font-size-md: 1.5rem; 
+  --font-size-sm: 1rem; 
+  --font-size-xs: 0.875rem;
+
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+  --font-weight-black: 900;
+
+  --line-height-tight: 1.1;
+  --line-height-normal: 1.5;
+  --line-height-loose: 2;
+
+  /* Button Styles */
+  --button-color: var(--accent-color);
+  --button-font-size: var(--font-size-md);
+  --button-padding: 0.5rem 1rem;
+  --button-border-radius: 0.375rem;
+}
+
+#root, button {
+  font-family: var(--font-primary);
+  font-size: var(--font-size-lg);
+  letter-spacing: -1.2px;
 }
 
 body {
@@ -20,6 +67,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  
 }
 
 html.dark body {

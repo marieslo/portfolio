@@ -1,5 +1,7 @@
 # personal-website-FE
 
 ## Techologies used:
-- [Tailwind CSS](https://tailwindcss.com/)
-- JavaScript animation library [GSAP](https://gsap.com/)
+- Style: [Tailwind CSS](https://tailwindcss.com/)
+- Animation:[GSAP](https://gsap.com/)
+- Fonts and icons: [Google](https://fonts.google.com)
+- Sounds: [Freesound](https://freesound.org/)

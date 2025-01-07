@@ -1,9 +1,8 @@
 .project-item {
   position: relative;
-  background-color: #fff;
+  background-color: transparent;
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   opacity: 0; 
   margin-bottom: 2rem; 
   transition: opacity 0.5s ease;
@@ -11,22 +10,22 @@
 }
 
 .project-item.big {
-  width: 100%;
+  width: 80%;
+  height: fit-content;
 }
 
 .project-item.medium {
-  width: 80%;
+  width: 70%;
+  height: fit-content;
 }
 
 .project-item.small {
   width: 60%;
+  height: fit-content;
 }
 
 .project-card {
   position: relative;
-  width: 100%;
-  height: 300px; 
-  background-color: #f5f5f5;
   border-radius: 10px;
   overflow: hidden;
 }
@@ -35,8 +34,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100%;
-  background-color: #e3e3e3;
 }
 
 .project-image {
@@ -51,8 +48,8 @@
   align-items: center;
   justify-content: center;
   padding: 1rem;
-  background-color: #fff;
   position: absolute;
+  background-color: var(--neutral-color);
   top: 0;
   left: 0;
   right: 0;
