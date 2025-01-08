@@ -1,6 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -25,26 +23,25 @@
   --blue-semantic: #3772ff;
 
   /* Font Variables */
-  /* --font-primary: "Bebas Neue", sans-serif; */
-  --font-primary: "Rubik Doodle Shadow", serif;
-  --font-secondary: "Fraunces", serif;
+  --font-primary:  "Anonymous Pro", serif;
+  --font-secondary: "Anonymous Pro", serif;
 
-  --font-size-xxl: 3rem; 
-  --font-size-xl: 2.5rem; 
-  --font-size-lg: 2rem; 
-  --font-size-md: 1.5rem; 
-  --font-size-sm: 1rem; 
-  --font-size-xs: 0.875rem;
+  --font-size-xxl: 20px; 
+  --font-size-xl: 18px; 
+  --font-size-lg: 16px; 
+  --font-size-md: 14px; 
+  --font-size-sm: 12px; 
+  --font-size-xs: 11px;
 
   --font-weight-light: 300;
   --font-weight-normal: 400;
-  --font-weight-medium: 500;
+  /* --font-weight-medium: 500; */
   --font-weight-bold: 700;
-  --font-weight-black: 900;
+  /* --font-weight-black: 900; */
 
-  --line-height-tight: 1.1;
-  --line-height-normal: 1.5;
-  --line-height-loose: 2;
+  --line-height-tight: 1;
+  --line-height-normal: 1.2;
+  --line-height-loose: 1.5;
 
   /* Button Styles */
   --button-color: var(--accent-color);
@@ -55,8 +52,8 @@
 
 #root, button {
   font-family: var(--font-primary);
-  font-size: var(--font-size-lg);
-  letter-spacing: -1.2px;
+  font-size: var(--font-size-md);
+  line-height: var(--line-height-tight);
 }
 
 body {
@@ -76,7 +73,7 @@ html.dark body {
 
 html:not(.dark) body {
   background-color: #f5f5f5;
-  color: #333;
+  color: var(--text-light);
 }
 
 .container {
@@ -135,4 +132,56 @@ html:not(.dark) body {
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
   padding: 2rem;
+}
+
+/* App.css */
+header h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+header h1 span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* App.css */
+.bento-grid {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: scroll; /* Allow horizontal scrolling */
+  gap: 20px; /* Optional: Adjust gap between items */
+  padding: 20px 0;
+}
+
+.bento-grid::-webkit-scrollbar {
+  height: 8px; /* Customize scrollbar height */
+}
+
+.bento-grid::-webkit-scrollbar-thumb {
+  background-color: #888; /* Customize scrollbar color */
+  border-radius: 5px;
+}
+
+.bento-grid::-webkit-scrollbar-thumb:hover {
+  background-color: #555; /* Hover effect for scrollbar */
+}
+
+/* .letter {
+  display: inline-block;
+  opacity: 0;
+  transform: translateX(100%);
+} */
+
+.parallax-container {
+  position: relative;
+  height: 400px;
+  overflow: hidden;
+}
+
+.bento-grid {
+  position: relative;
+  z-index: 1; /* Ensure projects are above the parallax background */
 }

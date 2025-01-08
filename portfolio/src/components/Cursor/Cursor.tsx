@@ -17,7 +17,7 @@ export default function Cursor() {
     };
   }, []);
 
-  const letters = "KROW OT AVAILABLE ".split("");
+  // const letters = "KROW ROF AVAILABLE ".split("");
 
   return (
     <>
@@ -33,7 +33,7 @@ export default function Cursor() {
           transform: `translate3d(${cursorPosition.x}px, ${cursorPosition.y}px, 0)`,
         }}
       >
-        {letters.map((letter, index) => (
+        {/* {letters.map((letter, index) => (
           <span
             key={index}
             style={{
@@ -44,7 +44,7 @@ export default function Cursor() {
           >
             {letter}
           </span>
-        ))}
+        ))} */}
       </div>
     </>
   );

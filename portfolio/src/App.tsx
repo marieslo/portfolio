@@ -1,26 +1,23 @@
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import "./App.css";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/all";
 
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Cursor from "./components/Cursor/Cursor";
 import ProjectItem from "./components/ProjectItem/ProjectItem";
 
-gsap.registerPlugin(ScrollTrigger);
+import { motion, useAnimation, useInView, useScroll, useTransform } from "framer-motion";
 
 export default function App() {
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const projectsRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
+  // Handle click sound effect
+  React.useEffect(() => {
     const handleClick = () => {
       if (audioRef.current) {
         audioRef.current.currentTime = 0;
-        audioRef.current.play().catch((err) => {
-          console.error("Audio playback error:", err);
-        });
+        audioRef.current.play().catch((err) => console.error("Audio playback error:", err));
       }
     };
 
@@ -28,31 +25,7 @@ export default function App() {
     return () => window.removeEventListener("click", handleClick);
   }, []);
 
-  useEffect(() => {
-    const projects = projectsRef.current?.querySelectorAll(".project-item");
-  
-    projects?.forEach((project, index) => {
-      gsap.fromTo(
-        project,
-        { opacity: 0, y: 100 }, 
-        {
-          opacity: 1,
-          y: 0,
-          duration: 1,
-          ease: "power4.out",
-          scrollTrigger: {
-            trigger: project,
-            start: "top bottom",   
-            end: "top center",     
-            scrub: true,      
-            once: true,            
-          },
-        }
-      );
-    });
-  }, []);
-  
-
+  // Define projects data
   const projects = [
     { id: 1, name: "Project 1", imageUrl: "https://picsum.photos/300?random=1", size: "big", description: "This is a big project about AI." },
     { id: 2, name: "Project 2", imageUrl: "https://picsum.photos/300?random=2", size: "medium", description: "This is a medium project on web development." },
@@ -69,11 +42,19 @@ export default function App() {
         <header>
           <Header />
         </header>
-
+        <h1>Recent Projects</h1>
         <main className="w-full overflow-hidden">
+          <motion.div
+            className="parallax-container"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1 }}
+          >
+            <ParallaxBackground />
+          </motion.div>
           <div ref={projectsRef} className="bento-grid">
             {projects.map((project) => (
-              <ProjectItem key={project.id} project={project} />
+              <ProjectWithScroll key={project.id} project={project} />
             ))}
           </div>
         </main>
@@ -83,5 +64,60 @@ export default function App() {
         </footer>
       </div>
     </div>
+  );
+}
+
+function ProjectWithScroll({ project }: { project: any }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const controls = useAnimation();
+  const inView = useInView(ref, { once: true, margin: "0px 0px -50% 0px" });
+
+  React.useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    }
+  }, [inView, controls]);
+
+  return (
+    <motion.div
+      ref={ref}
+      className="project"
+      initial="hidden"
+      animate={controls}
+      variants={{
+        hidden: { opacity: 0, x: "100%" },
+        visible: {
+          opacity: 1,
+          x: 0,
+          transition: { duration: 0.8, ease: "easeOut" },
+        },
+      }}
+    >
+      <ProjectItem project={project} />
+    </motion.div>
+  );
+}
+
+function ParallaxBackground() {
+  const ref = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({ target: ref });
+  const y = useTransform(scrollYProgress, [0, 1], ["-50%", "0%"]);
+
+  return (
+    <motion.div
+      ref={ref}
+      className="parallax-background"
+      style={{
+        y, // Apply the parallax effect to the Y-axis
+        backgroundImage: "url('https://picsum.photos/1920/1080?random=10')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        height: "400px",
+        width: "100%",
+        position: "absolute",
+        top: 0,
+        zIndex: -1,
+      }}
+    />
   );
 }
