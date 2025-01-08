@@ -5,8 +5,9 @@
   overflow: hidden;
   opacity: 0; 
   margin-bottom: 2rem; 
-  transition: opacity 0.5s ease;
-  transform: translateX(0); 
+  opacity: 0; 
+  transform: translateY(50px); 
+  transition: all 0/5s ease-out;
 }
 
 .project-item.big {
@@ -74,4 +75,9 @@
   margin-top: 5rem; 
   padding: 0 2rem; 
   gap: 2rem; 
+}
+
+.project-item img {
+  width: 100%;
+  height: auto;
 }

@@ -3,15 +3,13 @@ display: flex;
 flex-direction: row;
 align-items: start;
 gap: 20%;
-line-height: 28px;
 }
 
 .text-aboutme{
     font-family: var(--font-secondary);
     font-weight: var(--font-weight-normal); 
     font-style: normal;
-    font-size: var(--font-size-sm);
-    line-height: 20px;
+    font-size: var(--font-size-xs);
     min-width: fit-content;
     height: fit-content; 
     position: relative;
@@ -22,52 +20,26 @@ line-height: 28px;
     overflow: hidden;
 }
 
-.availabletowork-text-container{
-    background-color: black;
-    min-width: 130px;
-    height: fit-content;
-    position: sticky;
-    top: 0%;
-    right: 0%;
-    }
-
-.availabletowork-text {
-    font-family: "Press Start 2P", serif;
-    font-weight: 400;
-    font-size: 10px;
-    font-style: normal;
-    color: #e3e3e3;
-    display: inline-block; 
-    padding: 15%; 
-    white-space: wrap; 
-    overflow: hidden;
-    max-width: 200px; 
-    animation: typing 3s steps(30) 1s 1 normal both; 
+.container-aboutme {
+    display: none; 
+  }
+  
+  .text-aboutme {
+    opacity: 0;
+    transform: translateY(20px); 
+    transition: opacity 0.05s ease, transform 0.5s ease;
+  }
+  
+  .about-me-container {
     position: relative;
-}
-
-.availabletowork-text::after {
-    content: "_";
-    position: absolute;
-    right: 0;
-    top: 0;
-    font-family: "Press Start 2P", serif; 
-    color: #e3e3e3;
-    animation: blink-caret 0.75s step-end infinite;
-    animation-delay: 3s; 
-}
-
-@keyframes typing {
-    0% {
-        width: 0;
-    }
-    100% {
-        width: 100%;
-    }
-}
-
-@keyframes blink-caret {
-    50% {
-        opacity: 0;
-    }
-}
+    display: inline-block;
+    padding: 10px;
+    transition: color 0.03s ease;
+  }
+  
+  .about-me-container:hover + .container-aboutme .text-aboutme {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.05s ease, transform 0.5s ease;
+  }
+  
