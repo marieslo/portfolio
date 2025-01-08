@@ -3,8 +3,11 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    position: absolute;
+    width: 100vw;
+    background-color: var(--accent-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1%;
   }
-  
-  /* .icons-by-icons8{
-    color: #505A5B;
-  } */

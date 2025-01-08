@@ -1,83 +1,79 @@
 .project-item {
-  position: relative;
-  background-color: transparent;
-  border-radius: 10px;
+  width: fit-content; 
   overflow: hidden;
-  opacity: 0; 
-  margin-bottom: 2rem; 
-  opacity: 0; 
-  transform: translateY(50px); 
-  transition: all 0/5s ease-out;
-}
-
-.project-item.big {
-  width: 80%;
-  height: fit-content;
-}
-
-.project-item.medium {
-  width: 70%;
-  height: fit-content;
-}
-
-.project-item.small {
-  width: 60%;
-  height: fit-content;
-}
-
-.project-card {
-  position: relative;
   border-radius: 10px;
-  overflow: hidden;
 }
 
-.card-front {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.card {
+  position: relative;
+  overflow: hidden;
 }
 
 .project-image {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: cover;
-  border-radius: 10px;
+  width: 100%; 
+  height: auto;
+  display: block;
 }
 
-.card-back {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem;
+.project-name-overlay {
   position: absolute;
-  background-color: var(--neutral-color);
+  bottom: 4%;
+  left: 5%;
+  width: 100%;
+  font-family: var(--font-secondary);
+  font-size: 28px !important;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1rem;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
+  text-align: left;
+  z-index: 10;
+  transition: opacity 0.05s ease;
+}
+
+.card-description-overlay {
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  bottom: 0;
-  transform: rotateY(180deg);
-  backface-visibility: hidden;
-  text-align: center;
+  padding-right: 10%;
+  height: fit-content;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #333;
+  display: none;
+  transform: translate(0, 0); 
+  width: auto; 
+  color: #000; 
+  text-align: start; 
+  padding: 0.5rem; 
+  opacity: 0; 
+  z-index: 20; 
+  transition: opacity 0.5s ease; 
 }
 
-.project-item:hover .card-front {
-  transform: rotateY(180deg);
+.project-item:hover .card-description-overlay {
+  display: block;
 }
 
-.project-item:hover .card-back {
-  transform: rotateY(0);
+.card:hover {
+  border-radius: 10px;
+  border: solid 0.5px var(--accent-color);
 }
 
-.bento-grid {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin-top: 5rem; 
-  padding: 0 2rem; 
-  gap: 2rem; 
+.project-item:hover .project-image {
+  filter: grayscale(100%);
+  transform: scale(1.1);
+  transition: transform 0.03s ease, filter 0.03s ease;
 }
 
-.project-item img {
-  width: 100%;
-  height: auto;
+.project-item:hover .card-description-overlay {
+  opacity: 1; 
+}
+
+.project-item:hover .project-name-overlay {
+  opacity: 0;
+}
+
+.project-item:hover .card-description-overlay {
+  opacity: 1;
 }

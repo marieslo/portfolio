@@ -1,4 +1,6 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -8,7 +10,7 @@
   /* Color Variables */
   --primary-color: #dae0f2;
   --secondary-color: #f9cff2;
-  --accent-color: #52154e;
+  --accent-color: #6dff80;
   --neutral-color: #efe9e7;
 
   --background-light: #dae0f2;
@@ -24,7 +26,7 @@
 
   /* Font Variables */
   --font-primary:  "Anonymous Pro", serif;
-  --font-secondary: "Anonymous Pro", serif;
+  --font-secondary: "Bebas Neue", serif;
 
   --font-size-xxl: 20px; 
   --font-size-xl: 18px; 
@@ -80,9 +82,8 @@ html:not(.dark) body {
   text-align: center;
 }
 
-
 .bg-gradient-to-b {
-  background: linear-gradient(135deg, #fbf8cc, #fde4cf, #ffcfd2, #f1c0e8, #cfbaf0, #a3c4f3, #90dbf4, #8eecf5, #98f5e1, #b9fbc0); 
+  background: linear-gradient(135deg, #fbf2cc, #fde4cf, #ffcfd2, #f1c0e8, #cfbaf0, #a3c4f3, #90dbf4, #8eecf5, #98f5e1, #b9fbc0); 
   background-size: 400% 400%;
   animation: gradientAnimation 10s ease infinite;
   position: relative;  
@@ -96,9 +97,9 @@ html:not(.dark) body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.2) 0px, rgba(0, 0, 0, 0.2) 0.5px, transparent 0.5px, transparent 100px), 
-              repeating-linear-gradient(90deg, rgba(0, 0, 0, 0.2) 0px, rgba(0, 0, 0, 0.2) 0.5px, transparent 0.5px, transparent 100px); 
-  background-size: 100px 100px;  
+  background: repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.2) 0px, rgba(0, 0, 0, 0.2) 0.5px, transparent 0.5px, transparent 10px), 
+              repeating-linear-gradient(90deg, rgba(0, 0, 0, 0.2) 0px, rgba(0, 0, 0, 0.2) 0.5px, transparent 0.5px, transparent 10px); 
+  background-size: 10px 10px;  
   pointer-events: none; 
 }
 
@@ -109,9 +110,9 @@ html:not(.dark) body {
 }
 
 .dark .bg-gradient-to-b::before {
-  background: repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.2) 0px, rgba(255, 255, 255, 0.2) 0.5px, transparent 0.5px, transparent 100px), 
-              repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.2) 0px, rgba(255, 255, 255, 0.2) 0.5px, transparent 0.5px, transparent 100px);
-  background-size: 100px 100px;  
+  background: repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.2) 0px, rgba(255, 255, 255, 0.2) 0.5px, transparent 0.5px, transparent 10px), 
+              repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.2) 0px, rgba(255, 255, 255, 0.2) 0.5px, transparent 0.5px, transparent 10px);
+  background-size: 10px 10px;  
 }
 
 @keyframes gradientAnimation {
@@ -126,62 +127,15 @@ html:not(.dark) body {
   }
 }
 
-
 .bento-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  padding: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+  gap: 20px;
+  padding: 20px;
 }
 
-/* App.css */
-header h1 {
-  font-size: 2.5rem;
-  font-weight: bold;
+h1 {
+  font-family: var(--font-secondary);
+  font-size: 40px !important;
   white-space: nowrap;
-}
-
-header h1 span {
-  display: inline-block;
-  opacity: 0;
-  transform: translateY(20px);
-}
-
-/* App.css */
-.bento-grid {
-  display: flex;
-  flex-wrap: nowrap;
-  overflow-x: scroll; /* Allow horizontal scrolling */
-  gap: 20px; /* Optional: Adjust gap between items */
-  padding: 20px 0;
-}
-
-.bento-grid::-webkit-scrollbar {
-  height: 8px; /* Customize scrollbar height */
-}
-
-.bento-grid::-webkit-scrollbar-thumb {
-  background-color: #888; /* Customize scrollbar color */
-  border-radius: 5px;
-}
-
-.bento-grid::-webkit-scrollbar-thumb:hover {
-  background-color: #555; /* Hover effect for scrollbar */
-}
-
-/* .letter {
-  display: inline-block;
-  opacity: 0;
-  transform: translateX(100%);
-} */
-
-.parallax-container {
-  position: relative;
-  height: 400px;
-  overflow: hidden;
-}
-
-.bento-grid {
-  position: relative;
-  z-index: 1; /* Ensure projects are above the parallax background */
 }

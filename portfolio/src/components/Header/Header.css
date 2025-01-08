@@ -1,15 +1,9 @@
 .header-container {
+  position: sticky;
+  width: 100vw;
+  background-color: var(--accent-color);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px;
-}
-
-
-.welcome-message{
-  background-color: var(--neutral-color);
-  border: solid 0.8px #000000;
-  border-radius: 10px;
-  padding: 2%;
-  z-index: 9999;
+  padding: 1%;
 }

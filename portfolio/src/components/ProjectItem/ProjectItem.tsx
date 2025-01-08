@@ -1,12 +1,12 @@
-import React, { useEffect } from "react";
+import React from "react";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import "./ProjectItem.css";
-import gsap from "gsap";
 
 type Project = {
   id: number;
   name: string;
-  imageUrl: string ;
-  size: string | null;
+  imageUrl: string;
   description: string | null;
 };
 
@@ -15,38 +15,41 @@ type ProjectItemProps = {
 };
 
 export default function ProjectItem({ project }: ProjectItemProps) {
-  useEffect(() => {
-    gsap.fromTo(
-      `.project-item-${project.id}`,
-      { opacity: 0, y: 50 },
-      {
+  const controls = useAnimation();
+  const [ref, inView] = useInView({
+    triggerOnce: false, 
+    threshold: 0.1, 
+  });
+
+  React.useEffect(() => {
+    if (inView) {
+      controls.start({
         opacity: 1,
         y: 0,
-        scrollTrigger: {
-          trigger: `.project-item-${project.id}`,
-          start: "top bottom",
-          end: "top center",
-          scrub: true,
-          once: true,
-        },
-      }
-    );
-  }, [project.id]);
+        transition: { duration: 0.8, ease: "easeOut" },
+      });
+    } else {
+      controls.start({
+        opacity: 0,
+        y: 50,
+      });
+    }
+  }, [inView, controls]);
 
   return (
-    <div className={`project-item project-item-${project.id} ${project.size}`}>
-          <div className="card-front">
-            <img src={project.imageUrl} alt={project.name} className="project-image" />
-          </div>
-          <div className="card-front">
-            <p>{project.name}</p>
-          </div>
+    <motion.div
+      ref={ref}
+      className="project-item"
+      initial={{ opacity: 0, y: 50 }}
+      animate={controls}
+    >
+      <div className="card">
+        <img src={project.imageUrl} alt={project.name} className="project-image" />
+        <div className="project-name-overlay">{project.name}</div>
         {project.description && (
-          <div className="card-back">
-            <p>{project.description}</p>
-          </div>
+          <div className="card-description-overlay">{project.description}</div>
         )}
-     
-    </div>
+      </div>
+    </motion.div>
   );
 }
