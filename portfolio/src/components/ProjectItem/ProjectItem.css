@@ -2,6 +2,7 @@
   width: fit-content; 
   overflow: hidden;
   border-radius: 10px;
+  transition: transform 0.3s ease; 
 }
 
 .card {
@@ -13,23 +14,26 @@
   width: 100%; 
   height: auto;
   display: block;
+  filter: grayscale(100%); 
+  transition: filter 0.3s ease; 
 }
 
 .project-name-overlay {
   position: absolute;
-  bottom: 4%;
-  left: 5%;
+  top: 10%;
+  left: 50%; 
+  transform: translate(-50%, -50%);
   width: 100%;
-  font-family: var(--font-secondary);
+  text-align: center; 
+  font-family: var(--font-bodytext);
+  font-style: italic;
   font-size: 28px !important;
-  color: #fff;
+  color: var(--accent-color);
   font-weight: bold;
-  font-size: 1rem;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
-  text-align: left;
   z-index: 10;
   transition: opacity 0.05s ease;
 }
+
 
 .card-description-overlay {
   position: absolute;
@@ -39,6 +43,8 @@
   padding-right: 10%;
   height: fit-content;
   background-color: rgba(255, 255, 255, 0.8);
+  font-family: var(--font-accent);
+  line-height: 15px;
   color: #333;
   display: none;
   transform: translate(0, 0); 
@@ -57,11 +63,10 @@
 
 .card:hover {
   border-radius: 10px;
-  border: solid 0.5px var(--accent-color);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 1px 15px var(--accent-color);
 }
-
 .project-item:hover .project-image {
-  filter: grayscale(100%);
+  filter: grayscale(0%); 
   transform: scale(1.1);
   transition: transform 0.03s ease, filter 0.03s ease;
 }
@@ -76,4 +81,9 @@
 
 .project-item:hover .card-description-overlay {
   opacity: 1;
+}
+
+.project-item:hover {
+  transform: translateY(-10px) translateX(50px); 
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); 
 }

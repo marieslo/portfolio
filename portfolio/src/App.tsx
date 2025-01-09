@@ -16,7 +16,9 @@ export default function App() {
     const handleClick = () => {
       if (audioRef.current) {
         audioRef.current.currentTime = 0;
-        audioRef.current.play().catch((err) => console.error("Audio playback error:", err));
+        audioRef.current.play().catch((err) =>
+          console.error("Audio playback error:", err)
+        );
       }
     };
 
@@ -24,13 +26,12 @@ export default function App() {
     return () => window.removeEventListener("click", handleClick);
   }, []);
 
-  // Define projects data
   const projects = [
-    { id: 1, name: "Project 1", imageUrl: "https://picsum.photos/300?random=1", size: "big", description: "This is a big project about AI." },
-    { id: 2, name: "Project 2", imageUrl: "https://picsum.photos/300?random=2", size: "medium", description: "This is a medium project on web development." },
+    { id: 1, name: "Project 1", imageUrl: "https://picsum.photos/300?random=1", size: "big", description: "This is a big project about AI. This is a big project about AI.This is a big project about AI.This is a big project about AI.This is a big project about AI.This is a big project about AI." },
+    { id: 2, name: "Project 2", imageUrl: "https://picsum.photos/300?random=2", size: "medium", description: "This is a medium project on web development.This is a medium project on web development.This is a medium project on web development.This is a medium project on web development.This is a medium project on web development." },
     { id: 3, name: "Project 3", imageUrl: "https://picsum.photos/300?random=3", size: "small", description: "This is a small project for mobile apps." },
     { id: 4, name: "Project 4", imageUrl: "https://picsum.photos/300?random=4", size: "medium", description: "This project focuses on UI/UX design." },
-    { id: 5, name: "Project 5", imageUrl: "https://picsum.photos/300?random=5", size: "big", description: "An advanced project about machine learning.An advanced project about machine learning.An advanced project about machine learning.An advanced project about machine learning.An advanced project about machine learning.An advanced project about machine learning.An advanced project about machine learning.An advanced project about machine learning.An advanced project about machine learning.An advanced project about machine learning.An advanced project about machine learning." },
+    { id: 5, name: "Project 5", imageUrl: "https://picsum.photos/300?random=5", size: "big", description: "An advanced project about machine learning." },
   ];
 
   return (
@@ -41,15 +42,14 @@ export default function App() {
         <header>
           <Header />
         </header>
-        <h1 className="text-center text-2xl font-bold mt-8">Recent Projects</h1>
+       <h1>RECENT PROJECTS</h1>
         <main className="w-full overflow-hidden relative">
           <motion.div
             className="parallax-container"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1 }}
-          >
-          </motion.div>
+          ></motion.div>
           <div className="bento-grid grid grid-cols-1 gap-8 px-4">
             {projects.map((project) => (
               <ProjectWithScroll key={project.id} project={project} />
@@ -94,3 +94,25 @@ function ProjectWithScroll({ project }: { project: any }) {
     </motion.div>
   );
 }
+
+// Animation for Split Type Heading
+const splitTypeVariants = {
+  hidden: { opacity: 1 },
+  visible: {
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const letterVariants = {
+  hidden: { opacity: 0, y: 50, rotate: -90, scale: 0.8, color: "#FF0000" },
+  visible: {
+    opacity: 1,
+    y: 0,
+    rotate: 0,
+    scale: 1,
+    color: "#000",
+    transition: { duration: 0.4, ease: "easeOut" },
+  },
+};
