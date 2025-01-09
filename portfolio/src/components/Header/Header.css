@@ -1,9 +1,21 @@
-.header-container {
+.header {
   position: sticky;
-  width: 100vw;
-  background-color: var(--accent-color);
+  top: 0;
+  width: 100%;
+  background-color: var(--background-color);
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding: 1%;
+  justify-content: space-between;
+  padding: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header__toggle-about-me {
+  color: var(--text-color);
+  transition: color 0.3s ease;
+  padding: 4px 10px;
+}
+
+.header__toggle-about-me:hover {
+  color: var(--accent-color);
 }
