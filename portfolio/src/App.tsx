@@ -4,13 +4,25 @@ import "./App.css";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Cursor from "./components/Cursor/Cursor";
-import ProjectItem from "./components/ProjectItem/ProjectItem";
-
-import { motion, useAnimation, useInView } from "framer-motion";
+import ProjectWithScroll from "./components/ProjectWithScroll/ProjectWithScroll";
+import SquareBackground from "./components/SquareBackground/SquareBackground";
+import ButtonDarkMode from "./components/ButtonDarkMode/ButtonDarkMode";
 
 export default function App() {
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
+  document.body.addEventListener('click', function() {
+    // Toggle between two background colors when the body is clicked
+    if (document.body.style.backgroundColor === 'rgb(0, 0, 0)') {
+      document.body.style.backgroundColor = 'white';
+      document.body.style.color = 'black';
+    } else {
+      document.body.style.backgroundColor = 'black';
+      document.body.style.color = 'white';
+    }
+  });
+
+  
   // Handle click sound effect
   React.useEffect(() => {
     const handleClick = () => {
@@ -35,22 +47,18 @@ export default function App() {
   ];
 
   return (
-    <div>
+    <div className="bg-gradient-to-b">
       <Cursor />
       <audio ref={audioRef} src="/sound/773604__kreha__smallclick.wav" />
-      <div className="bg-gradient-to-b">
-        <header>
-          <Header />
-        </header>
-       <h1>RECENT PROJECTS</h1>
-        <main className="w-full overflow-hidden relative">
-          <motion.div
-            className="parallax-container"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1 }}
-          ></motion.div>
-          <div className="bento-grid grid grid-cols-1 gap-8 px-4">
+      <div>
+      <header>
+          <Header />  
+          <ButtonDarkMode />
+        </header>  
+      <SquareBackground/>
+        <main>
+          <h1>RECENT PROJECTS</h1>
+          <div className="bento-grid">
             {projects.map((project) => (
               <ProjectWithScroll key={project.id} project={project} />
             ))}
@@ -64,55 +72,4 @@ export default function App() {
   );
 }
 
-function ProjectWithScroll({ project }: { project: any }) {
-  const ref = useRef<HTMLDivElement>(null);
-  const controls = useAnimation();
-  const inView = useInView(ref, { once: true, margin: "-50px 0px" });
-
-  React.useEffect(() => {
-    if (inView) {
-      controls.start("visible");
-    }
-  }, [inView, controls]);
-
-  return (
-    <motion.div
-      ref={ref}
-      className={`project-item ${project.size}`}
-      initial="hidden"
-      animate={controls}
-      variants={{
-        hidden: { opacity: 0, y: 50 },
-        visible: {
-          opacity: 1,
-          y: 0,
-          transition: { duration: 0.8, ease: "easeOut" },
-        },
-      }}
-    >
-      <ProjectItem project={project} />
-    </motion.div>
-  );
-}
-
-// Animation for Split Type Heading
-const splitTypeVariants = {
-  hidden: { opacity: 1 },
-  visible: {
-    transition: {
-      staggerChildren: 0.1,
-    },
-  },
-};
-
-const letterVariants = {
-  hidden: { opacity: 0, y: 50, rotate: -90, scale: 0.8, color: "#FF0000" },
-  visible: {
-    opacity: 1,
-    y: 0,
-    rotate: 0,
-    scale: 1,
-    color: "#000",
-    transition: { duration: 0.4, ease: "easeOut" },
-  },
-};
+<ProjectWithScroll project={undefined}/>

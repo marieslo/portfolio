@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Header.css";
 import AboutMe from "../AboutMe/AboutMe";
-import ButtonDarkMode from "../ButtonDarkMode/ButtonDarkMode";
+import SocialMedia from "../SocialMedia/SocialMedia";
 
 export default function Header() {
   const [isAboutMeOpen, setIsAboutMeOpen] = useState(false);
@@ -11,14 +11,15 @@ export default function Header() {
   };
 
   return (
-    <header className="header">
-      <ButtonDarkMode />
+    <div>
+    
+      <div className="header">
       <AboutMe isOpen={isAboutMeOpen} /> 
       <div className="header__toggle-about-me" onClick={toggleAboutMe}>
         <img
           src={isAboutMeOpen 
             ? "/icons/keyboard_arrow_up_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png" 
-            : "/icons/keyboard_arrow_down_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png"
+            : "Marie Slovokhotov"
           }
           className="toggle-icon"
         />
@@ -28,9 +29,11 @@ export default function Header() {
             className="close-icon" 
           />
         ) : (
-          "About Me"
+          "Marie Slovokhotov"
         )}
       </div>
-    </header>
+      <SocialMedia />
+      </div>
+    </div>
   );
 }

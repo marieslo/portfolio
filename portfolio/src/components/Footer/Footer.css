@@ -2,10 +2,16 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: end;
     font-family: var(--font-accent);
+    background-color: var(--accent-color);
+    position: sticky;
+    z-index: 100;
   }
   
+  .footer-content{
+    padding: 1%;
+  }
   /* .icons-by-icons8{
     color: #505A5B;
   } */

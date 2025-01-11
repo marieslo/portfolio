@@ -1,21 +1,31 @@
 .project-item {
   width: fit-content; 
-  overflow: hidden;
+  overflow: hidden; 
   border-radius: 10px;
-  transition: transform 0.3s ease; 
+  transition: transform 0.3s ease;
 }
 
 .card {
   position: relative;
   overflow: hidden;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); 
+  transform: rotateX(-25deg) rotateY(25deg);  
+  transition: all 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+.card:hover {
+  transform: perspective(1500px); 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+  scale: 1.1; 
 }
 
 .project-image {
-  width: 100%; 
+  width: 100%;
   height: auto;
   display: block;
-  filter: grayscale(100%); 
-  transition: filter 0.3s ease; 
+  filter: grayscale(100%);
+  transition: filter 0.3s ease, transform 0.3s ease;
 }
 
 .project-name-overlay {
@@ -25,65 +35,43 @@
   transform: translate(-50%, -50%);
   width: 100%;
   text-align: center; 
-  font-family: var(--font-bodytext);
-  font-style: italic;
-  font-size: 28px !important;
+  font-family: var( --font-header);
+  letter-spacing: -2px;
+  font-size: 2.5rem !important;
   color: var(--accent-color);
-  font-weight: bold;
   z-index: 10;
-  transition: opacity 0.05s ease;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  mix-blend-mode: difference;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
 }
-
 
 .card-description-overlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  padding-right: 10%;
+  top: 10%;
+  left: 10%;
   height: fit-content;
   background-color: rgba(255, 255, 255, 0.8);
   font-family: var(--font-accent);
-  line-height: 15px;
+  line-height: 1;
   color: #333;
   display: none;
-  transform: translate(0, 0); 
-  width: auto; 
-  color: #000; 
-  text-align: start; 
-  padding: 0.5rem; 
-  opacity: 0; 
-  z-index: 20; 
-  transition: opacity 0.5s ease; 
+  opacity: 0;
+  z-index: 20;
+  transition: opacity 0.5s ease;
+  padding: 0.5rem;
+  text-align: left;
+}
+
+.project-item:hover .project-image {
+  filter: grayscale(0%); 
 }
 
 .project-item:hover .card-description-overlay {
   display: block;
-}
-
-.card:hover {
-  border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 1px 15px var(--accent-color);
-}
-.project-item:hover .project-image {
-  filter: grayscale(0%); 
-  transform: scale(1.1);
-  transition: transform 0.03s ease, filter 0.03s ease;
-}
-
-.project-item:hover .card-description-overlay {
   opacity: 1; 
 }
 
 .project-item:hover .project-name-overlay {
-  opacity: 0;
-}
-
-.project-item:hover .card-description-overlay {
-  opacity: 1;
-}
-
-.project-item:hover {
-  transform: translateY(-10px) translateX(50px); 
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); 
+  opacity: 0; 
 }
