@@ -1,8 +1,17 @@
+.about-me__content{
+display: flex;
+flex-direction: row;
+gap: 10%;
+padding: 1px 20px;
+transform: rotateX(-25deg) rotateY(25deg); 
+}
+
 .about-me {
   overflow: hidden;
   max-height: 0;
   opacity: 0;
   transition: max-height 0.5s ease, opacity 0.5s ease;
+  /* transform: rotateX(-25deg) rotateY(25deg);  */
 }
 
 .about-me--open {
@@ -15,13 +24,10 @@
   opacity: 0;
 }
 
-.name{
-font-family: var(--font-header);
-}
-
 .available{
   font-family: var(--font-accent);
-  color: var(--green-semantic);
+  width: fit-content;
+  padding: 20px;
 }
 
 .about-me__icon {
@@ -47,9 +53,12 @@ font-family: var(--font-header);
 }
 
 
-.about-me__text {
-  font-family: var(--font-bodytext);
-  font-style: italic;
-  line-height: 2px;
+.header__toggle-about-me {
   color: var(--text-color);
+  transition: color 0.3s ease;
+  padding: 4px 10px;
+}
+
+.header__toggle-about-me:hover {
+  color: var(--accent-color);
 }

@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Cursor.css";
-import React from "react";
+
 
 export default function Cursor() {
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
@@ -17,7 +17,7 @@ export default function Cursor() {
     };
   }, []);
 
-  // const letters = "KROW ROF AVAILABLE ".split("");
+  // const letters = "* * * * * * * * * * * * * *".split("");
 
   return (
     <>
