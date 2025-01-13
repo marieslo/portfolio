@@ -2,15 +2,14 @@
   width: fit-content; 
   overflow: hidden; 
   border-radius: 10px;
-  transition: transform 0.3s ease;
+  transition: transform 0.03s ease;
 }
 
 .card {
   position: relative;
   overflow: hidden;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); 
-  transform: rotateX(-25deg) rotateY(25deg);  
-  transition: all 0.3s ease-in-out;
+  transition: all 0.03s ease-in-out;
   border-radius: 10px;
 }
 
@@ -25,7 +24,7 @@
   height: auto;
   display: block;
   filter: grayscale(100%);
-  transition: filter 0.3s ease, transform 0.3s ease;
+  transition: filter 0.03s ease, transform 0.03s ease;
 }
 
 .project-name-overlay {
@@ -41,8 +40,8 @@
   color: var(--accent-color);
   z-index: 10;
   opacity: 1;
-  transition: opacity 0.3s ease;
-  mix-blend-mode: difference;
+  transition: opacity 0.03s ease;
+  /* mix-blend-mode: difference; */
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
 }
 
