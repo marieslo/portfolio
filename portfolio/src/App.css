@@ -11,13 +11,14 @@
   --primary-color: #86beda;
   --secondary-color: #4b88a2;
   /* --accent-color: #3284ff; */
-  --accent-color: #ff5100;
-  --neutral-color: #d3d4d9;
+  --accent-color: #0a1d0c;
+  --accent-color-shade: #74a7ee3a;
+  --neutral-color: #e8e7df;
 
-  --background-light: #fff9fb;
+  --background-light: #e8e7df;
   --background-dark: #252627;
   --text-light: #252627;
-  --text-dark: #fff9fb;
+  --text-dark: #e8e7df;
 
   /* Semantic Colors */
   --green-semantic: #1da355;
@@ -140,24 +141,41 @@ html:not(.dark) body {
 
 .bento-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
-  gap: 20px; 
-  justify-content: center; 
+  gap: 1%;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  margin-left: auto;
+  justify-content: center;
   align-content: center;
-  min-height: 100vh; 
-  box-sizing: border-box; 
+  min-height: 100vh;
+  width: 96vw;
+  margin-top: 1%;
+  transform: rotateX(-25deg) rotateY(25deg);
 }
 
+
 h1 {
+  margin-left: auto;
+  justify-content: center; 
+  align-content: center;
   white-space: nowrap;
   font-size: clamp(2rem, 10vw, 12em); 
-  width: 90vw;
+  width: 100vw;
   font-weight: bold;
   color: var(--accent-color);
   letter-spacing: -6px;
   transform: rotateX(-25deg) rotateY(25deg); 
   position: relative;
-  margin-top: 10%;
-  margin-bottom: 150px;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+  /* text-shadow: -4px -8px 1px var(--accent-color-shade);  */
+}
+
+.square-background {
+  /* position: absolute;
+  top: 0;
+  left: 0; */
+  transform: rotateX(-25deg) rotateY(25deg); 
+  margin: 5% 0%;
+  width: 100%;
+  overflow: hidden; /* Ensures the squares stay within the header area */
+  z-index: -1; /* Background behind the header content */
+  /* transform: rotateX(-25deg) rotateY(25deg);  */
 }

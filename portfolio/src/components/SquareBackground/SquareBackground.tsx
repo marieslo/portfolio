@@ -3,15 +3,14 @@ import { gsap } from 'gsap';
 import './SquareBackground.css';
 
 export default function SquareBackground() {
-  const [squareCount, setSquareCount] = useState({ rows: 0, cols: 0 });
+  const [squareCount, setSquareCount] = useState(0);
   const squaresRef = useRef<(HTMLDivElement | null)[]>([]);
 
-
   const calculateSquares = () => {
-    const squareSize = 50; 
-    const cols = Math.ceil(window.innerWidth / squareSize);
-    const rows = Math.ceil(window.innerHeight / squareSize);
-    setSquareCount({ rows, cols });
+    const squareSize = 16; 
+    const screenWidth = window.innerWidth; 
+    const cols = Math.ceil(screenWidth / squareSize); 
+    setSquareCount(cols);
   };
 
   useEffect(() => {
@@ -20,9 +19,7 @@ export default function SquareBackground() {
 
     const handleMouseMove = (event: MouseEvent) => {
       const { clientX, clientY } = event;
-      const { current: squares } = squaresRef;
-
-      squares.forEach((square) => {
+      squaresRef.current.forEach((square) => {
         if (square) {
           const rect = square.getBoundingClientRect();
           const dx = clientX - (rect.left + rect.width / 2);
@@ -35,7 +32,7 @@ export default function SquareBackground() {
           gsap.to(square, {
             scale,
             rotation,
-            duration: 0.2,
+            duration: 0.02,
             ease: 'power2.out',
           });
         }
@@ -50,7 +47,8 @@ export default function SquareBackground() {
     };
   }, []);
 
-  const squares = Array.from({ length: squareCount.rows * squareCount.cols }, (_, index) => (
+
+  const squares = Array.from({ length: squareCount }, (_, index) => (
     <div
       key={index}
       className="square"

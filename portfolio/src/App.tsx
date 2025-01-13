@@ -12,7 +12,6 @@ export default function App() {
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   document.body.addEventListener('click', function() {
-    // Toggle between two background colors when the body is clicked
     if (document.body.style.backgroundColor === 'rgb(0, 0, 0)') {
       document.body.style.backgroundColor = 'white';
       document.body.style.color = 'black';
@@ -55,9 +54,14 @@ export default function App() {
           <Header />  
           <ButtonDarkMode />
         </header>  
-      <SquareBackground/>
         <main>
+        <div className="square-background">
+                  <SquareBackground />
+                </div>
           <h1>RECENT PROJECTS</h1>
+          <div className="square-background">
+                  <SquareBackground />
+                </div>
           <div className="bento-grid">
             {projects.map((project) => (
               <ProjectWithScroll key={project.id} project={project} />

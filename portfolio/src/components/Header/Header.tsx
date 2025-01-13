@@ -11,28 +11,26 @@ export default function Header() {
   };
 
   return (
-    <div>
-    
+    <div className="header-wrapper">
+   
       <div className="header">
-      <AboutMe isOpen={isAboutMeOpen} /> 
-      <div className="header__toggle-about-me" onClick={toggleAboutMe}>
-        <img
-          src={isAboutMeOpen 
-            ? "/icons/keyboard_arrow_up_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png" 
-            : "Marie Slovokhotov"
-          }
-          className="toggle-icon"
-        />
-        {isAboutMeOpen ? (
-          <img 
-            src="/icons/close_icon.png" 
-            className="close-icon" 
+        <AboutMe isOpen={isAboutMeOpen} />
+        <div className="header__toggle-about-me" onClick={toggleAboutMe}>
+          <img
+            src={
+              isAboutMeOpen
+                ? "/icons/keyboard_arrow_up_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png"
+                : "/icons/menu_icon.png"
+            }
+            className="toggle-icon"
           />
-        ) : (
-          "Marie Slovokhotov"
-        )}
-      </div>
-      <SocialMedia />
+          {isAboutMeOpen ? (
+            <img src="/icons/close_icon.png" className="close-icon" />
+          ) : (
+            <span>Marie Slovokhotov</span>
+          )}
+        </div>
+        <SocialMedia />
       </div>
     </div>
   );

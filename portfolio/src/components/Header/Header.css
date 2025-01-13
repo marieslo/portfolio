@@ -1,14 +1,21 @@
-.header {
-  position: sticky;
-  top: 0;
+.header-wrapper {
+  position: relative;
   width: 100%;
-  height: max-content;
-  background-color: var(--accent-color);
-  display: flex;
-  align-items: center;
-  justify-content: start;
-  /* padding: 1rem; */
-  letter-spacing: -1px;
-  margin-bottom: 1rem;
-  z-index: 100;
+  height: auto;
 }
+
+
+.header {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  /* height: 200px; */
+  padding-bottom: 1%;
+  background-color: transparent; 
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+  /* backdrop-filter: blur(10px);  */
+}
+
