@@ -60,5 +60,5 @@ transform: rotateX(-25deg) rotateY(25deg);
 }
 
 .header__toggle-about-me:hover {
-  color: var(--accent-color);
+  color: var(--color3);
 }

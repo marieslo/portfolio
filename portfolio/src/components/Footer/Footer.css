@@ -4,7 +4,7 @@
     align-items: center;
     justify-content: end;
     font-family: var(--font-accent);
-    background-color: var(--accent-color);
+    background-color: var(--color4);
     position: sticky;
     z-index: 100;
   }
