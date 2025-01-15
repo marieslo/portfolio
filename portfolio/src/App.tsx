@@ -58,7 +58,7 @@ export default function App() {
         <div className="square-background">
                   <SquareBackground />
                 </div>
-          <h1>RECENT PROJECTS</h1>
+          <h1>Recent projects</h1>
           <div className="square-background">
                   <SquareBackground />
                 </div>

@@ -15,21 +15,16 @@ export default function ProjectWithScroll({ project }: { project: any }) {
   }, [inView, controls]);
 
   return (
-    <motion.div
-      ref={ref}
-      animate={controls}
-      variants={{
-        hidden: { opacity: 0, rotateX: 0, rotateY: 0 },
-        visible: {
-          opacity: 1,
-          y: 0,
-          transition: { duration: 0.8, ease: "easeOut" },
-        },
-      }}
-    >
-      <div>
+<motion.div
+className="min-h-screen flex items-center justify-center bg-gray-800 text-white"
+initial={{ opacity: 0 }}
+animate={{ opacity: 1 }}
+exit={{ opacity: 0 }}
+>
+<div className="text-center">
         <ProjectItem project={project} />
       </div>
     </motion.div>
   );
 }
+
