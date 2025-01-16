@@ -1,21 +1,21 @@
 import React, { useState } from "react";
 import "./Header.css";
 import AboutMe from "../AboutMe/AboutMe";
-import SocialMedia from "../SocialMedia/SocialMedia";
 
 export default function Header() {
   const [isAboutMeOpen, setIsAboutMeOpen] = useState(false);
 
   const toggleAboutMe = () => {
-    setIsAboutMeOpen((prev) => !prev); 
+    setIsAboutMeOpen((prev) => !prev);
   };
 
   return (
-    <div className="header-wrapper">
-   
-      <div className="header">
-        <AboutMe isOpen={isAboutMeOpen} />
-        <div className="header__toggle-about-me" onClick={toggleAboutMe}>
+    <div>
+      <div className="header bg-transparent text-white py-6 flex items-center justify-between relative">
+        <div
+          className="header__toggle-about-me ml-4 flex items-center cursor-pointer"
+          onClick={toggleAboutMe}
+        >
           <img
             src={
               isAboutMeOpen
@@ -23,15 +23,28 @@ export default function Header() {
                 : "/icons/menu_icon.png"
             }
             className="toggle-icon"
+            alt="Toggle About Me"
           />
-          {isAboutMeOpen ? (
-            <img src="/icons/close_icon.png" className="close-icon" />
-          ) : (
-            <span>Marie Slovokhotov</span>
-          )}
+          <span className="ml-2">
+            {isAboutMeOpen ? (
+              <img
+                src="/icons/close_icon.png"
+                className="close-icon cursor-pointer"
+                alt="Close About Me"
+                onClick={(e) => {
+                  e.stopPropagation(); 
+                  setIsAboutMeOpen(false); 
+                }}
+              />
+            ) : (
+              ""
+            )}
+          </span>
         </div>
-        <SocialMedia />
       </div>
+
+      {/* About Me Section */}
+      <AboutMe isOpen={isAboutMeOpen} onClose={() => setIsAboutMeOpen(false)} />
     </div>
   );
 }

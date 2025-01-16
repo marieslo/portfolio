@@ -1,0 +1,7 @@
+#skills{
+transform: rotateX(-25deg) rotateY(25deg);
+}
+
+.skill-card{
+    min-width: fit-content;
+}

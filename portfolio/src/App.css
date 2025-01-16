@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Archivo+Black&family=Archivo:ital,wght@0,100..900;1,100..900&family=Bebas+Neue&family=Funnel+Display:wght@300..800&family=Manrope:wght@200..800&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&family=Red+Hat+Mono:ital,wght@0,300..700;1,300..700&family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alice&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Trocchi&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -28,8 +28,8 @@
   --blue-semantic: #3772ff;
 
   /* Font Variables */
-  --font-header: "Anonymous Pro", serif;
-  --font-bodytext:  "Anonymous Pro", serif;
+  --font-header: "Trocchi", serif;
+  --font-bodytext:  "Questrial", serif;
   --font-accent:  "Anonymous Pro", serif;
 
   --font-size-xxl: 30px; 
@@ -82,7 +82,7 @@ html:not(.dark) body {
 }
 
 .bg-gradient-to-b {
-  background: linear-gradient(135deg, #dee2e6, #ced4da, #adb5bd); 
+  background-color: var(--background-light); 
   /* background-size: 400% 400%; */
   width: 100vw;
   animation: gradientAnimation 10s ease infinite;
@@ -107,7 +107,7 @@ html:not(.dark) body {
 
 /* Dark Mode */
 .dark .bg-gradient-to-b {
-  background: linear-gradient(135deg, #495057, #343a40); 
+  background-color: var(--background-dark);
   /* background-size: 400% 400%; */
   animation: gradientAnimation 10s ease infinite;
 }
@@ -138,10 +138,10 @@ html:not(.dark) body {
   }
 }
 
-.bento-grid {
+.projects-grid {
   display: grid;
   gap: 1%;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
   margin-left: auto;
   justify-content: center;
   align-content: center;
@@ -164,6 +164,9 @@ h1 {
   transform: rotateX(-25deg) rotateY(25deg);
 }
 
+h2{
+  transform: rotateX(-25deg) rotateY(25deg);
+}
 
 .square-background {
   transform: rotateX(-25deg) rotateY(25deg); 
@@ -171,4 +174,20 @@ h1 {
   width: 100%;
   overflow: hidden; 
   z-index: -1; 
+}
+
+.contact-social-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.contact-social-wrapper a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.footer-container {
+  padding: 1rem;
 }

@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@gsap/react": "^2.1.1",
+    "emailjs-com": "^3.2.0",
     "framer-motion": "^11.18.0",
     "gsap": "^3.12.5",
     "motion": "^11.16.1",

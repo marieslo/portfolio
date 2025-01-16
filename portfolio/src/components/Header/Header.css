@@ -1,21 +1,22 @@
-.header-wrapper {
-  position: relative;
-  width: 100%;
-  height: auto;
-}
-
-
 .header {
-  position: relative;
-  z-index: 1;
-  width: 100%;
-  /* height: 200px; */
-  padding-bottom: 1%;
-  background-color: var(--color4); 
   display: flex;
-  flex-direction: column;
-  align-items: start;
-  justify-content: start;
-  /* backdrop-filter: blur(10px);  */
+  justify-content: space-between;
+  align-items: center;
 }
 
+.header__toggle-about-me {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.toggle-icon {
+  width: 30px;
+  height: 30px;
+}
+
+.close-icon {
+  width: 20px;
+  height: 20px;
+  margin-left: 8px;
+}
