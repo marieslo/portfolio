@@ -1,7 +1,5 @@
 .cursor-dot {
   position: fixed;
-  /* top: 0;
-  left: 0; */
   width: 30px;
   height: 30px;
   background-color: var(--primary-color);
@@ -11,26 +9,3 @@
   mix-blend-mode: difference;
   transition: transform 0.001s ease, background-color 0.001s ease;
 }
-
-/* .cursor-circle {
-  position: fixed;
-  top: 0;
-  left: 0;
-  pointer-events: none;
-  z-index: 999;
-  width: 30px;
-  height: 30px;
-  transform: translate(-50%, -50%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.cursor-circle span {
-  position: absolute;
-  font-family: "Press Start 2P", sans-serif;
-  font-size: 8px; 
-  font-weight: 400;
-  color: var(--primary-color);
-  transform-origin: 37.5px 37.5px; 
-} */

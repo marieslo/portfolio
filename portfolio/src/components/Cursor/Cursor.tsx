@@ -17,7 +17,6 @@ export default function Cursor() {
     };
   }, []);
 
-  // const letters = "* * * * * * * * * * * * * *".split("");
 
   return (
     <>
@@ -33,18 +32,6 @@ export default function Cursor() {
           transform: `translate3d(${cursorPosition.x}px, ${cursorPosition.y}px, 0)`,
         }}
       >
-        {/* {letters.map((letter, index) => (
-          <span
-            key={index}
-            style={{
-              transform: `rotate(${(index / letters.length) * 360}deg) translate(70px) rotate(-${
-                (index / letters.length) * 360
-              }deg)`,
-            }}
-          >
-            {letter}
-          </span>
-        ))} */}
       </div>
     </>
   );

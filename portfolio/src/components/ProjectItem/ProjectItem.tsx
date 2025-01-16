@@ -7,7 +7,8 @@ type Project = {
   id: number;
   name: string;
   imageUrl: string;
-  description: string | null;
+  description: string | null; 
+  tags: string[]; 
 };
 
 type ProjectItemProps = {
@@ -45,10 +46,15 @@ export default function ProjectItem({ project }: ProjectItemProps) {
     >
       <div className="card">
         <img src={project.imageUrl} alt={project.name} className="project-image" />
-        <div className="project-name-overlay">{project.name}</div>
+        <div className="project-name-overlay mt-6">{project.name}</div>
         {project.description && (
           <div className="card-description-overlay">{project.description}</div>
         )}
+        <div className="tags">
+          {project.tags.map((tag, index) => (
+            <span key={index} className="tag">{tag}</span>
+          ))}
+        </div>
       </div>
     </motion.div>
   );

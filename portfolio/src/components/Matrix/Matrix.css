@@ -1,0 +1,34 @@
+.matrix {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1; 
+  }
+  
+  .matrix span {
+    position: absolute;
+    opacity: 0;
+    color: rgb(109, 127, 109);
+    font-family: monospace;
+    animation: matrix-animation 10s linear infinite;
+    font-size: 20px;
+    transform: translateY(-100px);
+  }
+  
+  @keyframes matrix-animation {
+    0% {
+      opacity: 0;
+      transform: translateY(-100px);
+    }
+    50% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(100px);
+    }
+  }

@@ -1,64 +1,63 @@
-.about-me__content{
-display: flex;
-flex-direction: row;
-gap: 10%;
-padding: 1px 20px;
-transform: rotateX(-25deg) rotateY(25deg); 
-}
-
-.about-me {
+.about-me-container {
+  position: relative;
+  height: 100vh; 
   overflow: hidden;
-  max-height: 0;
-  opacity: 0;
-  transition: max-height 0.5s ease, opacity 0.5s ease;
-  /* transform: rotateX(-25deg) rotateY(25deg);  */
 }
 
-.about-me--open {
-  max-height: 300px; 
-  opacity: 1;
-}
-
-.about-me--closed {
-  max-height: 0;
-  opacity: 0;
-}
-
-.available{
-  font-family: var(--font-accent);
-  width: fit-content;
+.about-me-content {
+  position: relative;
+  z-index: 1; 
   padding: 20px;
+  background-color: #fff; 
+  color: var(--text-dark);
+  border-radius: 10px;
+  width: 80%;
 }
 
-.about-me__icon {
-  width: 24px; 
-  height: 24px;
-  margin-right: 8px;
-  transition: transform 0.3s ease; 
+.about-me__close-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: transparent;
+  border: none;
+  font-size: 30px;
+  color: var(--text-dark);
+  cursor: pointer;
 }
 
-.about-me__icon:hover {
-  transform: scale(1.2); 
+
+.about-me__photo-wrapper {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.about-me__photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.available {
+  text-align: center;
+  font-size: 18px;
+  margin-top: 10px;
+  background-color: #fff; 
+  font-family: monospace;
+  color: var(--green-semantic);
+  border-radius: 10px;
 }
 
 .about-me__content {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  padding: 1rem;
-  background-color: var(--background-color);
-  border: 1px solid var(--border-color);
-  border-radius: 8px;
-  align-items: center;
+  padding: 10px 20px;
+  background-color: var(--neutral-color);
+  border-radius: 10px;
 }
 
+.about-me__text {
+  font-size: 18px;
+  margin: 10px 0;
+ 
+  color: var(--text-dark);
 
-.header__toggle-about-me {
-  color: var(--text-color);
-  transition: color 0.3s ease;
-  padding: 4px 10px;
-}
-
-.header__toggle-about-me:hover {
-  color: var(--color3);
 }
