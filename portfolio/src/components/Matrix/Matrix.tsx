@@ -7,29 +7,29 @@ const Matrix = () => {
   useEffect(() => {
     const generateMatrixChars = () => {
       let newChars: number[] = [];
-      for (let i = 0; i < 100; i++) { 
+      for (let i = 0; i < 200; i++) { 
         newChars.push(Math.floor(Math.random() * 2)); 
       }
       setMatrixChars(newChars);
     };
 
     generateMatrixChars();
-    const interval = setInterval(generateMatrixChars, 120); // Update every 120 ms
+    const interval = setInterval(generateMatrixChars, 200); 
     return () => clearInterval(interval); 
   }, []);
 
   return (
     <div className="matrix">
       {matrixChars.map((char, index) => {
-        const randomLeft = Math.floor(Math.random() * 100); // Random left position (percentage)
-        const randomTop = Math.floor(Math.random() * 100);  // Random top position (percentage)
-        const animationDelay = Math.random() * 5; // Random delay for each character's animation
+        const column = index % 10;  
+        const randomTop = Math.floor(Math.random() * 100);  
+        const animationDelay = Math.random() * 5; 
 
         return (
           <span
             key={index}
             style={{
-              left: `${randomLeft}%`,
+              left: `${(column * 10)}%`, 
               top: `${randomTop}%`,
               animationDelay: `${animationDelay}s`,
             }}

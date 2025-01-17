@@ -7,8 +7,8 @@ type Project = {
   id: number;
   name: string;
   imageUrl: string;
-  description: string | null; 
-  tags: string[]; 
+  description: string | null;
+  tags: string[];
 };
 
 type ProjectItemProps = {
@@ -18,8 +18,8 @@ type ProjectItemProps = {
 export default function ProjectItem({ project }: ProjectItemProps) {
   const controls = useAnimation();
   const [ref, inView] = useInView({
-    triggerOnce: false, 
-    threshold: 0.1, 
+    triggerOnce: true, 
+    threshold: 0.1,
   });
 
   React.useEffect(() => {
@@ -41,8 +41,9 @@ export default function ProjectItem({ project }: ProjectItemProps) {
     <motion.div
       ref={ref}
       className="project-item"
-      initial={{ opacity: 0, y: 50 }}
-      animate={controls}
+      initial={{ opacity: 0, y: 50 }}  
+      animate={controls}  
+      exit={{ opacity: 0 }}  
     >
       <div className="card">
         <img src={project.imageUrl} alt={project.name} className="project-image" />

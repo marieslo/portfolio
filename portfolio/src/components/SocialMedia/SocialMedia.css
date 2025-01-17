@@ -1,6 +1,7 @@
 .qr-code-wrapper {
    position: relative;
    display: flex;
+   flex-direction: column;
    width: 110px;
    height: 110px;
    background-color: #04a7914f;
@@ -14,12 +15,6 @@
 
  .qr-code-wrapper:hover {
    transform: translateY(5px); 
- }
- 
- .qr-code-wrapper canvas {
-   display: block;
-   width: 100%;
-   height: 100%;
  }
  
  .qr-icon {

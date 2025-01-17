@@ -32,7 +32,7 @@
   }
   
   .navbar__link:hover {
-    color: #d9ff00;
+    color: var(--color5);
     transform: rotateX(-25deg) rotateY(25deg);
   }
   

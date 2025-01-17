@@ -9,12 +9,18 @@
 @tailwind components;
 @tailwind utilities;
 
+/* * {
+  box-sizing: border-box;
+} */
 
 :root {
+
+  --space: 1rem;
   --color1: #d90368;
   --color2: #b348d1;
   --color3: #04a791;
   --color4: #e97405;
+  --color5: #00ff08;
   --color-light: #aab9ca;
   --color-dark: #0d1c2e;
 
@@ -48,7 +54,7 @@
 /* Global Styles */
 body {
   font-family: var(--font-bodytext);
-  color: var(--text-dark);
+  color: var(--clor-dark);
   line-height: var(--line-height-normal);
   margin: 0;
   padding: 0;
@@ -59,10 +65,20 @@ body {
   min-height: 100vh;
 }
 
+section {
+  margin-inline: auto;
+  width: min(1000px, 100%);
+}
+
+section + section {
+  margin-block-start: 4rem;
+  padding-block-start: 4rem;
+}
+
 /* Header */
 h1, h2, h3, h4 {
   font-family: var(--font-header);
-  color: var(--text-dark);
+  color: var(--color-dark);
   line-height: var(--line-height-tight);
 
 }
@@ -107,13 +123,14 @@ button {
   background-color: var(--color1);
   color: var(--color-light);
   border: none;
-  /* cursor: pointer; */
+  /* cursor: none; */
   transition: background-color 0.03s ease, transform 0.02s ease;
-  text-transform: uppercase;
+  text-transform: uppercase; 
 }
 
 button:hover {
   transform: scale(1.2);
+  /* cursor: none; */
 }
 
 /* Links */
@@ -121,12 +138,14 @@ a {
   color: var(--color1);
   text-decoration: none;
   font-weight: var(--font-weight-bold);
-  transition: color 0.3s ease, transform 0.2s ease;
+  transition: color 0.03s ease, transform 0.02s ease;
+  /* cursor: none; */
 }
 
 a:hover {
   color: var(--color2);
   transform: scale(1.05);
+  /* cursor: none; */
 }
 
 html.dark body {
@@ -177,3 +196,4 @@ html:not(.dark) body {
 .footer-container {
   padding: 1rem;
 }
+

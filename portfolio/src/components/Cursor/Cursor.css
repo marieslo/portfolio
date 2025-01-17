@@ -1,11 +1,24 @@
 .cursor-dot {
   position: fixed;
-  width: 30px;
-  height: 30px;
-  background-color: var(--primary-color);
-  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  background-color: var(--color-light);; 
   pointer-events: none;
   z-index: 2000;
   mix-blend-mode: difference;
-  transition: transform 0.001s ease, background-color 0.001s ease;
+  transition: transform 0.1s ease;
+  /* box-shadow: 10px 20px 8px 1px var(--color1); */
+}
+
+.cursor-tail {
+  position: fixed;
+  width: 20px;
+  height: 20px; 
+  padding: 1rem;
+  background-color: var(--color-light); 
+  /* pointer-events: none; */
+  z-index: 2000;
+  mix-blend-mode: difference;
+  transition: transform 0.001s ease;
+  /* box-shadow: 1px 10px 8px 1px var(--color1); */
 }

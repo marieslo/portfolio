@@ -1,7 +1,6 @@
 import React, { useRef } from "react";
 import "./App.css";
 
-import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Cursor from "./components/Cursor/Cursor";
 import Skills from "./components/Skills/Skills";
@@ -63,21 +62,12 @@ export default function App() {
     },
     {
       id: 3,
-      name: "Project 1",
+      name: "Project 3",
       imageUrl: "/mockpics/image3.png",
       size: "small",
       description: "Description of Project 1",
       tags: ["tag1", "tag2"],
       itemCount: 3, 
-    },
-    {
-      id: 4,
-      name: "Project 2",
-      imageUrl: "/mockpics/image4.png",
-      size: "medium",
-      description: "Description of Project 2",
-      tags: ["tag3", "tag4"],
-      itemCount: 4, 
     },
   ];
 
@@ -106,7 +96,6 @@ export default function App() {
       <audio ref={audioRef} src="/sound/773604__kreha__smallclick.wav" />
       <div>
         <header>
-          <Header />
           <Navbar
             onClickProjects={scrollToProjects}
             onClickSkills={scrollToSkills}
@@ -117,7 +106,7 @@ export default function App() {
           <h1 className="mb-10">
             {/* Skills */}
           </h1>
-          <div ref={skillsRef}>
+          <div className='skills-section' ref={skillsRef}>
             <Skills />
           </div>
           <h1 className="mb-10">
