@@ -58,7 +58,7 @@ export default function Navbar({ onClickProjects, onClickContact, onClickSkills 
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
-        <div className="max-w-screen-xl mx-auto flex justify-between items-center">
+        <div className="mx-auto flex items-center gap-5">
           <ButtonDarkMode />
 
           <motion.div

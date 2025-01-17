@@ -1,7 +1,7 @@
 .footer-container {
   position: relative;
   background-color: var(--color4);
-  padding: 20px;
+  padding: 2px;
   text-align: center;
   font-family: monospace;
   overflow: hidden;
@@ -14,7 +14,6 @@
   align-items: space-between;
   justify-content: space-between;
   width: 100%; 
-  font-size: 14px; 
 }
 
 .footer-content span {
@@ -23,12 +22,8 @@
 }
 
 .footer-content .icons-by-icons8 {
-  color: #505A5B;
+  color: var(--color-light);
   transition: color 0.3s ease; 
-}
-
-.footer-content .icons-by-icons8:hover {
-  color: #00bcd4; 
 }
 
 .footer-content .social-media {

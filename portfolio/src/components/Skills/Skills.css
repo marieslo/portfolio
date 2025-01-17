@@ -1,7 +1,12 @@
-#skills{
-transform: rotateX(-25deg) rotateY(25deg);
-}
-
 .skill-card{
     min-width: fit-content;
 }
+
+.square-background {
+    /* transform: rotateX(-25deg) rotateY(25deg);  */
+  
+    width: 100%;
+    overflow: hidden; 
+    z-index: -1; 
+  }
+  

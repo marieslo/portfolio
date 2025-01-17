@@ -1,19 +1,57 @@
-import React from 'react'
-import "./SocialMedia.css"; 
+import React from "react";
+import QRCode from "react-qr-code";
+import './SocialMedia.css'
 
 export default function SocialMedia() {
   return (
     <div className="flex justify-center space-x-8 mt-4">
-      
-      <a  href="https://github.com/marieslo" target="_blank" rel="noopener noreferrer" className="social-media">
-        <img width="30" height="30" src="https://img.icons8.com/ios/ffffff/github.png" alt="github" />
-      </a>
-      <a href="https://linkedin.com/marie-slovokhotov" target="_blank" rel="noopener noreferrer" className="social-media">
-        <img width="30" height="30" src="https://img.icons8.com/ios/ffffff/linkedin.png" alt="linkedin" />
-      </a>
-      <a href="https://t.me/marieslo" target="_blank" rel="noopener noreferrer" className="social-media">
-        <img width="30" height="30" src="https://img.icons8.com/ios/ffffff/telegram.png" alt="telegram" />
-      </a>
+      <div className="social-media">
+        <div className="qr-code-wrapper">
+          <a href="https://github.com/marieslo" target="_blank" rel="noopener noreferrer">
+            <div className="icon-wrapper">
+              <img
+                src="https://img.icons8.com/ios-filled/45/github.png"
+                alt="GitHub"
+                className="qr-icon"
+                style={{ filter: 'brightness(0) invert(1)' }} 
+              />
+            </div>
+            <QRCode value="https://github.com/marieslo" size={50} />
+          </a>
+        </div>
+      </div>
+
+      <div className="social-media">
+        <div className="qr-code-wrapper">
+          <a href="https://linkedin.com/marie-slovokhotov" target="_blank" rel="noopener noreferrer">
+            <div className="icon-wrapper">
+              <img
+                src="https://img.icons8.com/ios-filled/45/linkedin.png"
+                alt="LinkedIn"
+                className="qr-icon"
+                style={{ filter: 'brightness(0) invert(1)' }} 
+              />
+            </div>
+            <QRCode value="https://linkedin.com/marie-slovokhotov" size={50} />
+          </a>
+        </div>
+      </div>
+
+      <div className="social-media">
+        <div className="qr-code-wrapper">
+          <a href="https://t.me/marieslo" target="_blank" rel="noopener noreferrer">
+            <div className="icon-wrapper">
+              <img
+                src="https://img.icons8.com/ios-filled/45/telegram-app.png"
+                alt="Telegram"
+                className="qr-icon"
+                style={{ filter: 'brightness(0) invert(1)' }}
+              />
+            </div>
+            <QRCode value="https://t.me/marieslo" size={50} />
+          </a>
+        </div>
+      </div>
     </div>
-  )
+  );
 }
