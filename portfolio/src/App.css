@@ -1,4 +1,9 @@
+
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
+
 @import url('https://fonts.googleapis.com/css2?family=Alice&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Trocchi&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,33 +11,20 @@
 
 
 :root {
-  /* Color Variables */
-  --primary-color: #86beda;
-  --secondary-color: #4b88a2;
-  /* --accent-color: #3284ff; */
-  --color1: #F205CB;
-  --color2: #6B17BF;
-  --color3: #01ECC3;
-  --color4: #FF8100;
-  --neutral-color: #e8e7df;
+  --color1: #d90368;
+  --color2: #b348d1;
+  --color3: #04a791;
+  --color4: #e97405;
+  --color-light: #aab9ca;
+  --color-dark: #0d1c2e;
 
-  --background-light: #e8e7df;
-  --background-dark: #1A0859;
-  --text-dark: #1A0859;
-  --text-light: #e8e7df;
-
-  /* Semantic Colors */
-  --green-semantic: #1da355;
-  --red-semantic: #df2935;
-  --yellow-semantic: #fdca40;
-  --blue-semantic: #3772ff;
 
   /* Font Variables */
-  --font-header: "Trocchi", serif;
-  --font-bodytext:  "Questrial", serif;
-  --font-accent:  "Anonymous Pro", serif;
+  --font-header: "Fraunces", serif;  
+  --font-bodytext: "Questrial", sans-serif;
+  --font-accent: "Anonymous Pro", monospace; 
 
-  --font-size-xxl: 30px; 
+  --font-size-xxl: 40px; 
   --font-size-xl: 18px; 
   --font-size-lg: 16px; 
   --font-size-md: 14px; 
@@ -41,51 +33,114 @@
 
   --font-weight-light: 300;
   --font-weight-normal: 400;
-  /* --font-weight-medium: 500; */
   --font-weight-bold: 700;
-  /* --font-weight-black: 900; */
 
   --line-height-tight: 20px;
-  --line-height-normal: 1.2;
-  --line-height-loose: 1.5;
+  --line-height-normal: 1.5;
+  --line-height-loose: 1.75;
 
   /* Button Styles */
   --button-font-size: var(--font-size-md);
   --button-padding: 0.5rem 1rem;
-  --button-border-radius: 0.375rem;
+  --button-border-radius: 4px; 
 }
 
-#root {
-  font-family: var(--font-header);
-  font-size: var(--font-size-md);
-  line-height: var(--line-height-tight);
-}
-
+/* Global Styles */
 body {
-  height: 100vh;
-  overflow-x: hidden;
-  cursor: none;
-  box-sizing: border-box;
+  font-family: var(--font-bodytext);
+  color: var(--text-dark);
+  line-height: var(--line-height-normal);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Header */
+h1, h2, h3, h4 {
+  font-family: var(--font-header);
+  color: var(--text-dark);
+  line-height: var(--line-height-tight);
+
+}
+
+h1 {
+  font-weight: var(--font-weight-bold);  
+  color: var(--color4);
+  letter-spacing: -2px;
+  margin: 0 auto;
+  text-align: start;
+  font-size: var(--font-size-xxl);
+  white-space: nowrap;
+  position: relative;
+  /* text-transform: uppercase; */
+  transform: rotateX(-25deg) rotateY(25deg);
+}
+
+h2 {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color4);
+  letter-spacing: -1.5px;
+  transform: rotateX(-25deg) rotateY(25deg);
+}
+
+h3 {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-normal);
+  color: var(--color2)
+}
+
+h4 {
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-normal);
+}
+
+/* Button */
+button {
+  font-size: var(--button-font-size);
+  padding: var(--button-padding);
+  border-radius: var(--button-border-radius);
+  background-color: var(--color1);
+  color: var(--color-light);
+  border: none;
+  /* cursor: pointer; */
+  transition: background-color 0.03s ease, transform 0.02s ease;
+  text-transform: uppercase;
+}
+
+button:hover {
+  transform: scale(1.2);
+}
+
+/* Links */
+a {
+  color: var(--color1);
+  text-decoration: none;
+  font-weight: var(--font-weight-bold);
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+a:hover {
+  color: var(--color2);
+  transform: scale(1.05);
 }
 
 html.dark body {
-  color: var(--text-dark);
+  color: var(-color-dark);
 }
 
 html:not(.dark) body {
-  background-color: var(--background-light);
-  color: var(--text-light);
-}
-
-.container {
-  text-align: center;
+  background-color: var(--color-light);
+  color: var(--color-light);
 }
 
 .bg-gradient-to-b {
-  background-color: var(--background-light); 
-  /* background-size: 400% 400%; */
+  background-color: var(--color-light); 
   width: 100vw;
-  animation: gradientAnimation 10s ease infinite;
   position: relative;  
   z-index: 0; 
 }
@@ -93,88 +148,19 @@ html:not(.dark) body {
 /* Light Mode */
 .bg-gradient-to-b::before {
   content: "";
-  /* position: absolute; */
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  /* background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 30%, transparent 30%) 0 0, 
-  radial-gradient(circle, rgba(255, 255, 255, 0.3) 30%, transparent 30%) 10px 10px; 
-  background-size: 30px 30px;   */
   pointer-events: none; 
 }
 
 
 /* Dark Mode */
 .dark .bg-gradient-to-b {
-  background-color: var(--background-dark);
-  /* background-size: 400% 400%; */
-  animation: gradientAnimation 10s ease infinite;
+  background-color: var(--color-dark);
 }
 
-.dark .bg-gradient-to-b::before {
-  content: "";
-  /* position: absolute; */
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  /* background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 30%, transparent 30%) 0 0, 
-              radial-gradient(circle, rgba(255, 255, 255, 0.3) 30%, transparent 30%) 10px 10px;  
-  background-size: 40px 40px;    */
-  pointer-events: none; 
-}
-
-
-@keyframes gradientAnimation {
-  0% {
-    background-position: 0 0;
-  }
-  50% {
-    background-position: 100% 100%;
-  }
-  100% {
-    background-position: 0 0;
-  }
-}
-
-.projects-grid {
-  display: grid;
-  gap: 1%;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-  margin-left: auto;
-  justify-content: center;
-  align-content: center;
-  min-height: 100vh;
-  width: 96vw;
-  margin-top: 1%;
-  transform: rotateX(-25deg) rotateY(25deg);
-}
-
-h1 {
-  margin: 0 auto;
-  text-align: center;
-  font-size: clamp(2rem, 10vw, 12em); 
-  font-weight: bold;
-  white-space: nowrap;
-  color: var(--color1); 
-  letter-spacing: -4px;
-  position: relative;
-  text-transform: uppercase;
-  transform: rotateX(-25deg) rotateY(25deg);
-}
-
-h2{
-  transform: rotateX(-25deg) rotateY(25deg);
-}
-
-.square-background {
-  transform: rotateX(-25deg) rotateY(25deg); 
-  margin: 5% 0%;
-  width: 100%;
-  overflow: hidden; 
-  z-index: -1; 
-}
 
 .contact-social-wrapper {
   display: flex;

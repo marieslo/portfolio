@@ -4,12 +4,10 @@ import "./App.css";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Cursor from "./components/Cursor/Cursor";
-import ProjectWithScroll from "./components/ProjectWithScroll/ProjectWithScroll";
-import SquareBackground from "./components/SquareBackground/SquareBackground";
 import Skills from "./components/Skills/Skills";
 import Navbar from "./components/Navbar/Navbar";
 import SocialMedia from "./components/SocialMedia/SocialMedia";
-// import ContactEmail from "./components/ContactEmail/ContactEmail";
+import CarouselOfProjects from "./components/CarouselOfProjects/CarouselOfProjects";
 
 export default function App() {
   const audioRef = useRef<HTMLAudioElement | null>(null);
@@ -34,10 +32,53 @@ export default function App() {
     return () => window.removeEventListener("click", handleClick);
   }, []);
 
-  const projects = [
-    { id: 1, name: "Project 1", imageUrl: "/mockpics/image1.png", size: "big", description: "This is a big project about AI.", tags: ["AI", "React", "JavaScript"] },
-    { id: 2, name: "Project 2", imageUrl: "/mockpics/image2.png", tags: ["Web Development", "JavaScript"] },
-    { id: 3, name: "Project 3", imageUrl: "/mockpics/image3.png", size: "small", description: "This is a small project for mobile apps.", tags: ["React", "Mobile"] },
+  type ProjectType = {
+    id: number;
+    name: string;
+    imageUrl: string;
+    size: string;
+    description: string;
+    tags: string[];
+    itemCount: number; 
+  };
+
+  const projects: ProjectType[] = [
+    {
+      id: 1,
+      name: "Project 1",
+      imageUrl: "/mockpics/image1.png",
+      size: "small",
+      description: "Description of Project 1",
+      tags: ["tag1", "tag2"],
+      itemCount: 1, 
+    },
+    {
+      id: 2,
+      name: "Project 2",
+      imageUrl: "/mockpics/image2.png",
+      size: "medium",
+      description: "Description of Project 2",
+      tags: ["tag3", "tag4"],
+      itemCount: 2, 
+    },
+    {
+      id: 3,
+      name: "Project 1",
+      imageUrl: "/mockpics/image3.png",
+      size: "small",
+      description: "Description of Project 1",
+      tags: ["tag1", "tag2"],
+      itemCount: 3, 
+    },
+    {
+      id: 4,
+      name: "Project 2",
+      imageUrl: "/mockpics/image4.png",
+      size: "medium",
+      description: "Description of Project 2",
+      tags: ["tag3", "tag4"],
+      itemCount: 4, 
+    },
   ];
 
   // Scroll functions
@@ -48,20 +89,14 @@ export default function App() {
   };
 
   const scrollToProjects = () => {
-    console.log("Scrolling to Projects...");
     if (projectsRef.current) {
       projectsRef.current.scrollIntoView({ behavior: "smooth" });
-    } else {
-      console.error("projectsRef is not defined");
     }
   };
-  
+
   const scrollToSocialMedia = () => {
-    console.log("Scrolling to Social Media...");
     if (socialMediaRef.current) {
       socialMediaRef.current.scrollIntoView({ behavior: "smooth" });
-    } else {
-      console.error("socialMediaRef is not defined");
     }
   };
 
@@ -72,41 +107,38 @@ export default function App() {
       <div>
         <header>
           <Header />
-          <Navbar 
-            onClickProjects={scrollToProjects} 
-            onClickSkills={scrollToSkills} 
-            onClickContact={scrollToSocialMedia} 
+          <Navbar
+            onClickProjects={scrollToProjects}
+            onClickSkills={scrollToSkills}
+            onClickContact={scrollToSocialMedia}
           />
         </header>
         <main>
-        <h2 className="text-4xl font-bold mb-10  bg-transparent text-white">Skills</h2>
+          <h1 className="mb-10">
+            {/* Skills */}
+          </h1>
           <div ref={skillsRef}>
             <Skills />
           </div>
-
-          {/* Square Background */}
-          <div className="square-background">
-            <SquareBackground />
-          </div>
-
-          {/* Projects Section */}
-          <h1>Recent Projects</h1>
-          <div className="square-background">
-            <SquareBackground />
-          </div>
+          <h1 className="mb-10">
+            {/* Recent Projects */}
+            </h1>
           <div ref={projectsRef} className="projects-container">
-            {projects.map((project) => (
-              <ProjectWithScroll key={project.id} project={project} />
-            ))}
+            <CarouselOfProjects projects={projects} />
           </div>
         </main>
 
-        <h2 className="text-4xl font-bold mb-10 bg-transparent text-white">Contacts</h2>
-        <footer id="social-media" className="footer-container">
-          <div ref={socialMediaRef} className="contact-social-wrapper">
-            {/* <ContactEmail /> */}
-            <SocialMedia />
-          </div>
+        <h1
+          ref={socialMediaRef}
+          id="social-media"
+          className="mb-10">
+          {/* Contacts */}
+        </h1>
+
+        <div className="contact-social-wrapper">
+          <SocialMedia />
+        </div>
+        <footer className="footer-container">
           <Footer />
         </footer>
       </div>

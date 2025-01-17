@@ -18,21 +18,29 @@ export default function AboutMe({ isOpen, onClose }: AboutMeProps) {
         <button className="about-me__close-button" onClick={onClose}>
           &times;
         </button>
-
-        <div className="about-me__photo-wrapper">
-          <img
-            src="/images/Marie's photo.jpg"
-            alt="Marie Slovokhotov"
-            className="about-me__photo"
-          />
-        </div>
-
-        <div className="available">Available for work</div>
-
+        {/* <div className="available">available for work</div> */}
         <section className="about-me__content">
-          <p className="about-me__text">Text about me Text about me Text about me</p>
-          <p className="about-me__text">Text about me Text about me Text about me</p>
-          <p className="about-me__text">Text about me Text about me Text about me</p>
+      
+          <div className="about-me__content-wrapper">
+            <p className="about-me__text">
+              <span className="about-me__photo-wrapper">
+                <img
+                  src="/images/Marie's photo.jpg"
+                  alt="Marie Slovokhotov"
+                  className="about-me__photo"
+                />
+              </span>
+              Text about me. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Text about me. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Text about me. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Text about me. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Text about me. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Text about me. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Text about me. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Text about me. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Text about me. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
+          </div>
         </section>
       </div>
     </div>

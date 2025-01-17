@@ -1,6 +1,6 @@
 .button-darkmode{
-    min-width: 50px;
-    min-height: 50px;
-    background-color: var(--background-dark);
+    min-width: 52px;
+    min-height: 52px;
+    background-color: var(--color-dark);
     border-radius: 50%;
 }

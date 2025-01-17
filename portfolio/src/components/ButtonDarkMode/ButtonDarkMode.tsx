@@ -43,7 +43,7 @@ export default function ButtonDarkMode() {
     <div>
       <button
         onClick={toggleDarkMode}
-        className="button-darkmode p-2 bg-transparent"
+        className="button-darkmode "
       >
         {isDarkMode ? (
           <img
@@ -58,7 +58,7 @@ export default function ButtonDarkMode() {
             height="24"
             src="/icons/dark_mode_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png"
             alt="dark-mode-icon"
-            style={{ filter: "invert(1)" }}
+            // style={{ filter: "invert(1)" }}
           />
         )}
       </button>
