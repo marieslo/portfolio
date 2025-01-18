@@ -1,23 +1,12 @@
-/* .skills-section {
-    padding: 6rem 0;
-    background-color: transparent;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
-  
-
-  .skills-grid {
+.skills-grid {
     display: grid;
-    gap: var(--space);
     grid-template-columns: repeat(auto-fill, minmax(200px, 2fr)); 
     grid-auto-rows: auto;
     justify-items: center;
     align-items: start;
     width: 100%;
     max-width: 1000px;
-    margin: 0 auto;
+    overflow: hidden;
     transition: grid-template-columns 0.3s ease, grid-gap 0.3s ease;
   }
  
@@ -29,6 +18,7 @@
     text-align: center;
     padding: 8px 24px;
     font-family: var(--font-accent);
+    color: var(--color-dark);
     width: fit-content;
     height: fit-content;
     display: flex;
@@ -36,9 +26,6 @@
     justify-content: center;
     align-items: center;
     border-radius: 15px;
-    background-color: var(--surface-2);
-    background-image: var(--gradient);
-    transform: rotateX(-25deg) rotateY(25deg);
     perspective: 600px;
     transition: transform 0.3s, background-color 0.3s, opacity 0.3s;
   }
@@ -46,14 +33,6 @@
   .skill-item:hover {
     transform: rotateX(0deg) rotateY(0deg) scale(1.05);
     box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
-  }
-  
-  .skill-item h3 {
-    color: #fff;
-    font-size: 12px;
-    font-family: monospace;
-    margin: 0;
-    letter-spacing: -1px;
   }
   
 
@@ -92,4 +71,4 @@
       grid-gap: 2px;
     }
   }
-   */
+   

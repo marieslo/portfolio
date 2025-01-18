@@ -47,7 +47,7 @@ export default function ButtonDarkMode() {
       >
         {isDarkMode ? (
           <img
-            width="24"
+            width="24z"
             height="24"
             src="/icons/light_mode_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png"
             alt="light-mode-icon"

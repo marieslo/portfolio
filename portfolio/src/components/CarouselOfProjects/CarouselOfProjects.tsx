@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import './CarouselOfProjects.css';
+import'./CarouselOfProjects.css'
 import ProjectItem from '../ProjectItem/ProjectItem';
 
 type ProjectType = {
