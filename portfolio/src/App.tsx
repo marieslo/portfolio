@@ -112,7 +112,7 @@ export default function App() {
       <Cursor />
       <audio ref={audioRef} src="/sound/773604__kreha__smallclick.wav" />
       <Matrix /> 
-      <header style={{ position: "fixed", top: "0", width: "100%", transition: "top 0.3s" }}>
+      <header style={{ position: "fixed", top: "0", width: "100%", transition: "top 0.3s", zIndex:8000  }}>
         <Navbar
           onClickProjects={() => scrollToSection(projectsRef)}
           onClickSkills={() => scrollToSection(skillsRef)}
@@ -121,14 +121,13 @@ export default function App() {
       </header>
 
       <main>
-        {/* About Me Section */}
-             <section className="skills-section" ref={aboutMeRef}>
-          <h1 className="section-title">About Me</h1>
-          <AboutMe isOpen={false} onClose={function (): void {
-            throw new Error("Function not implemented.");
-          } } />
-        </section>
+       
 
+      {/* Projects Section */}
+        <section className="projects-section" ref={projectsRef}>
+          <h1 className="section-title">Recent Projects</h1>
+          <CarouselOfProjects projects={projects} />
+        </section> 
 
         {/* Skills Section */}
         <section className="skills-section" ref={skillsRef}>
@@ -136,13 +135,13 @@ export default function App() {
           <Skills />
         </section>
 
-        {/* Projects Section */}
-        <section className="projects-section" ref={projectsRef}>
-          <h1 className="section-title">Recent Projects</h1>
-          <CarouselOfProjects projects={projects} />
+        {/* About Me Section */}
+        <section className="skills-section" ref={aboutMeRef}>
+                  <h1 className="section-title">About Me</h1>
+          <AboutMe/>
         </section>
 
-        {/* Social Media Section */}
+        {/* Contacts Section */}
         <section className="social-media-section" ref={socialMediaRef}>
           <h1 className="section-title">Contacts</h1>
           <SocialMedia />

@@ -39,15 +39,12 @@ export default function Skills() {
         <div className="skills-grid">
           {skills.map((skill, index) => {
             return (
-              <motion.div
+              <div
                 key={index}
                 className="skill-item"
-                initial={{ opacity: 0, y: 50 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
               >
-                <h3 className="text-sm font-medium">{skill.name}</h3>
-              </motion.div>
+                <div className="text-sm font-medium">{skill.name}</div>
+              </div>
             );
           })}
         </div>

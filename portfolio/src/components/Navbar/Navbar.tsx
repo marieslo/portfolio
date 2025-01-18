@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import "./Navbar.css";
-import AboutMe from "../AboutMe/AboutMe";
 import ButtonDarkMode from "../ButtonDarkMode/ButtonDarkMode";
 
 export default function Navbar({ onClickProjects, onClickContact, onClickSkills }) {
   const [isSticky, setIsSticky] = useState(false);
-  const [isAboutMeOpen, setIsAboutMeOpen] = useState(false);
   const [isScrolledDown, setIsScrolledDown] = useState(false);
   const [activeSection, setActiveSection] = useState<string>("");
 
@@ -29,7 +27,6 @@ export default function Navbar({ onClickProjects, onClickContact, onClickSkills 
       { threshold: 0.5 } // Trigger when 50% of the section is visible
     );
 
-
     const sections = document.querySelectorAll("section");
     sections.forEach((section) => observer.observe(section));
 
@@ -40,13 +37,6 @@ export default function Navbar({ onClickProjects, onClickContact, onClickSkills 
     };
   }, []);
 
-  const toggleAboutMe = () => {
-    setIsAboutMeOpen((prev) => !prev);
-  };
-
-  const closeAboutMe = () => {
-    setIsAboutMeOpen(false);
-  };
 
   return (
     <>
@@ -56,13 +46,13 @@ export default function Navbar({ onClickProjects, onClickContact, onClickSkills 
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
-        <div className="mx-auto flex items-center gap-5">
+        <div className="mx-auto flex justify-between items-center w-full">
+          {/* Dark Mode Button aligned to the left */}
           <ButtonDarkMode />
 
           <motion.div
             className="flex space-x-6"
             initial={false}
-            animate={isScrolledDown ? "spread" : "normal"}
             variants={{
               normal: {
                 gap: "1.5rem",
@@ -78,15 +68,15 @@ export default function Navbar({ onClickProjects, onClickContact, onClickSkills 
             }}
           >
             <motion.a
-              href="#about-me"
-              className={`navbar__link ${activeSection === "about-me" ? "active" : ""}`}
+              href="#projects"
+              className={`navbar__link ${activeSection === "projects" ? "active" : ""}`}
               onClick={(e) => {
                 e.preventDefault();
-                toggleAboutMe();
+                onClickProjects();
               }}
               whileHover={{ scale: 1.1 }}
             >
-              About Me
+              Projects
             </motion.a>
 
             <motion.a
@@ -102,15 +92,14 @@ export default function Navbar({ onClickProjects, onClickContact, onClickSkills 
             </motion.a>
 
             <motion.a
-              href="#projects"
-              className={`navbar__link ${activeSection === "projects" ? "active" : ""}`}
+              href="#about-me"
+              className={`navbar__link ${activeSection === "about-me" ? "active" : ""}`}
               onClick={(e) => {
                 e.preventDefault();
-                onClickProjects();
               }}
               whileHover={{ scale: 1.1 }}
             >
-              Projects
+              About Me
             </motion.a>
 
             <motion.a
@@ -122,13 +111,12 @@ export default function Navbar({ onClickProjects, onClickContact, onClickSkills 
               }}
               whileHover={{ scale: 1.1 }}
             >
-              Contact
+              Contacts
             </motion.a>
           </motion.div>
         </div>
       </motion.nav>
 
-      {isAboutMeOpen && <AboutMe isOpen={isAboutMeOpen} onClose={closeAboutMe} />}
     </>
   );
 }

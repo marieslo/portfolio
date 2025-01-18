@@ -4,36 +4,31 @@
     left: 0;
     width: 100%;
     background-color: var(--color1);
-    z-index: 1500;
-    padding: 10px 20px;
-    transition: all 0.03s ease-in-out;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
+    z-index: 2500;
   }
   
   .navbar--sticky {
     background-color: transparent;
-    color: var(--color3);
+    text-shadow: -1px 1px 1px rgb(17, 16, 16); 
   }
   
   .navbar__link {
     text-decoration: none;
-    background-color: var(--color1);
+    /* background-color: var(--color1); */
     color: var(--color3);
     font-family: var(--font-header);
-    padding: 8px 16px;
-    border-radius: 15px;
+    padding: 2px;
+    /* border-radius: 15px; */
     /* font-size: 1.2rem; */
     font-weight: 500;
-    transition: color 0.03s ease;
+    /* transition: color 0.03s ease; */
     height: fit-content;
+    z-index: 2500
   }
   
   .navbar__link:hover {
     color: var(--color5);
-    transform: rotateX(-25deg) rotateY(25deg);
+    z-index: 2500;
   }
   
   /* Button styles */

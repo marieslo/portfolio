@@ -4,7 +4,7 @@
   height: 16px;
   background-color: var(--color-light);; 
   pointer-events: none;
-  z-index: 2000;
+  z-index: 9999;
   mix-blend-mode: difference;
   transition: transform 0.1s ease;
   /* box-shadow: 10px 20px 8px 1px var(--color1); */
@@ -17,7 +17,7 @@
   padding: 1rem;
   background-color: var(--color-light); 
   /* pointer-events: none; */
-  z-index: 2000;
+  z-index: 9999;
   mix-blend-mode: difference;
   transition: transform 0.001s ease;
   /* box-shadow: 1px 10px 8px 1px var(--color1); */

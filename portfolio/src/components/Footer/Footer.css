@@ -1,10 +1,12 @@
 .footer-container {
   position: relative;
+  margin: auto;
   background-color: var(--color4);
   padding: 2px;
   text-align: center;
   font-family: monospace;
   overflow: hidden;
+  width: 100%; 
 }
 
 
@@ -13,12 +15,11 @@
   flex-direction: row;
   align-items: space-between;
   justify-content: space-between;
-  width: 100%; 
 }
 
 .footer-content span {
   color: #fff; 
-  margin-left: 15px; 
+
 }
 
 .footer-content .icons-by-icons8 {
