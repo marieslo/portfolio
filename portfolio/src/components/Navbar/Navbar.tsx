@@ -8,8 +8,6 @@ export default function Navbar({ onClickProjects, onClickContact, onClickSkills 
   const [isSticky, setIsSticky] = useState(false);
   const [isAboutMeOpen, setIsAboutMeOpen] = useState(false);
   const [isScrolledDown, setIsScrolledDown] = useState(false);
-
-  // Track which section is in view
   const [activeSection, setActiveSection] = useState<string>("");
 
   // Handle scroll and set which section is currently in view

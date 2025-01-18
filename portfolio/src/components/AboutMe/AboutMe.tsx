@@ -1,6 +1,6 @@
 import React from "react";
 import "./AboutMe.css";
-import Matrix from "../Matrix/Matrix"; 
+
 
 type AboutMeProps = {
   isOpen: boolean;
@@ -12,7 +12,6 @@ export default function AboutMe({ isOpen, onClose }: AboutMeProps) {
 
   return (
     <div className="about-me-container">
-      <Matrix /> 
 
       <div className="about-me-content">
         <button className="about-me__close-button" onClick={onClose}>
