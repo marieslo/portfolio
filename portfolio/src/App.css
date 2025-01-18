@@ -22,16 +22,6 @@
   --color-light: #eed6fa;
   --color-dark: #25005d;
 
-  /* --color1: #7D1128;
-  --color2: #3D0000;
-  --color3: #EC8385;
-  --color4: #FF0072;
-  --color5: #DDD4CC;
-  --color-light: #DDD4CC;
-  --color-dark: #5F5449;
- */
-
-
 
   /* Font Variables */
   --font-header: "Bebas Neue", serif;
@@ -80,14 +70,13 @@ h1, h2, h3, h4 {
   font-family: var(--font-header);
   color: var(--color-dark);
   line-height: var(--line-height-tight);
-
+  margin-bottom: 50px;
 }
 
 h1 {
   font-weight: var(--font-weight-bold);  
   color: var(--color4);
   letter-spacing: -2px;
-  margin: 0 auto;
   text-align: start;
   font-size: var(--font-size-xxl);
   white-space: nowrap;
@@ -117,20 +106,10 @@ h4 {
 
 /* Button */
 button {
-  font-size: var(--button-font-size);
-  padding: var(--button-padding);
-  border-radius: var(--button-border-radius);
-  background-color: var(--color1);
+  font-size: 12px;
+  background-color: var(--color4);
   color: var(--color-light);
   border: none;
-  /* cursor: none; */
-  transition: background-color 0.03s ease, transform 0.02s ease;
-  text-transform: uppercase; 
-}
-
-button:hover {
-  transform: scale(1.2);
-  /* cursor: none; */
 }
 
 /* Links */
@@ -167,7 +146,8 @@ section{
   padding: 50px;
   font-family: var(--font-accent);
   width: 90%;
-  height: 60vh;
+  min-height: 60vh;
+  max-height: fit-content;
   display: flex;
   flex-direction: column;
   justify-content: start;
@@ -220,4 +200,3 @@ section{
 .footer-container {
   padding: 1rem;
 }
-

@@ -4,7 +4,7 @@
   background-color: var(--color4);
   padding: 2px;
   text-align: center;
-  font-family: monospace;
+  font-family: var(--font-header);
   overflow: hidden;
   width: 100%; 
 }
@@ -19,7 +19,6 @@
 
 .footer-content span {
   color: #fff; 
-
 }
 
 .footer-content .icons-by-icons8 {
