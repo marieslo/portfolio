@@ -3,8 +3,8 @@
     top: 0;
     left: 0;
     width: 100%;
-    background-color: var(--color-dark);
-    z-index: 1000;
+    background-color: var(--color1);
+    z-index: 1500;
     padding: 10px 20px;
     transition: all 0.03s ease-in-out;
     display: flex;
@@ -20,7 +20,7 @@
   
   .navbar__link {
     text-decoration: none;
-    background-color: var(--color-dark);
+    background-color: var(--color1);
     color: var(--color3);
     font-family: var(--font-header);
     padding: 8px 16px;
@@ -76,15 +76,3 @@
   .navbar__link {
     transition: all 0.03s ease-in-out;
   }
-  
-  .navbar__link.active {
-    font-weight: var(--font-weight-bold);  
-    color: var(--color4);
-    letter-spacing: -2px;
-    margin: 0 auto;
-    text-align: start;
-    font-size: var(--font-size-xxl);
-    background: transparent;
-    transform: rotateX(-25deg) rotateY(25deg) !important;
-  }
-  

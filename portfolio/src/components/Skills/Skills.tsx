@@ -34,7 +34,7 @@ export default function Skills() {
   }, []);
 
   return (
-    <section id="skills" className="skills-section bg-transparent">
+    <div id="skills" className="skills-section bg-transparent">
       <div className="max-w-screen-xl mx-auto text-center">
         <div className="skills-grid">
           {skills.map((skill, index) => {
@@ -52,6 +52,6 @@ export default function Skills() {
           })}
         </div>
       </div>
-    </section>
+    </div>
   );
 }

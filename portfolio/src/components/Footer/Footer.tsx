@@ -12,7 +12,7 @@ export default function Footer() {
           </a>
         </span>
         <span>
-          &copy; {new Date().getFullYear()} Marie Slovokhotov
+          &copy; Marie Slovokhotov, 2024 - {new Date().getFullYear()} 
         </span>
       </div>
     </div>

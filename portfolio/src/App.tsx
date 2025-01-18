@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import "./App.css";
 
 import Footer from "./components/Footer/Footer";
@@ -7,17 +7,19 @@ import Skills from "./components/Skills/Skills";
 import Navbar from "./components/Navbar/Navbar";
 import SocialMedia from "./components/SocialMedia/SocialMedia";
 import CarouselOfProjects from "./components/CarouselOfProjects/CarouselOfProjects";
+import AboutMe from "./components/AboutMe/AboutMe";
+import Matrix from "./components/Matrix/Matrix";
 
 export default function App() {
+  // Refs for audio and sections
   const audioRef = useRef<HTMLAudioElement | null>(null);
-
-  // Refs for each section
   const projectsRef = useRef<HTMLDivElement | null>(null);
   const skillsRef = useRef<HTMLDivElement | null>(null);
   const socialMediaRef = useRef<HTMLDivElement | null>(null);
+  const aboutMeRef = useRef<HTMLDivElement | null>(null);
 
   // Handle click sound effect
-  React.useEffect(() => {
+  useEffect(() => {
     const handleClick = () => {
       if (audioRef.current) {
         audioRef.current.currentTime = 0;
@@ -31,6 +33,33 @@ export default function App() {
     return () => window.removeEventListener("click", handleClick);
   }, []);
 
+  // Header scroll effect
+  useEffect(() => {
+    let prevScrollPos = window.pageYOffset;
+    const header = document.querySelector("header") as HTMLElement;
+
+    const handleScroll = () => {
+      const currentScrollPos = window.pageYOffset;
+      const scrollDifference = prevScrollPos - currentScrollPos;
+
+      if (currentScrollPos > 100) {
+        if (scrollDifference >= 10) {
+          header.style.top = "0";
+        } else if (scrollDifference <= -10) {
+          header.style.top = `-${header.offsetHeight}px`;
+        }
+      } else {
+        header.style.top = "0";
+      }
+
+      prevScrollPos = currentScrollPos;
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Project type and data
   type ProjectType = {
     id: number;
     name: string;
@@ -38,7 +67,7 @@ export default function App() {
     size: string;
     description: string;
     tags: string[];
-    itemCount: number; 
+    itemCount: number;
   };
 
   const projects: ProjectType[] = [
@@ -49,7 +78,7 @@ export default function App() {
       size: "small",
       description: "Description of Project 1",
       tags: ["tag1", "tag2"],
-      itemCount: 1, 
+      itemCount: 1,
     },
     {
       id: 2,
@@ -58,35 +87,23 @@ export default function App() {
       size: "medium",
       description: "Description of Project 2",
       tags: ["tag3", "tag4"],
-      itemCount: 2, 
+      itemCount: 2,
     },
     {
       id: 3,
       name: "Project 3",
       imageUrl: "/mockpics/image3.png",
       size: "small",
-      description: "Description of Project 1",
+      description: "Description of Project 3",
       tags: ["tag1", "tag2"],
-      itemCount: 3, 
+      itemCount: 3,
     },
   ];
 
-  // Scroll functions
-  const scrollToSkills = () => {
-    if (skillsRef.current) {
-      skillsRef.current.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
-  const scrollToProjects = () => {
-    if (projectsRef.current) {
-      projectsRef.current.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
-  const scrollToSocialMedia = () => {
-    if (socialMediaRef.current) {
-      socialMediaRef.current.scrollIntoView({ behavior: "smooth" });
+  // Scroll to a specific section
+  const scrollToSection = (sectionRef: React.RefObject<HTMLDivElement>) => {
+    if (sectionRef.current) {
+      sectionRef.current.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -94,43 +111,47 @@ export default function App() {
     <div className="bg-gradient-to-b">
       <Cursor />
       <audio ref={audioRef} src="/sound/773604__kreha__smallclick.wav" />
-      <div>
-        <header>
-          <Navbar
-            onClickProjects={scrollToProjects}
-            onClickSkills={scrollToSkills}
-            onClickContact={scrollToSocialMedia}
-          />
-        </header>
-        <main>
-          <h1 className="mb-10">
-            {/* Skills */}
-          </h1>
-          <div className='skills-section' ref={skillsRef}>
-            <Skills />
-          </div>
-          <h1 className="mb-10">
-            {/* Recent Projects */}
-            </h1>
-          <div ref={projectsRef} className="projects-container">
-            <CarouselOfProjects projects={projects} />
-          </div>
-        </main>
+      <Matrix /> 
+      <header style={{ position: "fixed", top: "0", width: "100%", transition: "top 0.3s" }}>
+        <Navbar
+          onClickProjects={() => scrollToSection(projectsRef)}
+          onClickSkills={() => scrollToSection(skillsRef)}
+          onClickContact={() => scrollToSection(socialMediaRef)}
+        />
+      </header>
 
-        <h1
-          ref={socialMediaRef}
-          id="social-media"
-          className="mb-10">
-          {/* Contacts */}
-        </h1>
+      <main>
+        {/* About Me Section */}
+             <section className="skills-section" ref={aboutMeRef}>
+          <h1 className="section-title">About Me</h1>
+          <AboutMe isOpen={false} onClose={function (): void {
+            throw new Error("Function not implemented.");
+          } } />
+        </section>
 
-        <div className="contact-social-wrapper">
+
+        {/* Skills Section */}
+        <section className="skills-section" ref={skillsRef}>
+          <h1 className="section-title">Skills</h1>
+          <Skills />
+        </section>
+
+        {/* Projects Section */}
+        <section className="projects-section" ref={projectsRef}>
+          <h1 className="section-title">Recent Projects</h1>
+          <CarouselOfProjects projects={projects} />
+        </section>
+
+        {/* Social Media Section */}
+        <section className="social-media-section" ref={socialMediaRef}>
+          <h1 className="section-title">Contacts</h1>
           <SocialMedia />
-        </div>
-        <footer className="footer-container">
-          <Footer />
-        </footer>
-      </div>
+        </section>
+      </main>
+
+      <footer className="footer-container">
+        <Footer />
+      </footer>
     </div>
   );
 }

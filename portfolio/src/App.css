@@ -1,9 +1,7 @@
-
 @import "slick-carousel/slick/slick.css";
 @import "slick-carousel/slick/slick-theme.css";
 
-@import url('https://fonts.googleapis.com/css2?family=Alice&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Trocchi&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -16,19 +14,29 @@
 :root {
 
   --space: 1rem;
-  --color1: #d90368;
-  --color2: #b348d1;
-  --color3: #04a791;
-  --color4: #e97405;
-  --color5: #00ff08;
-  --color-light: #aab9ca;
-  --color-dark: #0d1c2e;
+  --color1: #5D16A6;
+  --color2: #a7f304;
+  --color3: #9683EC;
+  --color4: #ff6701;
+  --color5: #1cc6c9;
+  --color-light: #F7EBFD;
+  --color-dark: #25005d;
+
+  /* --color1: #7D1128;
+  --color2: #3D0000;
+  --color3: #EC8385;
+  --color4: #FF0072;
+  --color5: #DDD4CC;
+  --color-light: #DDD4CC;
+  --color-dark: #5F5449;
+ */
+
 
 
   /* Font Variables */
-  --font-header: "Fraunces", serif;  
-  --font-bodytext: "Questrial", sans-serif;
-  --font-accent: "Anonymous Pro", monospace; 
+  --font-header: "Bebas Neue", serif;
+  --font-bodytext: "Bebas Neue", serif;
+  --font-accent: monospace;
 
   --font-size-xxl: 40px; 
   --font-size-xl: 18px; 
@@ -49,6 +57,8 @@
   --button-font-size: var(--font-size-md);
   --button-padding: 0.5rem 1rem;
   --button-border-radius: 4px; 
+
+  /* --border-radius: 20px; */
 }
 
 /* Global Styles */
@@ -64,7 +74,17 @@ body {
   align-items: center;
   min-height: 100vh;
 }
-
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: var(--color-light); /* Adjust based on your theme */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: top 0.3s ease;
+}
+ 
 section {
   margin-inline: auto;
   width: min(1000px, 100%);
@@ -155,6 +175,28 @@ html.dark body {
 html:not(.dark) body {
   background-color: var(--color-light);
   color: var(--color-light);
+}
+
+section{
+  background: rgba(150, 150, 197, 0.2);
+  border: 0.5px solid rgba(255, 255, 255, 0.3);
+  box-shadow: -2px 2px 20px rgba(255, 255, 255, 0.3);
+  text-align: center;
+  padding: 8px 24px;
+  font-family: var(--font-accent);
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 40px;
+  background-image: var(--gradient);
+  perspective: 600px;
+  transition: transform 0.3s, background-color 0.3s, opacity 0.3s;
+  margin-top: 10%;
+  backdrop-filter: blur(10px); 
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .bg-gradient-to-b {
