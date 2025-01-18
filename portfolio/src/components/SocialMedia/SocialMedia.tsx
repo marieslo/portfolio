@@ -5,7 +5,6 @@ import './SocialMedia.css'
 export default function SocialMedia() {
   return (
     <div className="flex justify-center space-x-8 mt-4">
-      
       <div className="social-media">
       <a href="https://github.com/marieslo" target="_blank" rel="noopener noreferrer">
         <div className="qr-code-wrapper">

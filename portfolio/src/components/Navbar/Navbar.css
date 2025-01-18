@@ -15,7 +15,8 @@
   .navbar__link {
     text-decoration: none;
     /* background-color: var(--color1); */
-    color: var(--color3);
+    /* color: var(--color3); */
+    color: #ffffff;
     font-family: var(--font-header);
     padding: 2px;
     /* border-radius: 15px; */

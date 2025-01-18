@@ -1,0 +1,135 @@
+.contact-form-section {
+    background: transparent;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px; 
+    margin: 0 auto;
+}
+
+.form-container {
+    background: #ffffff44;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 900px; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: row; 
+    gap: 20px; 
+    flex-wrap: wrap; 
+}
+
+.contact-form .left-side,
+.contact-form .right-side {
+    display: flex;
+    flex-direction: column; 
+    gap: 1px; 
+}
+
+.contact-form .left-side  {
+    width: 48%; 
+    justify-content: space-between;
+}
+
+.contact-form .right-side {
+    width: 48%;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--color5);
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px 16px;
+    margin-top: 8px;
+    font-size: 16px;
+    border-radius: 15px;
+    background-color: #f7f7f7;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: var(--color5);
+    background-color: var(--color-light)
+}
+
+.contact-form textarea {
+    min-height: 120px;
+    resize: vertical;
+    font-family: monospace;
+    font-size: 16px;
+}
+
+.submit-btn {
+    background: var(--color5);
+    color: white;
+    border: none;
+    padding: 14px 24px;
+    cursor: pointer;
+    font-size: 12px;
+    width: 100%;
+    transition: background-color 0.3s ease;
+    font-weight: 500;
+    border-radius: 15px;
+}
+
+.submit-btn:hover {
+    background: var(--color2);
+}
+
+
+.image-container {
+    display: flex;
+    justify-content: center;  
+    align-items: center;  
+    margin: 10px auto;             
+  }
+
+.mail-icon {
+    width: 40px;  
+    height: 40px; 
+  }
+
+.status-message {
+    margin-top: 20px;
+    font-size: 16px;
+    text-align: center;
+    color: #28a745;
+    font-weight: 600;
+}
+
+.status-message.error {
+    color: #dc3545;
+}
+
+
+@media (max-width: 768px) {
+    .contact-form {
+        flex-direction: column; 
+        display: flex;
+        justify-content: center;  
+        align-items: center;  
+    }
+
+    .contact-form .left-side,
+    .contact-form .right-side {
+        width: 100%;
+    }
+
+    .form-container {
+        padding: 20px; 
+    }
+}

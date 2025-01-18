@@ -9,6 +9,7 @@ import SocialMedia from "./components/SocialMedia/SocialMedia";
 import CarouselOfProjects from "./components/CarouselOfProjects/CarouselOfProjects";
 import AboutMe from "./components/AboutMe/AboutMe";
 import Matrix from "./components/Matrix/Matrix";
+import ContactEmail from "./components/ContactEmail/ContactEmail"
 
 export default function App() {
   // Refs for audio and sections
@@ -145,6 +146,7 @@ export default function App() {
         <section className="social-media-section" ref={socialMediaRef}>
           <h1 className="section-title">Contacts</h1>
           <SocialMedia />
+         <ContactEmail/>
         </section>
       </main>
 
