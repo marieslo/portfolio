@@ -1,30 +1,25 @@
 .project-item {
-  width: fit-content; 
+  width: 400px;  
+  height: 300px; 
   overflow: hidden; 
-  border-radius: 15px;
   transition: transform 0.03s ease;
   flex: 0 0 auto; 
   transform: rotateY(-25deg) rotateX(25deg); 
-  transition: transform 0.3s ease;
 }
 
 .card {
   position: relative;
   overflow: hidden;
   transition: all 0.03s ease-in-out;
-  border-radius: 15px;
-  box-shadow: -10px 2px 20px rgba(208, 5, 226, 0.189);
+  width: 400px; 
+  height: 300px; 
 }
 
 .card:hover {
   transform: perspective(1500px); 
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
-  scale: 1.1; 
 }
 
 .project-image {
-  width: 100%;
-  height: auto;
   display: block;
   filter: grayscale(100%);
   transition: filter 0.03s ease, transform 0.03s ease;
@@ -46,7 +41,7 @@
   color: var(--color2);
   z-index: 10;
   transition: opacity 0.03s ease;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  text-shadow: -1px 1px 1px rgba(17, 16, 16, 0.462); 
 }
 
 .card-description-overlay {
@@ -92,17 +87,15 @@
 }
 
 .project-item {
-  flex: 0 0 auto;
-  width: 300px; 
-  height: max-content; 
+  flex: 0 0 auto; 
   scroll-snap-align: center; 
-  
+  width: 400px; 
+  height: 300px; 
 }
 
 .project-item:hover {
-  transform: scale(1.05) rotateY(10deg) rotateX(-10deg);
+  transform: rotateY(10deg) rotateX(-10deg);
 }
-
 
 .projects-container::-webkit-scrollbar {
   height: 8px;
@@ -115,4 +108,48 @@
 
 .projects-container::-webkit-scrollbar-thumb:hover {
   background-color: #555;
+}
+
+.tags {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  z-index: 1500;
+  padding: 0.5rem;
+  width: 90%;
+  justify-content: center;
+}
+ 
+.tag {
+  background-color: var(--color3);
+  color: var(--color-light);
+  font-size: 0.85rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 10px;
+  font-family: var(--font-accent);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.tag:hover {
+  background-color: var(--color2);
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .project-item {
+    width: 300px; 
+    height: 200px; 
+  }
+}
+
+@media (max-width: 480px) {
+  .project-item {
+    width: 250px;  
+    height: 180px; 
+  }
 }

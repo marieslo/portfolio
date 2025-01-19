@@ -1,6 +1,7 @@
 import React from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import { useTags } from "../../context/TagsProvider";
 import "./ProjectItem.css";
 
 type Project = {
@@ -8,7 +9,7 @@ type Project = {
   name: string;
   imageUrl: string;
   description: string | null;
-  tags: string[];
+  tagIds: number[];
 };
 
 type ProjectItemProps = {
@@ -17,10 +18,8 @@ type ProjectItemProps = {
 
 export default function ProjectItem({ project }: ProjectItemProps) {
   const controls = useAnimation();
-  const [ref, inView] = useInView({
-    triggerOnce: true, 
-    threshold: 0.1,
-  });
+  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
+  const { tags } = useTags();
 
   React.useEffect(() => {
     if (inView) {
@@ -37,26 +36,30 @@ export default function ProjectItem({ project }: ProjectItemProps) {
     }
   }, [inView, controls]);
 
+  const projectTags = tags.filter((tag) => project.tagIds.includes(tag.id));
+
   return (
     <motion.div
-      ref={ref}
-      className="project-item"
-      initial={{ opacity: 0, y: 50 }}  
-      animate={controls}  
-      exit={{ opacity: 0 }}  
-    >
-      <div className="card">
-        <img src={project.imageUrl} alt={project.name} className="project-image" />
-        <div className="project-name-overlay mt-6">{project.name}</div>
-        {project.description && (
-          <div className="card-description-overlay">{project.description}</div>
-        )}
-        <div className="tags">
-          {project.tags.map((tag, index) => (
-            <span key={index} className="tag">{tag}</span>
-          ))}
-        </div>
+    ref={ref}
+    className="project-item"
+    initial={{ opacity: 0, y: 50 }}
+    animate={controls}
+    exit={{ opacity: 0 }}
+  >
+    <div className="card">
+      <img src={project.imageUrl} alt={project.name} className="project-image" />
+      <div className="project-name-overlay mt-6">{project.name}</div>
+      {project.description && (
+        <div className="card-description-overlay">{project.description}</div>
+      )}
+      <div className="tags">
+        {projectTags.map((tag) => (
+          <span key={tag.id} className="tag">
+            {tag.name}
+          </span>
+        ))}
       </div>
-    </motion.div>
+    </div>
+  </motion.div>  
   );
 }
