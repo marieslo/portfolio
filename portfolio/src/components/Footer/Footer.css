@@ -1,10 +1,10 @@
 .footer-container {
   position: relative;
   margin: auto;
-  background-color: var(--color4);
+  background-color: var(--color1);
   padding: 2px;
   text-align: center;
-  font-family: var(--font-header);
+  font-family: var(--font-basic);
   overflow: hidden;
   width: 100%; 
 }

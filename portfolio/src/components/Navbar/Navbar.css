@@ -9,30 +9,25 @@
   
   .navbar--sticky {
     background-color: transparent;
-    text-shadow: -1px 1px 1px rgb(17, 16, 16); 
+    text-shadow: -1px 1px 1px rgba(17, 16, 16, 0.462); 
   }
   
   .navbar__link {
     text-decoration: none;
-    /* background-color: var(--color1); */
-    /* color: var(--color3); */
-    color: #ffffff;
-    font-family: var(--font-header);
+    color: var(--color-light);
+    font-family: var(--font-basic);
     padding: 2px;
-    /* border-radius: 15px; */
-    /* font-size: 1.2rem; */
     font-weight: 500;
-    /* transition: color 0.03s ease; */
     height: fit-content;
     z-index: 2500
   }
   
   .navbar__link:hover {
-    color: var(--color5);
+    color: var(--color2);
     z-index: 2500;
   }
   
-  /* Button styles */
+
   button {
     cursor: pointer;
     background: transparent;

@@ -16,12 +16,7 @@ export default function Skills() {
     { name: "TypeScript", tags: ["Frontend", "TypeScript"] },
   ];
 
-  const pastelColors = [
-    "#ffb3ba", "#ffdfba", "#ffffba", "#baffc9", "#bae1ff", 
-    "#c2c2f0", "#ffb3e6", "#d3ffce", "#cceeff", "#ffcccc", 
-    "#c2f0c2", "#ffb2b2", "#d9f7ff", "#ffb3d9", "#ffccff", 
-    "#f0e6f6", "#e6c2ff", "#d2ffb3", "#ffcc99", "#ffcccc"
-  ];
+  const pastelColors = ["#ffadad","#ffd6a5","#fdffb6","#caffbf","#9bf6ff","#a0c4ff","#bdb2ff","#ffc6ff"]
 
   useEffect(() => {
     gsap.to(".skill-item", {

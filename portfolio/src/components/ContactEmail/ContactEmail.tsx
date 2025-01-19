@@ -1,83 +1,138 @@
 import React, { useState } from "react";
 import emailjs from "emailjs-com";
-import "./ContactEmail.css";
+import "./ContactEmail.css"; 
 
 export default function ContactEmail() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [subject, setSubject] = useState(""); 
   const [message, setMessage] = useState("");
-  const [status, setStatus] = useState("");
+  const [toast, setToast] = useState<{ type: string; message: string } | null>(null);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
     const templateParams = {
-      from_name: name,
-      from_email: email,
-      message: message,
+      from_name: name, 
+      from_email: email, 
+      subject: subject,  
+      message: message,  
     };
 
     emailjs
-      .send(
-        "your_service_id", // EmailJS service ID
-        "your_template_id", // EmailJS template ID
-        templateParams,
-        "your_public_api_key" // EmailJS public API key
-      )
+    .send(
+      process.env.REACT_APP_EMAILJS_SERVICE_ID as string,  
+      process.env.REACT_APP_EMAILJS_TEMPLATE_ID as string, 
+      templateParams,
+      process.env.REACT_APP_EMAILJS_USER_ID as string 
+    )
       .then(
         () => {
-          setStatus("Message sent successfully!");
+          setToast({
+            type: "success",
+            message: "Message sent successfully!",
+          });
           setName("");
           setEmail("");
+          setSubject("");
           setMessage("");
         },
         (error) => {
           console.error("EmailJS error:", error);
-          setStatus("Failed to send message. Please try again.");
+          setToast({
+            type: "error",
+            message: "Failed to send message. Please try again.",
+          });
         }
       );
   };
 
+
+  React.useEffect(() => {
+    if (toast) {
+      const timer = setTimeout(() => {
+        setToast(null);
+      }, 5000);
+      return () => clearTimeout(timer); 
+    }
+  }, [toast]);
+
   return (
     <div id="contact-form" className="contact-form-section">
       <div className="form-container">
-      <div className="image-container">
-        <img className="mail-icon" src="/public/icons/mail_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png" />
-      </div>
         <form onSubmit={handleSubmit} className="contact-form">
           <div className="left-side">
             <label>
-              Your name:
               <input
                 type="text"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 required
+                placeholder="Your name"
+                className="border p-2 rounded-md mt-2 w-full"
               />
             </label>
-            <label>
-              Your email:
+            <label> 
               <input
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
+                placeholder="Your email"
+                className="border p-2 rounded-md mt-2 w-full"
               />
             </label>
+            <label>    
+              <input
+                type="text"
+                value={subject}
+                onChange={(e) => setSubject(e.target.value)}
+                required
+                placeholder="Subject"
+                className="border p-2 rounded-md mt-2 w-full"
+              />
+            </label>
+       
           </div>
           <div className="right-side">
             <label>
-              Type your message:
+              
               <textarea
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
                 required
+                className="border p-2 rounded-md mt-2 w-full h-32"
+                placeholder="Type your message"
               ></textarea>
             </label>
-            <button type="submit" className="submit-btn">Send an email</button>
+            <button type="submit" className="submit-btn  text-white p-2 rounded-md mt-4 w-full">
+              <div className="image-container">
+                <img
+                  width="40"
+                  height="40"
+                  src="https://img.icons8.com/wired/50/secured-letter.png"
+                  alt="secured-letter"
+                />
+              </div>
+              Send an email
+            </button>
           </div>
         </form>
-        {status && <p className="status-message">{status}</p>}
+        
+
+        {toast && (
+          <div
+            className={`fixed inset-0 flex items-center justify-center z-50 p-4`}
+          >
+            <div
+              className={`w-full max-w-sm p-6 rounded-lg shadow-lg transform transition-all ${
+                toast.type === "success" ? "bg-green-500 text-white" : "bg-red-500 text-white"
+              }`}
+            >
+              <p className="text-center font-semibold">{toast.message}</p>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

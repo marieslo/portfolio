@@ -1,45 +1,45 @@
-.card-stack-container {
-    position: relative;
-    width: 100%;
-    height: fit-content;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    perspective: 1200px;
-    margin-top: 50px;
-  }
-  
-  .card-stack {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    width: 100%;
-    height: 100%;
-    transform-style: preserve-3d;
-    transition: transform 0.5s ease;
-  }
+.carousel-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
 
-  .card-stack-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    z-index: 999;
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  font-size: 2rem;
+  padding: 12px;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.carousel-button.prev {
+  left: 10px;
+}
+
+.carousel-button.next {
+  right: 10px;
+}
+
+.carousel {
+  display: flex;
+  gap: 2px;
+  transition: transform 0.5s ease;
+  overflow: hidden;
+  flex-wrap: nowrap;
+}
+
+
+@media (max-width: 768px) {
+  .carousel {
+    flex-direction: column; 
+    align-items: center; 
+    overflow-y: auto; 
   }
-  
-  .prev {
-    left: 10px;
-  }
-  
-  .next {
-    right: 10px;
-  }
-  
-  .card-stack-button:hover {
-    background-color: rgba(0, 0, 0, 0.7);
-  }
+}

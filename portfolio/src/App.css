@@ -1,92 +1,60 @@
 @import "slick-carousel/slick/slick.css";
 @import "slick-carousel/slick/slick-theme.css";
 
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Special+Elite&family=Sulphur+Point:wght@300;400;700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* * {
-  box-sizing: border-box;
-} */
 
 :root {
+  --color1: #a06114;
+  --color2: #ffc25f;
+  --color3: #bea2ff;
+  --color-light: #fff3c1;
+  --color-dark: #2f2b37;
 
-  --space: 1rem;
-  --color1: #5D16A6;
-  --color2: #a7f304;
-  --color3: #9683EC;
-  --color4: #ff6701;
-  --color5: #1cc6c9;
-  --color-light: #eed6fa;
-  --color-dark: #25005d;
+  --font-header:  "Fraunces", serif;
+  --font-basic: "Bebas Neue", serif;
+  --font-text: "Sulphur Point", serif;
+  --font-accent: "Special Elite", serif;
 
-
-  /* Font Variables */
-  --font-header: "Bebas Neue", serif;
-  --font-bodytext: "Bebas Neue", serif;
-  --font-accent: monospace;
-
-  --font-size-xxl: 40px; 
-  --font-size-xl: 18px; 
-  --font-size-lg: 16px; 
-  --font-size-md: 14px; 
-  --font-size-sm: 12px; 
-  --font-size-xs: 11px;
-
-  --font-weight-light: 300;
-  --font-weight-normal: 400;
-  --font-weight-bold: 700;
-
-  --line-height-tight: 20px;
-  --line-height-normal: 1.5;
-  --line-height-loose: 1.75;
-
-  /* Button Styles */
-  --button-font-size: var(--font-size-md);
-  --button-padding: 0.5rem 1rem;
-  --button-border-radius: 4px; 
-
-  /* --border-radius: 20px; */
 }
 
-/* Global Styles */
+
 body {
-  font-family: var(--font-bodytext);
-  color: var(--clor-dark);
-  line-height: var(--line-height-normal);
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; 
+  background-repeat: no-repeat;
+  height: 100%;
 }
 
-/* Header */
 h1, h2, h3, h4 {
   font-family: var(--font-header);
   color: var(--color-dark);
   line-height: var(--line-height-tight);
   margin-bottom: 50px;
+  position: relative;
 }
 
 h1 {
   font-weight: var(--font-weight-bold);  
-  color: var(--color4);
+  color: var(--color1);
   letter-spacing: -2px;
-  text-align: start;
-  font-size: var(--font-size-xxl);
+  text-align: space-between;
+  font-size: 40px;
   white-space: nowrap;
   position: relative;
-  /* text-transform: uppercase; */
   transform: rotateX(-25deg) rotateY(25deg);
+  text-transform: uppercase;
+  overflow: visible;
 }
 
+
 h2 {
-  font-size: var(--font-size-xl);
+
   font-weight: var(--font-weight-bold);
   color: var(--color4);
   letter-spacing: -1.5px;
@@ -104,7 +72,7 @@ h4 {
   font-weight: var(--font-weight-normal);
 }
 
-/* Button */
+
 button {
   font-size: 12px;
   background-color: var(--color4);
@@ -112,19 +80,17 @@ button {
   border: none;
 }
 
-/* Links */
+
 a {
   color: var(--color1);
   text-decoration: none;
   font-weight: var(--font-weight-bold);
   transition: color 0.03s ease, transform 0.02s ease;
-  /* cursor: none; */
 }
 
 a:hover {
   color: var(--color2);
   transform: scale(1.05);
-  /* cursor: none; */
 }
 
 html.dark body {
@@ -136,30 +102,36 @@ html:not(.dark) body {
   color: var(--color-light);
 }
 
-section{
+section {
   margin-inline: auto;
   width: min(1000px, 100%);
   background: rgba(150, 150, 197, 0.2);
-  /* border: 0.5px solid rgba(255, 255, 255, 0.3); */
-  /* box-shadow: -2px 2px 20px rgba(255, 255, 255, 0.3); */
+  border: 0.5px solid rgba(255, 255, 255, 0.3);
   text-align: center;
   padding: 50px;
   font-family: var(--font-accent);
   width: 90%;
   min-height: 60vh;
   max-height: fit-content;
-  display: flex;
-  flex-direction: column;
+  display: block; 
   justify-content: start;
   align-items: center;
   border-radius: 40px;
   background-image: var(--gradient);
   perspective: 600px;
-  transition: transform 0.3s, background-color 0.3s, opacity 0.3s;
-  margin-top: 5%;
-  backdrop-filter: blur(10px); 
-  -webkit-backdrop-filter: blur(10px);
+  transition: transform 0.3s ease-out, background-color 0.3s, opacity 0.3s;
+  margin: 0 auto; 
+  backdrop-filter: blur(50px); 
+  -webkit-backdrop-filter: blur(50px);
+  position: relative; 
+  z-index: 1; 
 }
+
+main {
+  display: flex;
+  flex-direction: column;
+}
+
 
 .bg-gradient-to-b {
   background-color: var(--color-light); 
