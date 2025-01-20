@@ -29,7 +29,7 @@ const Matrix = () => {
           <span
             key={index}
             style={{
-              left: `${(column * 10)}%`, 
+              left: `${(column * 12)}%`, 
               top: `${randomTop}%`,
               animationDelay: `${animationDelay}s`,
             }}

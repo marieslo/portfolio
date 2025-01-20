@@ -4,12 +4,13 @@
    flex-direction: row;
    width: 100px;
    height: 80px;
-   background-color: var(--color2);
+   background: var(--color2);
    border-radius: 5px;
    margin: 0 auto;
    justify-content: center !important;
    align-items: center;
-   box-shadow: -0.5px 0.5px 0.5px var(--color3);
+   box-shadow: var(--shadow);
+   border: var(--border);
    margin-bottom: 5px;
    padding: 5px;
  }

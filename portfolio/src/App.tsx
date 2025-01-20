@@ -14,7 +14,7 @@ import AboutMe from "./components/AboutMe/AboutMe";
 import Matrix from "./components/Matrix/Matrix";
 import ContactEmail from "./components/ContactEmail/ContactEmail";
 import { TagsProvider } from "./context/TagsProvider";
-
+import WaveLines from "./components/WaveLines/WaveLines";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -32,30 +32,12 @@ export default function App() {
     }
   };
 
-    // Handle click sound effect
-  const audioRef = useRef<HTMLAudioElement | null>(null);
-
-  useEffect(() => {
-    const handleClick = () => {
-      if (audioRef.current) {
-        audioRef.current.currentTime = 0;
-        audioRef.current.play().catch((err) =>
-          console.error("Audio playback error:", err)
-        );
-      }
-    };
-
-    window.addEventListener("click", handleClick);
-    return () => window.removeEventListener("click", handleClick);
-  }, []);
-
-
     // GSAP ScrollTrigger Animations for Each Section
   useEffect(() => {
     gsap.utils.toArray('.section').forEach((section: any) => {
       gsap.fromTo(
         section,
-        { y: "100px", opacity: 0 }, 
+        { y: "100px" }, 
         {
           y: "0px",  
           opacity: 1, 
@@ -97,6 +79,9 @@ export default function App() {
     { id: 1, name: "Project 1", imageUrl: "/mockpics/image1.png", size: "small", description: "Description of Project 1", tags: ["tag1", "tag2"], tagIds: [101, 102], itemCount: 1 },
     { id: 2, name: "Project 2", imageUrl: "/mockpics/image2.png", size: "medium", description: "Description of Project 2", tags: ["tag3", "tag4"], tagIds: [103, 104], itemCount: 2 },
     { id: 3, name: "Project 3", imageUrl: "/mockpics/image3.png", size: "small", description: "Description of Project 3", tags: ["tag1", "tag2"], tagIds: [101, 102], itemCount: 3 },
+    { id: 1, name: "Project 1", imageUrl: "/mockpics/image1.png", size: "small", description: "Description of Project 1", tags: ["tag1", "tag2"], tagIds: [101, 102], itemCount: 1 },
+    { id: 2, name: "Project 2", imageUrl: "/mockpics/image2.png", size: "medium", description: "Description of Project 2", tags: ["tag3", "tag4"], tagIds: [103, 104], itemCount: 2 },
+    { id: 3, name: "Project 3", imageUrl: "/mockpics/image3.png", size: "small", description: "Description of Project 3", tags: ["tag1", "tag2"], tagIds: [101, 102], itemCount: 3 },
   ];
 
   return (
@@ -105,15 +90,17 @@ export default function App() {
         <div className="bg-gradient-to-b">
           <Cursor />
           <Matrix />
-          <header style={{ position: "fixed", top: "0", width: "100%", transition: "top 0.3s", zIndex: 8000 }}>
+      
+          <header style={{ position: "fixed", top: "0", width: "100%", transition: "top 0.3s" }}>
           <Navbar
           onClickProjects={() => scrollToSection(projectsRef)}
           onClickSkills={() => scrollToSection(skillsRef)}
           onClickContact={() => scrollToSection(socialMediaRef)}
           onClickAboutMe={() => scrollToSection(aboutMeRef)} 
         />
+              <WaveLines />
           </header>
-
+      
           <main>
             <Routes>
               <Route path="*" />
@@ -121,31 +108,31 @@ export default function App() {
 
             {/* Projects Section */}
             <section className="section projects-section" ref={projectsRef}>
-              <h1 className="section-title">Recent Projects</h1>
+              {/* <h1 className="section-title">Recent Projects</h1> */}
               <CarouselOfProjects projects={projects} />
             </section>
 
             {/* Skills Section */}
             <section className="section skills-section" ref={skillsRef}>
-              <h1 className="section-title">Skills</h1>
+              {/* <h1 className="section-title">Skills</h1> */}
               <Skills />
             </section>
 
             {/* About Me Section */}
             <section className="section about-me-section" ref={aboutMeRef}>
-              <h1 className="section-title">About Me</h1>
+              {/* <h1 className="section-title">About Me</h1> */}
               <AboutMe />
             </section>
 
             {/* Contact Section */}
             <section className="section contact-section" ref={socialMediaRef}>
-              <h1 className="section-title">Contacts</h1>
+              {/* <h1 className="section-title">Contacts</h1> */}
               <SocialMedia />
               <ContactEmail />
             </section>
           </main>
 
-          <footer className="footer-container">
+          <footer >
             <Footer />
           </footer>
         </div>
