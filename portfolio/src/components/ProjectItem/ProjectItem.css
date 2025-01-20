@@ -4,7 +4,7 @@
   overflow: hidden; 
   transition: transform 0.03s ease;
   flex: 0 0 auto; 
-  transform: rotateY(-25deg) rotateX(25deg); 
+  box-shadow: var(--shadow);
 }
 
 .card {
@@ -29,15 +29,16 @@
   position: absolute;
   top: 1%;
   left: 50%; 
-  padding: 10%;
+  padding: 20%;
+  margin: 10% auto;
   transform: translate(-50%, -50%);
   width: 100%;
-  background: linear-gradient(to bottom, var(--color3) 0%, var(--color3) 70%, transparent 100%);
+  background: linear-gradient(to bottom, #a69ff9 0%, #a69ff9 70%, transparent 100%);
   opacity: 1;
   text-align: center; 
   font-family: var(--font-header);
   letter-spacing: -2px;
-  font-size: 2.5rem !important;
+  font-size: 30px;
   color: var(--color2);
   z-index: 10;
   transition: opacity 0.03s ease;
@@ -49,7 +50,7 @@
   top: 10%;
   left: 10%;
   height: fit-content;
-  background-color: var(--color-light);
+  background: var(--color-light);
   font-family: var(--font-accent);
   line-height: 1;
   color: var(--color-dark);
@@ -93,10 +94,6 @@
   height: 300px; 
 }
 
-.project-item:hover {
-  transform: rotateY(10deg) rotateX(-10deg);
-}
-
 .projects-container::-webkit-scrollbar {
   height: 8px;
 }
@@ -125,18 +122,18 @@
 }
  
 .tag {
-  background-color: var(--color3);
+  background: var(--color3);
   color: var(--color-light);
   font-size: 0.85rem;
   padding: 0.3rem 0.6rem;
   border-radius: 10px;
   font-family: var(--font-accent);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow);
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .tag:hover {
-  background-color: var(--color2);
+  background: var(--color2);
   transform: scale(1.1);
 }
 

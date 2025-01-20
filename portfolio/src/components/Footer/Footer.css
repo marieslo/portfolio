@@ -1,19 +1,21 @@
 .footer-container {
   position: relative;
   margin: auto;
-  background-color: var(--color1);
-  padding: 2px;
+  background: var(--color1);
   text-align: center;
-  font-family: var(--font-basic);
+  font-family: var(--font-accent);
   overflow: hidden;
-  width: 100%; 
+  width: 90%; 
+  padding: 0.5rem 2.5rem; 
+  border-radius: 40px 40px 0 0;
+  z-index: 9500;
+  box-shadow: var(--shadow);
 }
-
 
 .footer-content {
   display: flex;
   flex-direction: row;
-  align-items: space-between;
+  align-items: center;
   justify-content: space-between;
 }
 
@@ -32,7 +34,7 @@
   gap: 15px; 
 }
 
-@media (max-width: 768px) {
+@media (max-width: 400px) {
   .footer-container {
     flex-direction: column;
     align-items: center;
@@ -41,9 +43,5 @@
   .footer-content {
     flex-direction: column; 
     text-align: center;
-  }
-
-  .footer-content span {
-    margin: 5px 0; 
   }
 }
