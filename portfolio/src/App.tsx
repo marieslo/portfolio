@@ -9,7 +9,7 @@ import Cursor from "./components/Cursor/Cursor";
 import Skills from "./components/Skills/Skills";
 import Navbar from "./components/Navbar/Navbar";
 import SocialMedia from "./components/SocialMedia/SocialMedia";
-import CarouselOfProjects from "./components/CarouselOfProjects/CarouselOfProjects";
+import ScrollProjects from "./components/ScrollProjects/SrollProjects";
 import AboutMe from "./components/AboutMe/AboutMe";
 import Matrix from "./components/Matrix/Matrix";
 import ContactEmail from "./components/ContactEmail/ContactEmail";
@@ -64,32 +64,13 @@ export default function App() {
 
   }, []);
 
-  type ProjectType = {
-    id: number;
-    name: string;
-    imageUrl: string;
-    size: string;
-    description: string;
-    tags: string[];
-    tagIds: number[];
-    itemCount: number;
-  };
-
-  const projects: ProjectType[] = [
-    { id: 1, name: "Project 1", imageUrl: "/mockpics/image1.png", size: "small", description: "Description of Project 1", tags: ["tag1", "tag2"], tagIds: [101, 102], itemCount: 1 },
-    { id: 2, name: "Project 2", imageUrl: "/mockpics/image2.png", size: "medium", description: "Description of Project 2", tags: ["tag3", "tag4"], tagIds: [103, 104], itemCount: 2 },
-    { id: 3, name: "Project 3", imageUrl: "/mockpics/image3.png", size: "small", description: "Description of Project 3", tags: ["tag1", "tag2"], tagIds: [101, 102], itemCount: 3 },
-    { id: 1, name: "Project 1", imageUrl: "/mockpics/image1.png", size: "small", description: "Description of Project 1", tags: ["tag1", "tag2"], tagIds: [101, 102], itemCount: 1 },
-    { id: 2, name: "Project 2", imageUrl: "/mockpics/image2.png", size: "medium", description: "Description of Project 2", tags: ["tag3", "tag4"], tagIds: [103, 104], itemCount: 2 },
-    { id: 3, name: "Project 3", imageUrl: "/mockpics/image3.png", size: "small", description: "Description of Project 3", tags: ["tag1", "tag2"], tagIds: [101, 102], itemCount: 3 },
-  ];
 
   return (
     <TagsProvider>
       <Router>
         <div className="bg-gradient-to-b">
           <Cursor />
-          <Matrix />
+          {/* <Matrix /> */}
       
           <header style={{ position: "fixed", top: "0", width: "100%", transition: "top 0.3s" }}>
           <Navbar
@@ -106,23 +87,25 @@ export default function App() {
               <Route path="*" />
             </Routes>
 
-            {/* Projects Section */}
-            <section className="section projects-section" ref={projectsRef}>
-              {/* <h1 className="section-title">Recent Projects</h1> */}
-              <CarouselOfProjects projects={projects} />
-            </section>
-
-            {/* Skills Section */}
-            <section className="section skills-section" ref={skillsRef}>
-              {/* <h1 className="section-title">Skills</h1> */}
-              <Skills />
-            </section>
-
             {/* About Me Section */}
             <section className="section about-me-section" ref={aboutMeRef}>
               {/* <h1 className="section-title">About Me</h1> */}
               <AboutMe />
+            </section> 
+
+            {/* Projects Section */}
+            <section className="section projects-section" ref={projectsRef}>
+              {/* <h1 className="section-title">Recent Projects</h1> */}
+             <ScrollProjects/>
             </section>
+
+            {/* Skills Section */}
+            {/* <section className="section skills-section" ref={skillsRef}> */}
+              {/* <h1 className="section-title">Skills</h1> */}
+              {/* <Skills />
+            </section> */}
+
+      
 
             {/* Contact Section */}
             <section className="section contact-section" ref={socialMediaRef}>

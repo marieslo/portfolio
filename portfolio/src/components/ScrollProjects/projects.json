@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "name": "Project 1",
+    "imageUrl": "/mockpics/image1.png",
+    "description": "Description of Project 1",
+    "tags": ["tag1", "tag2"],
+    "tagIds": [101, 102],
+    "itemCount": 1,
+    "url": "/mockpics/small-size.png"
+  },
+  {
+    "id": 2,
+    "name": "Project 2",
+    "imageUrl": "/mockpics/image2.png",
+    "description": "Description of Project 2",
+    "tags": ["tag3", "tag4"],
+    "tagIds": [103, 104],
+    "itemCount": 2,
+    "url": "/mockpics/medium-size.png"
+  },
+  {
+    "id": 3,
+    "name": "Project 3",
+    "imageUrl": "/mockpics/image3.png",
+    "description": "Description of Project 3",
+    "tags": ["tag1", "tag2"],
+    "tagIds": [101, 102],
+    "itemCount": 3,
+    "url": "/mockpics/large-size.png"
+  },
+  {
+    "id": 1,
+    "name": "Project 1",
+    "imageUrl": "/mockpics/image1.png",
+    "description": "Description of Project 1",
+    "tags": ["tag1", "tag2"],
+    "tagIds": [101, 102],
+    "itemCount": 1,
+    "url": "/mockpics/small-size.png"
+  },
+  {
+    "id": 2,
+    "name": "Project 2",
+    "imageUrl": "/mockpics/image2.png",
+    "description": "Description of Project 2",
+    "tags": ["tag3", "tag4"],
+    "tagIds": [103, 104],
+    "itemCount": 2,
+    "url": "/mockpics/medium-size.png"
+  },
+  {
+    "id": 3,
+    "name": "Project 3",
+    "imageUrl": "/mockpics/image3.png",
+    "description": "Description of Project 3",
+    "tags": ["tag1", "tag2"],
+    "tagIds": [101, 102],
+    "itemCount": 3,
+    "url": "/mockpics/large-size.png"
+  }
+]

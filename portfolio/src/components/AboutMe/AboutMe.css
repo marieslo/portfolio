@@ -101,3 +101,25 @@
     line-height: 1.4;
   }
 }
+
+
+
+.about-me__line {
+  display: block;
+  margin: 10px 0;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+[data-line="right"] {
+  transform: translateX(0); 
+}
+
+[data-line="left"] {
+  transform: translateX(0); 
+}
+
+.capital-letter {
+  font-size: 32px;
+  font-weight: bold;
+  margin-right: 5px;
+}
