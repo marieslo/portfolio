@@ -22,7 +22,7 @@ const WaveLines = () => {
 
     if (!ctx) return;
 
-    const lineCount = 3; 
+    const lineCount = 2; 
 
     interface Line {
       x: number;

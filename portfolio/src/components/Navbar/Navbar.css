@@ -5,17 +5,21 @@
   transform: translateX(-50%); 
   width: auto; 
   background: var(--color1);
-  padding: 0.5rem 3rem;
-  border-radius: 0 0 40px 40px;
-  padding: 0.5rem;
   width: 90%; 
   transform: translateX(-50%);
   box-shadow: var(--shadow);
+  text-align: center;
+  font-family: var(--font-accent);
+  font-size: 12px;
+  font-weight: 200;
+  letter-spacing: -0.5px;
+  overflow: hidden;
+  padding: 0.5rem 2.5rem; 
+  border-radius: 0 0 40px 40px ;
 }
 
 .navbar--sticky {
   background: var(--color3);
-  z-index: 9900;
 }
 
 .navbar__link {
@@ -42,7 +46,6 @@
 
 .navbar-content {
   position: relative;
-  z-index: 9500;
   display: flex;
   justify-content: space-between;
   width: 100%;

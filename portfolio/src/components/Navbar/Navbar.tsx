@@ -35,14 +35,16 @@ export default function Navbar({ onClickProjects, onClickSkills, onClickAboutMe,
 
   return (
     <motion.nav
-      className={`navbar ${isSticky ? "navbar--sticky" : ""}`}
+      className={`navbar  ${isSticky ? "navbar--sticky" : ""}`}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
     >
-      <div className="navbar-container items-center relative">
+      <div className="">
         <div className="navbar-content flex justify-between items-center">
           <ButtonDarkMode />
+
+
           <motion.div
             className="flex space-x-6"
             initial={false}
@@ -51,31 +53,8 @@ export default function Navbar({ onClickProjects, onClickSkills, onClickAboutMe,
               spread: { gap: "3rem", y: 20, opacity: 1, transition: { staggerChildren: 0.2 } },
             }}
           >
-            <motion.a
-              href="#projects"
-              className={`navbar__link ${activeSection === "projects" ? "active" : ""}`}
-              onClick={(e) => {
-                e.preventDefault();
-                onClickProjects();
-              }}
-              whileHover={{ scale: 1.1 }}
-            >
-              Projects
-            </motion.a>
 
-            <motion.a
-              href="#skills"
-              className={`navbar__link ${activeSection === "skills" ? "active" : ""}`}
-              onClick={(e) => {
-                e.preventDefault();
-                onClickSkills();
-              }}
-              whileHover={{ scale: 1.1 }}
-            >
-              Skills
-            </motion.a>
-
-            <motion.a
+          <motion.a
               href="#about-me"
               className={`navbar__link ${activeSection === "about-me" ? "active" : ""}`}
               onClick={(e) => {
@@ -88,6 +67,30 @@ export default function Navbar({ onClickProjects, onClickSkills, onClickAboutMe,
             </motion.a>
 
             <motion.a
+              href="#projects"
+              className={`navbar__link ${activeSection === "projects" ? "active" : ""}`}
+              onClick={(e) => {
+                e.preventDefault();
+                onClickProjects();
+              }}
+              whileHover={{ scale: 1.1 }}
+            >
+              Projects
+            </motion.a>
+
+            {/* <motion.a
+              href="#skills"
+              className={`navbar__link ${activeSection === "skills" ? "active" : ""}`}
+              onClick={(e) => {
+                e.preventDefault();
+                onClickSkills();
+              }}
+              whileHover={{ scale: 1.1 }}
+            >
+              Skills
+            </motion.a> */}
+
+            <motion.a
               href="#contact"
               className={`navbar__link ${activeSection === "contact" ? "active" : ""}`}
               onClick={(e) => {
@@ -98,7 +101,9 @@ export default function Navbar({ onClickProjects, onClickSkills, onClickAboutMe,
             >
               Contacts
             </motion.a>
+            
           </motion.div>
+
         </div>
       </div>
     </motion.nav>

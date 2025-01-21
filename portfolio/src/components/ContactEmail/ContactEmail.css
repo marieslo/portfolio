@@ -52,7 +52,8 @@
     margin-top: 8px;
     border-radius: 5px;
     font-size: 14px;
-    font-family: var(--font-bodytext);
+    font-family: var(--font-accent);
+    font-weight: 300;
     background-color: #eef6ddcc;
     transition: border-color 0.3s ease, background-color 0.3s ease;
     color: var(--color-dark);
@@ -69,17 +70,18 @@
     width: 100%; 
     min-height: 200px; 
     resize: vertical; 
-    font-family: var(--font-bodytext);
+    font-family: var(--font-accent);
     background-color: #eef6ddcc; 
     padding: 12px 16px; 
     border-radius: 5px; 
     font-size: 14px; 
     transition: border-color 0.3s ease, background-color 0.3s ease;
-    color: var(--color-dark); 
+    color: var(--color-dark);
+    line-height: 1.5; 
 }
 
 .submit-btn {
-    background: linear-gradient(135deg, var(--color2), var(--color2) 40%, var(--color1) 60%, var(--color2));
+    background: linear-gradient(145deg, #fcb54b, var(--color2));
     background-size: 200%;
     background-position: 50% 50%;
     color: var(--color-dark);
@@ -121,6 +123,7 @@
     background: linear-gradient(145deg, #fcb54b, var(--color2));
     box-shadow: var(--shadow);
     border: var(--border);
+    border-radius: 40px;
   }
   
   .submit-btn:hover::before {
@@ -146,12 +149,12 @@
     margin-top: 20px;
     font-size: 16px;
     text-align: center;
-    color: #28a745;
+    color: #83cc94;
     font-weight: 600;
 }
 
 .status-message.error {
-    color: #dc3545;
+    color: #eda0a7;
 }
 
 @media (max-width: 768px) {

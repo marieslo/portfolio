@@ -1,5 +1,10 @@
 .button-darkmode{
     background-color: transparent;
     border-radius: 50%;
-    padding: auto;
+    padding: 4px;
+}
+
+.button-darkmode:hover{
+    background: var(--color1);
+    box-shadow: var(--shadow);
 }
