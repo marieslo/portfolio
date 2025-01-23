@@ -59,6 +59,7 @@ export default function ContactEmail() {
 
   return (
     <div id="contact-form" className="contact-form-section">
+  
       <div className="form-container">
         <form onSubmit={handleSubmit} className="contact-form">
           <div className="left-side">

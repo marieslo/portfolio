@@ -1,8 +1,8 @@
 import React, { useEffect, useRef } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger"; 
-import "./App.css"
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import "./App.css";
 
 import Footer from "./components/Footer/Footer";
 import Cursor from "./components/Cursor/Cursor";
@@ -11,111 +11,117 @@ import Navbar from "./components/Navbar/Navbar";
 import SocialMedia from "./components/SocialMedia/SocialMedia";
 import ScrollProjects from "./components/ScrollProjects/SrollProjects";
 import AboutMe from "./components/AboutMe/AboutMe";
-import Matrix from "./components/Matrix/Matrix";
 import ContactEmail from "./components/ContactEmail/ContactEmail";
 import { TagsProvider } from "./context/TagsProvider";
-import WaveLines from "./components/WaveLines/WaveLines";
+import WaveSquares from "./components/WaveSquares/WaveSquares";
+import Matrix from "./components/Matrix/Matrix";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function App() {
-  // Refs for sections
+
   const projectsRef = useRef<HTMLDivElement | null>(null);
   const skillsRef = useRef<HTMLDivElement | null>(null);
   const socialMediaRef = useRef<HTMLDivElement | null>(null);
   const aboutMeRef = useRef<HTMLDivElement | null>(null);
 
-  // Scroll to a specific section
+ 
   const scrollToSection = (sectionRef: React.RefObject<HTMLDivElement>) => {
     if (sectionRef.current) {
       sectionRef.current.scrollIntoView({ behavior: "smooth" });
     }
   };
 
-    // GSAP ScrollTrigger Animations for Each Section
   useEffect(() => {
-    gsap.utils.toArray('.section').forEach((section: any) => {
-      gsap.fromTo(
-        section,
-        { y: "100px" }, 
-        {
-          y: "0px",  
-          opacity: 1, 
-          duration: 1,
-          scrollTrigger: {
-            trigger: section,
-            start: "top bottom", 
-            end: "bottom top",   
-            scrub: 1, 
-            markers: false,
-          },
-        }
-      );
-    });
-    gsap.to(".section", {
+    const timeline = gsap.timeline({
       scrollTrigger: {
-        trigger: ".section",
-        start: "top top", 
-        end: "+=100%", 
-        scrub: 1,
-        markers: false,
+        trigger: ".wrapper",
+        start: "top top",
+        end: "+=150%",
+        pin: true,
+        scrub: true,
+    
       },
     });
 
+    timeline
+      .to("img", {
+        scale: 2,
+        z: 350,
+        transformOrigin: "center center",
+        ease: "power1.inOut",
+      })
+      .to(
+        ".section.hero",
+        {
+          scale: 1.1,
+          transformOrigin: "center center",
+          ease: "power1.inOut",
+        },
+        "<"
+      );
+    return () => {
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+    };
   }, []);
-
 
   return (
     <TagsProvider>
       <Router>
-        <div className="bg-gradient-to-b">
+        <div>
           <Cursor />
-          {/* <Matrix /> */}
-      
-          <header style={{ position: "fixed", top: "0", width: "100%", transition: "top 0.3s" }}>
-          <Navbar
-          onClickProjects={() => scrollToSection(projectsRef)}
-          onClickSkills={() => scrollToSection(skillsRef)}
-          onClickContact={() => scrollToSection(socialMediaRef)}
-          onClickAboutMe={() => scrollToSection(aboutMeRef)} 
-        />
-              <WaveLines />
+         
+                 <WaveSquares/>
+          <header style={{ position: "fixed", top: "0", transition: "top 0.3s" }}>
+          
+            <Navbar
+              onClickProjects={() => scrollToSection(projectsRef)}
+              onClickSkills={() => scrollToSection(skillsRef)}
+              onClickContact={() => scrollToSection(socialMediaRef)}
+              onClickAboutMe={() => scrollToSection(aboutMeRef)}
+            />
           </header>
-      
+          {/* <Matrix/> */}
           <main>
             <Routes>
-              <Route path="*" />
+              <Route path="*" element={<></>} />
             </Routes>
-
-            {/* About Me Section */}
-            <section className="section about-me-section" ref={aboutMeRef}>
-              {/* <h1 className="section-title">About Me</h1> */}
+           
+            <div className="wrapper">
+              <div className="content">
+               
+         
+            <section className="section hero section about-me-section" ref={aboutMeRef}>
               <AboutMe />
-            </section> 
-
-            {/* Projects Section */}
-            <section className="section projects-section" ref={projectsRef}>
-              {/* <h1 className="section-title">Recent Projects</h1> */}
-             <ScrollProjects/>
             </section>
 
-            {/* Skills Section */}
-            {/* <section className="section skills-section" ref={skillsRef}> */}
-              {/* <h1 className="section-title">Skills</h1> */}
-              {/* <Skills />
-            </section> */}
+            <section className="section projects-section" ref={projectsRef}>
+              <ScrollProjects />
+            </section>
 
-      
+     
+            <section className="section skills-section" ref={skillsRef}>
+              <Skills />
+            </section>
 
-            {/* Contact Section */}
+         
             <section className="section contact-section" ref={socialMediaRef}>
-              {/* <h1 className="section-title">Contacts</h1> */}
               <SocialMedia />
               <ContactEmail />
             </section>
+ 
+              </div>
+              <div className="image-container">
+                <img
+                  src="./public/images/33aa7dae-6bb9-467e-af19-a05caf2419f9.png"
+                />
+        
+              </div>
+            </div>
+
           </main>
 
-          <footer >
+          <footer>
             <Footer />
           </footer>
         </div>

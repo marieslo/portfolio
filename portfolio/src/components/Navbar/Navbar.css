@@ -1,31 +1,33 @@
 .navbar {
   position: fixed;
-  top: 0;
-  left: 50%; 
+  left: 25%;
   transform: translateX(-50%); 
-  width: auto; 
   background: var(--color1);
-  width: 90%; 
+  width: 60%; 
+  height: 80px;
   transform: translateX(-50%);
   box-shadow: var(--shadow);
   text-align: center;
-  font-family: var(--font-accent);
-  font-size: 12px;
-  font-weight: 200;
+  font-family: var(--font-header);
+  font-size: 24px;
   letter-spacing: -0.5px;
   overflow: hidden;
   padding: 0.5rem 2.5rem; 
-  border-radius: 0 0 40px 40px ;
+  border-radius: 0 0 80px 0;
+  backdrop-filter: blur(50px); 
+  -webkit-backdrop-filter: blur(50px);
 }
 
 .navbar--sticky {
   background: var(--color3);
+  background: rgba(229, 181, 255, 0.679);
+  border: 0.5px solid rgba(255, 255, 255, 0.3); 
 }
 
 .navbar__link {
   text-decoration: none;
   color: #ffffff;
-  font-family: var(--font-accent);
+  font-family: var(--font-header);
   padding: 2px;
   font-weight: 500;
   height: fit-content;
@@ -37,16 +39,8 @@
 }
 
 
-.navbar-container {
-  position: relative;
-  margin: 0 auto;
-  width: 90%; 
-  height: 100%;
-}
-
 .navbar-content {
   position: relative;
   display: flex;
   justify-content: space-between;
-  width: 100%;
 }

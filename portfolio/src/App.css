@@ -1,7 +1,7 @@
 @import "slick-carousel/slick/slick.css";
 @import "slick-carousel/slick/slick-theme.css";
 
-@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Comfortaa:wght@300..700&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -9,30 +9,20 @@
 
 
 :root {
-  --color1:linear-gradient(45deg,  #7cceda, #2ec4b6);
+  background-image: radial-gradient(ellipse farthest-corner at center top, #23233f 0%, #000000 60%);
+  --color1: linear-gradient(45deg,  #000, #000); 
   --color2: #fca949;
-  --color3: linear-gradient(45deg, #c8c3fc, #b59afe);
-  --color-light: #f7da74c5;
-  --color-dark: #383430;
+  --color3: linear-gradient(45deg, #828298, #c1bec9);
+  --color-light: linear-gradient(45deg, #828298, #c1bec9);
+  --color-dark:  linear-gradient(45deg,  #000, #000); 
 
-  --font-header: "Comfortaa", serif;
+  --font-header: "Bebas Neue", serif;
   --font-bodytext: "Comfortaa", serif;
-  --font-accent: "Comfortaa", serif;
+  --font-accent: "IBM Plex Mono", serif;
 
   --border-radius: 40px;
   --border: solid 0.5px #000;
   --shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
-
-    /* transform: rotateX(-25deg) rotateY(25deg); */
-    height: 100%;
-    width: 100%;
-}
-
-body {
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed; 
-  background-repeat: no-repeat;
 
 }
 
@@ -99,12 +89,51 @@ a:hover {
 }
 
 html.dark body {
-  color: var(-color-dark);
+  background-image: radial-gradient(ellipse farthest-corner at center top, #23233f 0%, #000000 60%);
+  color: var(-color-light);
+   margin: 0;
+/* 
+  background-image: 
+    repeating-linear-gradient(transparent, transparent 100px), 
+    repeating-linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0.1) 1px,
+      transparent 1px,
+      transparent 100px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0.1) 1px,
+      transparent 1px,
+      transparent 100px
+    );
+  background-size: 100px 100px;  */
 }
 
 html:not(.dark) body {
-  background-color: var(--color-light);
-  color: var(--color-light);
+  background: var(--color-light);
+  color: var(--color-dark);
+   margin: 0;
+
+  /* background-image: 
+    repeating-linear-gradient(transparent, transparent 100px), 
+    repeating-linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0.1) 1px,
+      transparent 1px,
+      transparent 100px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0.1) 1px,
+      transparent 1px,
+      transparent 100px
+    );
+  background-size: 100px 100px;  */
 }
 
 section {
@@ -120,60 +149,82 @@ section {
   padding: 50px;
   width: 86vw;
   min-height: 60vh;
-  height: fit-content;
+  max-height: fit-content;
   display: block; 
   justify-content: start;
   align-items: center;
   perspective: 600px;
   transition: transform 0.3s ease-out, background-color 0.3s, opacity 0.3s;
-  margin: 50px; 
+  margin-top: 60%; 
   backdrop-filter: blur(50px); 
   -webkit-backdrop-filter: blur(50px);
   position: relative; 
 }
 
-main {
-  display: flex;
-  flex-direction: column;
+.about-me-section{
+  background: var(--color1);
+  background-image: none;
+  box-shadow: none;
+  border: none;
+  border-radius: none;
+  backdrop-filter: none; 
+  -webkit-backdrop-filter: none;
 }
 
 
-.bg-gradient-to-b {
-  background-color: var(--color-light); 
-  width: 100vw;
-  position: relative;  
-  z-index: 0; 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Light Mode */
-.bg-gradient-to-b::before {
-  content: "";
+.wrapper,
+.content {
+  position: relative;
+  width: 100%;
+  z-index: 1;
+}
+
+.content {
+  overflow-x: hidden;
+}
+
+.content .section {
+  width: 100%;
+  height: 100vh;
+}
+
+.content .section.hero {
+  background-image: url(../public/images/Marie_photo.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: fit-content;
+}
+
+.content .section.gradient-purple {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+}
+
+.content .section.gradient-blue {
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+}
+
+
+.image-container {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  bottom: 0;
-  pointer-events: none; 
+  z-index: 2;
+  perspective: 500px;
+  overflow: hidden;
 }
 
-
-/* Dark Mode */
-.dark .bg-gradient-to-b {
-  background-color: var(--color-dark);
-}
-
-
-.contact-social-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-}
-
-.contact-social-wrapper a {
-  text-decoration: none;
-  color: inherit;
-}
-
-.footer-container {
-  padding: 1rem;
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
 }
