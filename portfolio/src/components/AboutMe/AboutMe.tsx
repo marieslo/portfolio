@@ -18,8 +18,7 @@ export default function AboutMe() {
   return (
     <div className="about-me-container" id="about-me">
       <div className="about-me__content-wrapper">
-        <div className="about-me__text">
-          <span className="about-me__photo-wrapper">
+      <span className="about-me__photo-wrapper">
             <div className="about-me__photo-container">
               <div className="about-me__photo-border"></div>
               <div className="about-me__photo">
@@ -30,15 +29,19 @@ export default function AboutMe() {
                 />
               </div>
             </div>
-            <img
-              width="50"
-              height="50"
-              src="https://img.icons8.com/scribby/50/pencil.png"
-              alt="pencil"
-            />
           </span>
+        <div className="about-me__text blurred-text">
+         
           
           {[
+            "Text about me. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "Text about me. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "Text about me. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "Text about me. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "Text about me. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "Text about me. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "Text about me. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "Text about me. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
             "Text about me. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
             "Text about me. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
             "Text about me. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
@@ -57,12 +60,13 @@ export default function AboutMe() {
                       : -scrollY * 0.5 // Odd lines (left)
                     : 0
                 }px)`,
-                opacity: scrollY > 0 ? 1 - scrollY * 0.001 : 1,
+                // opacity: scrollY > 0 ? 1 - scrollY * 0.001 : 1,
               }}
             >
               {line}
             </span>
           ))}
+         
         </div>
       </div>
     </div>

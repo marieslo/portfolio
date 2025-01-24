@@ -40,17 +40,16 @@ export default function ButtonDarkMode() {
   }, []);
 
   return (
-    <div>
       <button
         onClick={toggleDarkMode}
-        className="button-darkmode "
       >
         {isDarkMode ? (
           <img
-            width="24z"
+            width="24"
             height="24"
             src="/icons/light_mode_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png"
             alt="light-mode-icon"
+            className="button-darkmode"
           />
         ) : (
           <img
@@ -58,10 +57,10 @@ export default function ButtonDarkMode() {
             height="24"
             src="/icons/dark_mode_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png"
             alt="dark-mode-icon"
+            className="button-darkmode"
             // style={{ filter: "invert(1)" }}
           />
         )}
       </button>
-    </div>
   );
 }

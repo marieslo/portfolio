@@ -3,9 +3,7 @@ import emailjs from "emailjs-com";
 import "./ContactEmail.css"; 
 
 export default function ContactEmail() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [subject, setSubject] = useState(""); 
+  const [contactDetails, setcontactDetails] = useState("");
   const [message, setMessage] = useState("");
   const [toast, setToast] = useState<{ type: string; message: string } | null>(null);
 
@@ -13,9 +11,7 @@ export default function ContactEmail() {
     e.preventDefault();
 
     const templateParams = {
-      from_name: name, 
-      from_email: email, 
-      subject: subject,  
+      contactDetails: contactDetails, 
       message: message,  
     };
 
@@ -32,9 +28,7 @@ export default function ContactEmail() {
             type: "success",
             message: "Message sent successfully!",
           });
-          setName("");
-          setEmail("");
-          setSubject("");
+          setcontactDetails("");
           setMessage("");
         },
         (error) => {
@@ -59,43 +53,11 @@ export default function ContactEmail() {
 
   return (
     <div id="contact-form" className="contact-form-section">
+  
       <div className="form-container">
         <form onSubmit={handleSubmit} className="contact-form">
-          <div className="left-side">
-            <label>
-              <input
-                type="text"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                required
-                placeholder="Your name"
-                className="border p-2 rounded-md mt-2 w-full"
-              />
-            </label>
-            <label> 
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-                placeholder="Your email"
-                className="border p-2 rounded-md mt-2 w-full"
-              />
-            </label>
-            <label>    
-              <input
-                type="text"
-                value={subject}
-                onChange={(e) => setSubject(e.target.value)}
-                required
-                placeholder="Subject"
-                className="border p-2 rounded-md mt-2 w-full"
-              />
-            </label>
-       
-          </div>
-          <div className="right-side">
-            <label>
+        <div className="left-side">
+        <label>
               
               <textarea
                 value={message}
@@ -104,6 +66,20 @@ export default function ContactEmail() {
                 className="border p-2 rounded-md mt-2 w-full h-32"
                 placeholder="Type your message"
               ></textarea>
+            </label>
+          
+          
+       
+          </div>
+          <div className="right-side">
+          <label> 
+              <input
+                value={contactDetails}
+                onChange={(e) => setcontactDetails(e.target.value)}
+                required
+                placeholder="Your contact details"
+                className="border p-2 rounded-md mt-2 w-full"
+              />
             </label>
             <button type="submit" className="submit-btn  text-white p-2 rounded-md mt-4 w-full">
               <div className="image-container">
