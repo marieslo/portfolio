@@ -4,6 +4,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./App.css";
 
+import ButtonDarkMode from "./components/ButtonDarkMode/ButtonDarkMode";
 import Footer from "./components/Footer/Footer";
 import Cursor from "./components/Cursor/Cursor";
 import Skills from "./components/Skills/Skills";
@@ -72,14 +73,14 @@ export default function App() {
           <Cursor />
          
                  <WaveSquares/>
-          <header style={{ position: "fixed", top: "0", transition: "top 0.3s" }}>
-          
-            <Navbar
+          <header>
+              <Navbar
               onClickProjects={() => scrollToSection(projectsRef)}
               onClickSkills={() => scrollToSection(skillsRef)}
               onClickContact={() => scrollToSection(socialMediaRef)}
               onClickAboutMe={() => scrollToSection(aboutMeRef)}
             />
+            <ButtonDarkMode/>
           </header>
           {/* <Matrix/> */}
           <main>

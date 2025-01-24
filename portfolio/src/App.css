@@ -1,7 +1,7 @@
 @import "slick-carousel/slick/slick.css";
 @import "slick-carousel/slick/slick-theme.css";
 
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Comfortaa:wght@300..700&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Comfortaa:wght@300..700&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Unbounded:wght@200..900&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -9,21 +9,25 @@
 
 
 :root {
-  background-image: radial-gradient(ellipse farthest-corner at center top, #23233f 0%, #000000 60%);
-  --color1: linear-gradient(45deg,  #000, #000); 
-  --color2: #fca949;
-  --color3: linear-gradient(45deg, #828298, #c1bec9);
-  --color-light: linear-gradient(45deg, #828298, #c1bec9);
-  --color-dark:  linear-gradient(45deg,  #000, #000); 
+  --color1: linear-gradient(45deg,  #23233f, #000000); 
+  --color2:  linear-gradient(45deg, #000000, #23233f); 
+  --color3: linear-gradient(45deg, #84b55c, #bdd77b);
+  --color-light: radial-gradient(ellipse farthest-corner at right top,  #b6d7ffeb -70%,#749bff 60%);
+  --color-dark:  radial-gradient(ellipse farthest-corner at right top, #21213d 0%, #070011 60%);
 
-  --font-header: "Bebas Neue", serif;
-  --font-bodytext: "Comfortaa", serif;
-  --font-accent: "IBM Plex Mono", serif;
+  --font-header:  "Unbounded", serif;
+  --font-bodytext:  "Unbounded", serif;
+  --font-accent:  "Unbounded", serif;
 
   --border-radius: 40px;
   --border: solid 0.5px #000;
   --shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
 
+}
+
+.blurred-text {
+  color: var(--color2);
+  opacity: 0.5; 
 }
 
 h1, h2, h3, h4 {
@@ -67,14 +71,14 @@ h4 {
   font-weight: var(--font-weight-normal);
 }
 
-
+/* 
 button {
   font-size: 12px;
   background-color: var(--color4);
   color: var(--color-light);
   border: none;
 }
-
+ */
 
 a {
   color: var(--color1);
@@ -89,61 +93,25 @@ a:hover {
 }
 
 html.dark body {
-  background-image: radial-gradient(ellipse farthest-corner at center top, #23233f 0%, #000000 60%);
+  background: var(--color-dark);
   color: var(-color-light);
-   margin: 0;
-/* 
-  background-image: 
-    repeating-linear-gradient(transparent, transparent 100px), 
-    repeating-linear-gradient(
-      0deg,
-      rgba(255, 255, 255, 0.1),
-      rgba(255, 255, 255, 0.1) 1px,
-      transparent 1px,
-      transparent 100px
-    ),
-    repeating-linear-gradient(
-      90deg,
-      rgba(255, 255, 255, 0.1),
-      rgba(255, 255, 255, 0.1) 1px,
-      transparent 1px,
-      transparent 100px
-    );
-  background-size: 100px 100px;  */
+   /* margin: 0; */
 }
 
 html:not(.dark) body {
   background: var(--color-light);
   color: var(--color-dark);
-   margin: 0;
+   /* margin: 0; */
+}
 
-  /* background-image: 
-    repeating-linear-gradient(transparent, transparent 100px), 
-    repeating-linear-gradient(
-      0deg,
-      rgba(255, 255, 255, 0.1),
-      rgba(255, 255, 255, 0.1) 1px,
-      transparent 1px,
-      transparent 100px
-    ),
-    repeating-linear-gradient(
-      90deg,
-      rgba(255, 255, 255, 0.1),
-      rgba(255, 255, 255, 0.1) 1px,
-      transparent 1px,
-      transparent 100px
-    );
-  background-size: 100px 100px;  */
+main{
+  z-index: 2;
 }
 
 section {
   margin-inline: auto;
-  /* width: min(1000px, 100%); */
-  background: rgba(217, 208, 222, 0.184);
+  z-index: 2;
   border: 0.5px solid rgba(255, 255, 255, 0.3); 
-  background-image: radial-gradient(circle, rgba(123, 123, 123, 0.584) 1px, transparent 1px);
-  background-size: 20px 20px;
-  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
   border-radius: var(--border-radius);
   text-align: center;
   padding: 50px;
@@ -172,18 +140,6 @@ section {
 }
 
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-.wrapper,
-.content {
-  position: relative;
-  width: 100%;
-  z-index: 1;
-}
 
 .content {
   overflow-x: hidden;

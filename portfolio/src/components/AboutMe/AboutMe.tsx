@@ -30,7 +30,7 @@ export default function AboutMe() {
               </div>
             </div>
           </span>
-        <div className="about-me__text">
+        <div className="about-me__text blurred-text">
          
           
           {[

@@ -109,7 +109,7 @@ export default function WaveSquares ()  {
           size: 50,
           initialSize: 50,
           rippleStartTime: null,
-          color: "#2ec4b6",
+          color: "#cccccc",
           angle: 0,
           side: i % 2 === 0 ? "left" : "right",
         });

@@ -9,7 +9,7 @@ export default function SocialMedia() {
       <a href="https://github.com/marieslo" target="_blank" rel="noopener noreferrer">
         <div className="qr-code-wrapper">
             <div className="icon-wrapper">
-            <img width="60" height="60" src="https://img.icons8.com/wired/50/github.png" alt="github"/>
+            <img width="40" height="40" src="https://img.icons8.com/wired/50/github.png" alt="github"/>
             </div>
             <QRCode value="https://github.com/marieslo" size={50} />
         </div>

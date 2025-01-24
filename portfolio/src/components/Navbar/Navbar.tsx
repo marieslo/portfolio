@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import "./Navbar.css";
-import ButtonDarkMode from "../ButtonDarkMode/ButtonDarkMode";
+
 
 export default function Navbar({ onClickProjects, onClickSkills, onClickAboutMe, onClickContact }) {
-  const [isSticky, setIsSticky] = useState(false);
+
   const [activeSection, setActiveSection] = useState<string>("");
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsSticky(window.scrollY > 60);
+   
     };
 
     const observer = new IntersectionObserver(
@@ -35,16 +35,11 @@ export default function Navbar({ onClickProjects, onClickSkills, onClickAboutMe,
 
   return (
     <motion.nav
-      className={`navbar  ${isSticky ? "navbar--sticky" : ""}`}
+      className={`navbar`}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
     >
-      <div className="">
-        <div className="navbar-content flex justify-between items-center">
-          <ButtonDarkMode />
-
-
           <motion.div
             className="flex space-x-6"
             initial={false}
@@ -53,7 +48,7 @@ export default function Navbar({ onClickProjects, onClickSkills, onClickAboutMe,
               spread: { gap: "3rem", y: 20, opacity: 1, transition: { staggerChildren: 0.2 } },
             }}
           >
-
+    
           <motion.a
               href="#about-me"
               className={`navbar__link ${activeSection === "about-me" ? "active" : ""}`}
@@ -100,12 +95,8 @@ export default function Navbar({ onClickProjects, onClickSkills, onClickAboutMe,
               whileHover={{ scale: 1.1 }}
             >
               Contacts
-            </motion.a>
-            
+            </motion.a> 
           </motion.div>
-
-        </div>
-      </div>
     </motion.nav>
   );
 }
