@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Unbounded:wght@200..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color1: #967289; 
+  --color2: #a6a97f;
+  --color3: #1a4087;
+  --color-light: radial-gradient(ellipse farthest-corner at right top, var(--color2) 0%, var(--color2)  60%);
+  --color-dark:  radial-gradient(ellipse farthest-corner at right top, var(--color3) 0%, var(--color3) 60%);
+
+
+  --font-header:  "Unbounded", serif;
+  --font-bodytext:  "Prompt", serif;
+  --font-accent:  "Anonymous Pro", serif;
+
+  --border-radius: 1rem;
+  --border: solid 0.5px #000;
+  // --shadow: 2px 2px 2px var(--color3);
+
+  --header-height: 5rem;
+}
+
+.blurred-text {
+  color: var(--color2);
+  opacity: 0.5; 
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-header);
+  color: var(--color-dark);
+  line-height: var(--line-height-tight);
+  margin-bottom: 50px;
+  position: relative;
+}
+
+h1 {
+  font-weight: 800;  
+  color: var(--color3);
+  letter-spacing: -1px;
+  text-align: space-between;
+  font-size: 50px;
+  white-space: nowrap;
+  text-transform: uppercase;
+  overflow: visible;
+  padding-top: 2rem;
+
+}
+
+h2 {
+  font-weight: 600;
+  color: var(--color3);
+  letter-spacing: -1.2px;
+}
+
+
+a {
+  color: var(--color1);
+  text-decoration: none;
+  transition: color 0.03s ease, transform 0.02s ease;
+  &:hover {
+    color: var(--color2);
+    transform: scale(1.05);
+  }
+}
+
+html.dark body {
+  background: var(--color-dark);
+  color: var(--color-light);
+}
+
+html:not(.dark) body {
+  background: var(--color-light);
+  color: var(--color-dark);
+}
+
+main {
+  margin-top: var(--header-height); 
+  position: relative;
+  padding: 2rem 1rem;
+  z-index: 1;
+}
+
+.app-section {
+  z-index: 2;
+  text-align: center;
+  max-height: fit-content;
+  display: block; 
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease-out, background-color 0.3s, opacity 0.3s;
+  position: relative;
+  border-radius: var(--border-radius);
+  // border: 5px solid var(--color2); 
+  // box-shadow: 0 0 0 3px var(--color1);
+}
+
+.aboutme-section{
+  background-color: var(--color1);
+  }
+
+.projects-section{
+  background-color: var(--color1);
+  }
+
+  .contacts-section {
+    background-color: var(--color1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+  }
+  
+  .contacts-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    max-width: 100%;
+    width: 100%;
+  }  

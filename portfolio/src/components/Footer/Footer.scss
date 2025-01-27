@@ -1,0 +1,21 @@
+.footer-container {
+  position: sticky;
+  bottom: 0;
+  right: 0;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: transparent;
+  text-align: center;
+  font-family: var(--font-header);
+  font-weight: 300;
+  font-size: 14px;
+  letter-spacing: -0.5px;
+  overflow: hidden;
+  width: 100vw;
+  height: fit-content;
+  padding: 0.5rem 2.5rem; 
+  backdrop-filter: blur(50px); 
+  -webkit-backdrop-filter: blur(50px);
+}
