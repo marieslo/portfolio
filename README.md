@@ -13,3 +13,7 @@ qrcode.react
 react-slick slick-carousel
 three js
 tween.js
+font-awesome
+lucide-react
+scss
+Google Material

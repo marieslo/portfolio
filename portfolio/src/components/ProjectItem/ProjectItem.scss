@@ -6,6 +6,7 @@
   flex: 0 0 auto; 
   box-shadow: var(--shadow);
   border-radius: var(--border-radius);
+
 }
 
 .card {
@@ -14,6 +15,7 @@
   transition: all 0.03s ease-in-out;
   width: 400px; 
   height: 300px; 
+  font-family: var(--font-bodytext);
 }
 
 .card:hover {
@@ -37,7 +39,7 @@
   background: linear-gradient(to bottom, #a69ff9 0%, #a69ff9 70%, transparent 100%);
   opacity: 1;
   text-align: center; 
-  font-family: var(--font-header);
+  font-family: var(--font-bodytext);
   letter-spacing: -2px;
   font-size: 30px;
   color: var(--color2);
@@ -52,7 +54,7 @@
   left: 10%;
   height: fit-content;
   background: var(--color-light);
-  font-family: var(--font-accent);
+  font-family: var(--font-bodytext);
   line-height: 1;
   color: var(--color-dark);
   display: none;
@@ -151,4 +153,3 @@
     height: 180px; 
   }
 }
-

@@ -4,7 +4,7 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  /* padding: 3rem; */
+  padding: 1rem;
 }
 
 .skills-grid {
@@ -12,19 +12,15 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1rem;
   width: 100%;
-  /* padding: 1.2rem; */
 }
 
 .skill-item {
   position: relative;
-  /* background: var(--color2); */
   box-shadow: var(--shadow);
-  border: solid 3px #ffffff; 
-  outline: var(--border);
   text-align: center;
-  font-family: var(--font-accent);
+  font-family: var(--font-bodytext);
   color: var(--color-dark);
   border-radius: 12px; 
   perspective: 600px;
@@ -34,7 +30,6 @@
   flex-shrink: 1;
   overflow: hidden;
   padding: 4px 8px;
-  /* transform: rotateX(-15deg) rotateY(15deg); */
   background: rgba(217, 208, 222, 0.184);
   backdrop-filter: blur(50px); 
   -webkit-backdrop-filter: blur(50px);
@@ -42,9 +37,8 @@
 }
 
 .skill-name{
-  font-size: 14px;
+  font-size: 1rem;
   font-weight: 300;
-  letter-spacing: -0.5px;
 }
 
 @media (max-width: 1200px) {

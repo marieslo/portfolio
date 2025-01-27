@@ -1,9 +1,6 @@
-import React, { useEffect } from "react";
-import gsap from "gsap";
-// import { ScrollTrigger } from "gsap/ScrollTrigger";
-import "./Skills.css";
+import React from "react";
+import "./Skills.scss";
 
-// gsap.registerPlugin(ScrollTrigger);
 
 export default function Skills() {
   const skills = [
@@ -16,20 +13,8 @@ export default function Skills() {
     { name: "TypeScript", tags: ["Frontend", "TypeScript"] },
   ];
 
-  const pastelColors = ["#ffadad","#ffd6a5","#fdffb6","#caffbf","#9bf6ff","#a0c4ff","#bdb2ff","#ffc6ff"]
+  const pastelColors = ["#d5c5c8","#9da3a4","#604d53","#ffdbda"]
 
-  // useEffect(() => {
-  //   gsap.to(".skill-item", {
-  //     scrollTrigger: {
-  //       trigger: ".skills-grid",
-  //       start: "top bottom",
-  //       end: "bottom top",
-  //       scrub: true,
-  //     },
-  //     opacity: 1,
-  //     duration: 1,
-  //   });
-  // }, []);
 
   return (
     <div id="skills" className="skills-section bg-transparent">

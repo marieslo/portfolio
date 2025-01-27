@@ -1,0 +1,21 @@
+.project-card {
+    margin: 1rem;
+    border-radius: var(--border-radius) !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 2.5rem;
+  }
+  
+  .project-image {
+    border-radius: var(--border-radius);
+  }
+  
+  .project-name {
+    margin-top: 1rem;
+    font-weight: bold;
+  }
+  
+  .project-links {
+    margin-top: 1rem;
+    display: flex;
+    gap: 0.5rem;
+  }  
