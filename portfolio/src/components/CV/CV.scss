@@ -37,15 +37,14 @@
     background: var(--color-light);
     width: 100%;
     border-radius: var(--border-radius);
-    padding: 0.5rem;
     box-shadow: var(--shadow);
     font-family: var(--font-bodytext);
     text-align: start;
-    padding: 0.5rem;
+    padding: 1.5rem;
 
     &-title {
       font-size: 1rem;
-      text-align: center;
+      text-align: start;
       text-transform: uppercase;
       font-weight: bold;
       color: var(--color3);
@@ -103,7 +102,7 @@
     padding: 1.25rem;
     margin-bottom: 0.5rem;
     border-radius: var(--border-radius);
-    border: 0.5px solid var(--color3);
+    border: var(--border);
     text-align: start;
 
     .job-title {
@@ -117,7 +116,6 @@
       font-style: italic;
       margin-bottom: 1rem;
       color: var(--color3);
-      // margin-top: 0.25rem;
     }
   }
 

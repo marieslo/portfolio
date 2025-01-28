@@ -17,8 +17,7 @@
   font-weight: 300;
   font-size: 1rem;
   letter-spacing: -0.5px;
-  overflow: hidden; 
-  padding: 10px; 
+  overflow: hidden;
   border-radius: 0 0 var(--border-radius) var(--border-radius);
 }
 
@@ -31,6 +30,7 @@
   text-align: center;
   text-transform: uppercase;
   line-height: 1rem;
+  padding: 1.5rem 0.5rem; 
 }
 
 .name, .position {
