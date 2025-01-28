@@ -1,6 +1,6 @@
 import React from "react";
 import './Footer.scss'
-import CopyRight from "../CopyRight/CopyRight";
+import CopyRight from "./CopyRight";
 
 export default function Footer () {
   return (

@@ -11,6 +11,7 @@ import ScrollProjects from "./components/ScrollProjects/ScrollProjects";
 import SocialMedia from "./components/SocialMedia/SocialMedia";
 import WaveTop from "./components/Waves/WaveTop";
 import WaveBottom from "./components/Waves/WaveBottom";
+import DeveloperPlatforms from "./components/SocialMedia/DeveloperPlatforms";
 
 export default function App() {
   return (
@@ -19,31 +20,27 @@ export default function App() {
         <header>
           <Header />
         </header>
-
         <main>
-
-        <h1>About Me</h1>
-        <WaveTop />
+          <WaveTop /> 
+          <h1 className="app-section-heading pb-3">About Me</h1>
           <section className="app-section aboutme-section">
             <CV />
           </section>
-          <WaveBottom /> 
-          <h1>Recent Projects</h1>
-          <WaveTop />
+          <WaveBottom />
+          <WaveTop /> 
+          <h1 className="app-section-heading pb-3">Recent Projects</h1>
           <section className="app-section projects-section">        
             <ScrollProjects projects={projects} />
           </section>
           <WaveBottom />
-          <h1>Get in Touch</h1>
           <WaveTop />
           <section className="app-section contacts-section">
-            <div className="contacts-container">
-              <div className="social-media-container">
-                <SocialMedia />
-              </div>
-            </div>
+          <h1 className="pb-3">My Code Snippets</h1>
+          <DeveloperPlatforms/>
+           <h1 className="app-section-heading pt-3 pb-3">Connect with Me</h1>
+           <SocialMedia />  
           </section>
-          <WaveBottom />
+          <WaveBottom /> 
         </main>
         <footer>
           <Footer />

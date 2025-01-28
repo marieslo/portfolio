@@ -13,7 +13,7 @@ export default function Skills() {
     { name: "TypeScript", tags: ["Frontend", "TypeScript"] },
   ];
 
-  const pastelColors = ["#d5c5c8","#9da3a4","#604d53","#ffdbda"]
+  const pastelColors = ["#edede9","#d6ccc2","#f5ebe0","#e3d5ca","#d5bdaf"]
 
 
   return (
