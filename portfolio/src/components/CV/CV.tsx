@@ -11,8 +11,8 @@ export default function CV () {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      {/* Main Content */}
-      <div className="cv-main-content md:col-span-2 flex flex-col justify-center items-center gap-6">
+
+      <div className="cv-main-content md:col-span-2 flex flex-col justify-center items-center">
         <section className="section professional-summary">
           <h2 className="section-title">Professional Summary</h2>
           <div className="section-content-container">

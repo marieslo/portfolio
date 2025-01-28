@@ -9,6 +9,8 @@ import Footer from "./components/Footer/Footer";
 import CV from "./components/CV/CV";
 import ScrollProjects from "./components/ScrollProjects/ScrollProjects";
 import SocialMedia from "./components/SocialMedia/SocialMedia";
+import WaveTop from "./components/Waves/WaveTop";
+import WaveBottom from "./components/Waves/WaveBottom";
 
 export default function App() {
   return (
@@ -19,35 +21,33 @@ export default function App() {
         </header>
 
         <main>
-        <h1 className="text-lg md:text-xl font-semibold2 mt-4">About Me</h1>
-          <section className="app-section aboutme-section my-1">
-        
+
+        <h1>About Me</h1>
+        <WaveTop />
+          <section className="app-section aboutme-section">
             <CV />
           </section>
-          <h1 className="text-lg md:text-xl font-semibold2 mt-4">Recent Projects</h1>
-          <section className="app-section projects-section my-1">
-            
-           
+          <WaveBottom /> 
+          <h1>Recent Projects</h1>
+          <WaveTop />
+          <section className="app-section projects-section">        
             <ScrollProjects projects={projects} />
           </section>
-          <h1 className="text-lg md:text-xl font-semibold2 mt-4">Get in Touch</h1>
-          <section className="app-section contacts-section my-1">
-  <div className="contacts-container">
-    <div className="social-media-container">
-      <SocialMedia />
-    </div>
-
-  </div>
-</section>
-
+          <WaveBottom />
+          <h1>Get in Touch</h1>
+          <WaveTop />
+          <section className="app-section contacts-section">
+            <div className="contacts-container">
+              <div className="social-media-container">
+                <SocialMedia />
+              </div>
+            </div>
+          </section>
+          <WaveBottom />
         </main>
-
-       
-
         <footer>
           <Footer />
         </footer>
-
         <Routes>
           <Route path="*" element={null} />
         </Routes>

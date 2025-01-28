@@ -1,9 +1,7 @@
 .cv-container {
     display: grid;
     align-items: center;
-    gap: 0.5rem;
-    padding: 1rem 2.5rem;
-  
+
     .cv-main-content {
         display: flex;
         flex-direction: column;
@@ -12,7 +10,6 @@
         gap: 0.5rem;
     }
  
-
   .cv-photo-container {
     position: relative;
     overflow: hidden;
@@ -37,15 +34,19 @@
   }
 
   .section {
-    background-color: var(--color2);
+    background: var(--color-light);
     width: 100%;
     border-radius: var(--border-radius);
     padding: 0.5rem;
     box-shadow: var(--shadow);
     font-family: var(--font-bodytext);
+    text-align: start;
+    padding: 0.5rem;
 
     &-title {
-      font-size: 1.25rem;
+      font-size: 1rem;
+      text-align: center;
+      text-transform: uppercase;
       font-weight: bold;
       color: var(--color3);
       margin-bottom: 0.75rem;
@@ -55,38 +56,68 @@
 
     &-content {
       font-size: 1rem;
-      color: var(--color3);
+          color: var(--color-dark);
+          line-height: 1.2;
+          letter-spacing: -0.8px;
     }
 
     &-responsibilities {
-      margin-top: 0.5rem;
-      list-style-type: disc;
-      padding-left: 1.5rem;
+      font-size: 1rem;
+      color: var(--color-dark);
+      line-height: 1;
+      letter-spacing: -0.8px;
 
       li {
-        color: var(--color3);
         font-size: 1rem;
+        color: var(--color-dark);
+        line-height: 1;
       }
     }
   }
 
+  .job-responsibilities {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  .job-responsibilities li {
+    position: relative;
+    padding-left: 20px; 
+    margin-bottom: 10px;
+    line-height: 1;
+    letter-spacing: -0.8px;
+  }
+  
+  .job-responsibilities li::before {
+    content: '•'; 
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 20px;
+    color: var(--color3);
+  }
+
+  
   .job-card {
     background-color: var(--color2);
     padding: 1.25rem;
     margin-bottom: 0.5rem;
     border-radius: var(--border-radius);
-    border: 2px solid var(--color3);
+    border: 0.5px solid var(--color3);
+    text-align: start;
 
     .job-title {
-      font-size: 1.1rem;
+      font-size: 1rem;
       font-weight: bold;
       color: var(--color3);
     }
 
     .job-details {
-      font-size: 0.875rem;
+      font-size: 1rem;
+      font-style: italic;
+      margin-bottom: 1rem;
       color: var(--color3);
-      margin-top: 0.25rem;
+      // margin-top: 0.25rem;
     }
   }
 
@@ -116,7 +147,8 @@
 .section {
     &.professional-summary {
       .section-title {
-        font-size: 1.25rem;
+        font-size: 1rem;
+        text-transform: uppercase;
         font-weight: bold;
         margin-bottom: 0.75rem;
       }
@@ -124,12 +156,14 @@
       .section-content-container {
         display: flex;
         flex-direction: column;
-        gap: 1.5rem;
+        gap: 0.5rem;
+        // text-align: start;
   
         .section-content {
           font-size: 1rem;
-          color: #4a4a4a;
-          line-height: 1.6;
+          color: var(--color-dark);
+          line-height: 1.2;
+          letter-spacing: -0.8px;
         }
   
         .cv-photo-container {
@@ -167,4 +201,3 @@
       }
     }
   }
-  

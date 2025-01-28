@@ -19,10 +19,11 @@
 .skill-item {
   position: relative;
   box-shadow: var(--shadow);
+  border: var(--border);
   text-align: center;
   font-family: var(--font-bodytext);
   color: var(--color-dark);
-  border-radius: 12px; 
+  border-radius: var(--border-radius); 
   perspective: 600px;
   transition: transform 0.3s ease, background-color 0.3s ease, opacity 0.3s ease;
   flex-basis: 200px;

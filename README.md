@@ -3,7 +3,7 @@
 ## Techologies used
 
 - Style: [Tailwind CSS](https://tailwindcss.com/)
-- Animation: GSAP,  [Motion](https://motion.dev/)
+- Animation: GSAP?,  [Motion](https://motion.dev/)
 - Fonts: [Google](https://fonts.google.com/)
 - Icons: [Google](https://fonts.google.com/) & [Icons8](https://icons8.com/)
 - Sounds: [Freesound](https://freesound.org/)
@@ -16,4 +16,5 @@ tween.js
 font-awesome
 lucide-react
 scss
-Google Material
+Google Material Design
+https://getwaves.io

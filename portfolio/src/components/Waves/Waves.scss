@@ -1,0 +1,21 @@
+.wave-top,
+.wave-bottom {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+
+  svg {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
+
+.wave-top {
+  margin-bottom: 10%;
+}
+
+.wave-bottom {
+  margin-top: 10%;
+}

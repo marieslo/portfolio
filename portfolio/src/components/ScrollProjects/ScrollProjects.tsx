@@ -1,6 +1,6 @@
 import React from "react";
 import Carousel from "react-material-ui-carousel";
-import { Card, CardContent, CardMedia, Typography, Button } from "@mui/material";
+import { Card, CardMedia, Typography, Button } from "@mui/material";
 import './ScrollProjects.scss'
 
 type Project = {
@@ -20,72 +20,71 @@ type ScrollProjectsProps = {
 export default function ScrollProjects({ projects }: ScrollProjectsProps) {
   return (
     <Carousel
-      indicators={true}
-      autoPlay={true}
-      animation="slide"
-      duration={1000}
-      navButtonsAlwaysVisible={true}
-    >
-      {projects.map((project) => (
-        <Card key={project.id} className="project-card">
-          {/* Image */}
-          <CardMedia
-            component="img"
-            height="200"
-            image={project.imageUrl}
-            alt={project.name ?? "Project Image"}
-            className="project-image"
-          />
-
-          {/* Content */}
-          <CardContent>
-            {/* Project Name */}
-            {project.name && (
-              <Typography variant="h5" component="div" className="project-name">
-                {project.name}
-              </Typography>
-            )}
-
-            {/* Project Description */}
-            <Typography variant="body2" color="text.secondary">
-              {project.description}
+    indicators={true}
+    autoPlay={true}
+    animation="slide"
+    duration={800}
+    navButtonsAlwaysVisible={true}
+    className="carousel-container"
+  >
+    {projects.map((project) => (
+      <Card key={project.id} className="project-card">
+        {/* Image */}
+        <CardMedia
+          component="img"
+          image={project.imageUrl}
+          alt={project.name ?? "Project Image"}
+          className="project-image"
+        />
+  
+        {/* Content */}
+        <div className="project-content">
+          {/* Project Name */}
+          {project.name && (
+            <Typography variant="h5" className="project-name">
+              {project.name}
             </Typography>
-
-            {/* Skills */}
-            {project.skills.length > 0 && (
-              <Typography variant="body2" className="project-skills">
-                <strong>Skills:</strong> {project.skills.join(", ")}
-              </Typography>
-            )}
-
-            {/* Links */}
+          )}
+  
+          {/* Project Skills */}
+          {project.skills.length > 0 && (
+            <Typography variant="body2" className="project-skills">
+              <strong>Skills:</strong> {project.skills.join(", ")}
+            </Typography>
+          )}
+  
+          {/* Links */}
+     
             <div className="project-links">
-              {project.appUrl && (
-                <Button
-                  variant="contained"
-                  color="primary"
-                  href={project.appUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  View App
-                </Button>
-              )}
-              {project.codeUrl && (
-                <Button
-                  variant="outlined"
-                  color="secondary"
-                  href={project.codeUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  View Code
-                </Button>
-              )}
-            </div>
-          </CardContent>
-        </Card>
-      ))}
-    </Carousel>
+            {project.appUrl && (
+              <Button
+                variant="contained"
+                className="custom-button custom-button-viewApp"
+                href={project.appUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View App
+                <img width="40" height="40" src="https://img.icons8.com/glyph-neue/64/domain.png" alt="domain"/>
+              </Button>
+            )}
+            {project.codeUrl && (
+              <Button
+                variant="contained"
+                className="custom-button custom-button-viewCode"
+                href={project.codeUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View Code 
+                <img width="40" height="40" src="https://img.icons8.com/pastel-glyph/64/code--v2.png" alt="code"/>
+              </Button>
+            )}
+          </div>
+      
+        </div>
+      </Card>
+    ))}
+  </Carousel>  
   );
 }
