@@ -19,6 +19,7 @@
   letter-spacing: -0.5px;
   overflow: hidden; 
   padding: 10px; 
+  border-radius: 0 0 var(--border-radius) var(--border-radius);
 }
 
 .header-content {
@@ -29,11 +30,11 @@
   justify-content: space-around; 
   text-align: center;
   text-transform: uppercase;
+  line-height: 1rem;
 }
 
 .name, .position {
-  font-size: 2rem; 
-  margin: 0;
+  font-size: 1.5rem; 
 }
 
 .name {
