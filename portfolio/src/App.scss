@@ -31,12 +31,12 @@
 html body {
   background: var(--color-light);
   color: var(--color-dark);
+  z-index: 2;
 }
 
 main {
   margin-top: var(--header-height); 
   position: relative;
-  z-index: 1;
 }
 
  
@@ -64,7 +64,7 @@ h2 {
 }
 
 .app-section, .app-section-heading {
-  z-index: 2;
+  z-index: 4;
   text-align: center;
   width: 100%;
   max-height: fit-content;
