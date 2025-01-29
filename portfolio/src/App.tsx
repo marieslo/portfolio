@@ -8,10 +8,11 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import CV from "./components/CV/CV";
 import ScrollProjects from "./components/ScrollProjects/ScrollProjects";
-import SocialMedia from "./components/SocialMedia/SocialMedia";
-import WaveTop from "./components/Waves/WaveTop";
 import WaveBottom from "./components/Waves/WaveBottom";
-import DeveloperPlatforms from "./components/SocialMedia/DeveloperPlatforms";
+import DevPlatforms from "./components/Contacts/DevPlatforms";
+import SocialMedia from "./components/Contacts/SocialMedia";
+import WaveTop from "./components/Waves/WaveTop";
+
 
 export default function App() {
   return (
@@ -36,7 +37,7 @@ export default function App() {
           <WaveTop />
           <section className="app-section contacts-section">
           <h1 className="pb-3">My Code Snippets</h1>
-          <DeveloperPlatforms/>
+          <DevPlatforms/>
            <h1 className="app-section-heading pt-3 pb-3">Connect with Me</h1>
            <SocialMedia />  
           </section>

@@ -26,7 +26,7 @@
   border-radius: var(--border-radius); 
   perspective: 600px;
   transition: transform 0.3s ease, background-color 0.3s ease, opacity 0.3s ease;
-  flex-basis: 200px;
+  flex-basis: 80px;
   flex-grow: 1;
   flex-shrink: 1;
   overflow: hidden;
@@ -38,24 +38,24 @@
 }
 
 .skill-name{
-  font-size: 1rem;
+  font-size: 12px;
   font-weight: 300;
 }
 
-@media (max-width: 1200px) {
-  .skill-item {
-    flex-basis: 220px;
-  }
-}
+// @media (max-width: 1200px) {
+//   .skill-item {
+//     flex-basis: 220px;
+//   }
+// }
 
-@media (max-width: 900px) {
-  .skill-item {
-    flex-basis: 180px;
-  }
-}
+// @media (max-width: 900px) {
+//   .skill-item {
+//     flex-basis: 180px;
+//   }
+// }
 
-@media (max-width: 700px) {
-  .skill-item {
-    flex-basis: 140px;
-  }
-}
+// @media (max-width: 700px) {
+//   .skill-item {
+//     flex-basis: 140px;
+//   }
+// }
