@@ -1,7 +1,5 @@
 import React from "react";
-import './Contacts.scss';
 import ContactItem from "./ContactItem";
-
 
 export default function DevPlatforms() {
   const contactLinks = [
@@ -10,9 +8,9 @@ export default function DevPlatforms() {
   ];
 
   return (
-    <div className="contact-section">
+    <div className="contact-section py-8 px-4">
       <div className="max-w-screen-xl mx-auto text-center">
-        <div className="contact-grid">
+        <div className="contact-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {contactLinks.map(({ href, imgSrc, alt, hint }, idx) => (
             <ContactItem key={idx} href={href} imgSrc={imgSrc} alt={alt} hint={hint} />
           ))}
