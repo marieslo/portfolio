@@ -13,4 +13,3 @@ This is a single-page web application that I built to show off and organize my w
 - **Icons**: [Icons8](https://icons8.com/) – For high-quality, visually appealing icons.  
 - **QR Code Generator**: [react-qr-code](https://github.com/rosskhanas/react-qr-code) – For generating QR codes seamlessly.  
 - **Design Framework**: [Google Material Design](https://m3.material.io/) – For adhering to modern design principles.  
-- **Wave Generator**: [Get Waves](https://getwaves.io/) – For creating visually pleasing wave designs.  

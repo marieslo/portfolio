@@ -1,21 +1,18 @@
 import React from "react";
 
-export default function Footer() {
+interface FooterProps {
+  isDarkMode: boolean;
+}
+
+export default function Footer({ isDarkMode }: FooterProps) {
   return (
-    <div className="sticky bottom-0 right-0 z-30 flex items-center justify-between bg-[#efd9ba] text-center font-header font-light text-sm tracking-tight overflow-hidden w-full p-2.5 backdrop-blur-xl">
-      <span className="text-[#874524]">
-        Icons by&nbsp;
-        <a
-          href="https://icons8.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-[#874524] hover:text-[#874524] hover:underline transition-colors duration-300"
-        >
-          Icons8
-        </a>
-      </span>
-      <span className="text-[#874524]">
-        &copy; 2023 - {new Date().getFullYear()} Marie Slovokhotov
+    <div
+      className={`fixed bottom-0 right-0 w-full flex items-center justify-end z-50 ${
+        isDarkMode ? "bg-dark-bg text-dark-text" : "bg-color-light text-color-dark"
+      } border-b border-[#0000001a] shadow-lg backdrop-blur-md font-header font-light text-xs pr-5 tracking-tight overflow-hidden rounded-t-3xl`}
+    >
+      <span>
+        &copy; 2018 - {new Date().getFullYear()} Marie Slovokhotov. All rights reserved
       </span>
     </div>
   );
