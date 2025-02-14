@@ -12,11 +12,11 @@ export default function SkillsLessUsed() {
   return (
     <div id="skills-less" className="skills-section bg-transparent px-4 py-6">
       <div className="max-w-screen-xl mx-auto text-center">
-        <div className="skills-grid flex flex-wrap justify-center gap-4">
+        <div className="skills-grid flex flex-wrap justify-start gap-4 p-4">
           {skillsLess.map((skill, index) => (
             <div
               key={index}
-              className="skill-item relative text-center font-sans text-gray-800 rounded-2xl shadow-lg flex items-center justify-center transition-transform ease-in-out duration-300"
+              className="skill-item py-2 px-8 relative text-center font-sans text-gray-800 rounded-2xl shadow-lg flex items-center justify-center transition-transform ease-in-out duration-300"
               style={{
                 backgroundColor: pastelColors[index % pastelColors.length],
               }}
