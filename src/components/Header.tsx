@@ -16,23 +16,20 @@ export default function Header({ isDarkMode, toggleDarkMode }: HeaderProps) {
 
   return (
     <div
-      className={`fixed flex items-center justify-between top-0 left-0 z-50 w-full border-b border-[#0000001a] shadow-lg backdrop-blur-md font-header font-light text-base tracking-tight rounded-b-3xl px-6 py-4 ${
-        isDarkMode ? "bg-dark-bg text-dark-text" : "bg-color-light text-color-dark"
+      className={`fixed flex items-center justify-between top-0 left-0 z-50 w-full border-b border-[#0000001a] shadow-[0_4px_6px_0_rgba(0,0,0,0.3)] bg-opacity-30 backdrop-blur-md font-header font-thin text-sm tracking-tight px-6 py-2 ${
+        isDarkMode ? "bg-dark-bg text-light-text" : "bg-light-bg text-dark-text"
       }`}
     >
-      <div className="flex flex-col items-center gap-2">
-        <div className="text-lg font-extrabold">
-          <Link
-            to="aboutme"
-            smooth={true}
-            duration={500}
-            className="cursor-pointer hover:text-color-dark uppercase"
-          >
-            Marie Slovokhotov
-          </Link>
+      <div className="flex flex-col items-start gap-1 text-color3 uppercase">
+          <h2 className="text-lg font-extrabold">
+            <Link to="aboutme" smooth={true} duration={500}>
+              Marie Slovokhotov
+            </Link>
+          </h2>
+          <div className="text-lg font-thin uppercase flex-1" style={{ width: "100%" }}>
+            Full Stack Developer
+          </div>
         </div>
-        <div className="text-lg font-thin uppercase">Full Stack Developer</div>
-      </div>
       <div
         className="flex flex-col lg:hidden items-center cursor-pointer relative"
         onClick={toggleMenu}
@@ -71,7 +68,7 @@ export default function Header({ isDarkMode, toggleDarkMode }: HeaderProps) {
         <motion.div
           className={`lg:hidden right-0 bg-opacity-90 ${
             isMenuOpen ? "block" : "hidden"
-          } ${isDarkMode ? "bg-dark-bg" : "bg-transparent"}`}
+          } bg-transparent`}
           initial={{ opacity: 0 }}
           animate={{ opacity: isMenuOpen ? 1 : 0 }}
           transition={{ duration: 0.3 }}
@@ -81,7 +78,7 @@ export default function Header({ isDarkMode, toggleDarkMode }: HeaderProps) {
             to="aboutme"
             smooth={true}
             duration={500}
-            className="cursor-pointer hover:text-color-dark"
+            className="cursor-pointer hover:text-"
           >
             About Me
           </Link>

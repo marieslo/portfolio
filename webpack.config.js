@@ -1,18 +1,11 @@
-import path from 'path';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
-
-const __dirname = path.dirname(new URL(import.meta.url).pathname);
 
 export default {
   entry: './src/main.tsx',
-  output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js',
-  },
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
+        test: /\.(js|jsx|ts|tsx)$/,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
@@ -50,11 +43,4 @@ export default {
       template: './public/index.html',
     }),
   ],
-  devServer: {
-    static: {
-      directory: path.join(__dirname, 'public'),
-      publicPath: '/',
-    },
-    hot: true,
-  }
 };

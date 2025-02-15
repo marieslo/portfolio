@@ -1,28 +1,33 @@
 import React from "react";
+import SkillItem from "./SkillItem";
 
-export default function SkillsLessUsed() {
-  const skillsLess = [
-    { name: "Python" },
-    { name: "SQL" },
-    { name: "Docker" },
+interface Skill {
+  name: string;
+  icon: string;
+}
+
+interface SkillsLessUsedProps {
+  isDarkMode: boolean;
+}
+
+export default function SkillsLessUsed({ isDarkMode }: SkillsLessUsedProps) {
+  const skillsLess: Skill[] = [
+    { name: "Python", icon: "python" },
+    { name: "SQL", icon: "mysql" },
+    { name: "Docker", icon: "docker" },
   ];
 
-  const pastelColors = ["#e3d5ca", "#d5bdaf"];
-
   return (
-    <div id="skills-less" className="skills-section bg-transparent px-4 py-6">
+    <div id="skills-less" className="skills-section bg-transparent">
       <div className="max-w-screen-xl mx-auto text-center">
-        <div className="skills-grid flex flex-wrap justify-start gap-4 p-4">
+        <div className={`skills-grid flex flex-wrap justify-start gap-4 p-4`}>
           {skillsLess.map((skill, index) => (
-            <div
+            <SkillItem
               key={index}
-              className="skill-item py-2 px-8 relative text-center font-sans text-gray-800 rounded-2xl shadow-lg flex items-center justify-center transition-transform ease-in-out duration-300"
-              style={{
-                backgroundColor: pastelColors[index % pastelColors.length],
-              }}
-            >
-              <div className="skill-name text-sm font-light">{skill.name}</div>
-            </div>
+              name={skill.name}
+              skill={skill.icon}
+              isDarkMode={isDarkMode}
+            />
           ))}
         </div>
       </div>
