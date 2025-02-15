@@ -6,15 +6,13 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        color1: '#8a7f58',
-        color2: '#7c8c9b', 
-        color3: '#006bb6', 
-        'color-light': 'radial-gradient(ellipse farthest-corner at right top, #c1b99c 0%, #b29f7f 60%)',
-        'color-dark': 'radial-gradient(ellipse farthest-corner at right top, #6e3a21 0%, #60322b 60%)',
-        'light-bg': '#f4f4f4', 
-        'light-text': '#2d2d2d',
-        'dark-bg': '#1a2a3a',
-        'dark-text': '#d1d1d1',
+        color1: '#bdd5ea',
+        color2: '#577399', 
+        color3: '#FF6700', 
+        'light-bg': '#bdd5ea',
+        'dark-bg': '#3f5785',
+        'dark-text': '#495867',
+        'light-text': '#ccdbdc',
       },
       fontFamily: {
         header: ['"Unbounded"', 'serif'],

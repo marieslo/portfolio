@@ -3,16 +3,14 @@ import { motion } from "framer-motion";
 import SkillsMostlyUsed from "./SkillsMostlyUsed";
 import SkillsLessUsed from "./SkillsLessUsed";
 
-interface CVProps {
+interface SectionAboutMeProps {
   isDarkMode: boolean;
 }
 
-export default function CV({ isDarkMode }: CVProps) {
+export default function SectionAboutMe({ isDarkMode }: SectionAboutMeProps) {
   return (
     <motion.div
-      className={`grid grid-cols-1 md:grid-cols-2 gap-6 p-6 min-h-screen items-start font-thin font-bodytext ${
-        isDarkMode ? "bg-dark-bg text-dark-text" : "bg-color-light text-color-dark"
-      }`}
+      className={`grid grid-cols-1 md:grid-cols-2 gap-6 p-6 min-h-screen items-start font-thin font-bodytext bg-transparent ${isDarkMode ?  "text-light-text" : "text-dark-text"}`}
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
@@ -25,10 +23,10 @@ export default function CV({ isDarkMode }: CVProps) {
       >
         <section
           className={`${
-            isDarkMode ? "bg-dark-bg" : "bg-color-light"
-          } p-6 rounded-lg shadow-lg w-full`}
+            isDarkMode ? "bg-dark-bg text-light-text" : "bg-light-bg text-dark-text"
+          } p-6 rounded-b-3xl border-2 w-full rounded-3xl`}
         >
-          <h2 className="text-lg font-bold text-primary uppercase mb-3 border-b-2 pb-2">
+          <h2 className="text-lg font-bold text-primary uppercase mb-3 border-b-2 pb-2 text-color3">
             Professional Summary
           </h2>
           <div className="flex flex-col gap-2">
@@ -66,13 +64,13 @@ export default function CV({ isDarkMode }: CVProps) {
       >
         <section
           className={`${
-            isDarkMode ? "bg-dark-bg" : "bg-color-light"
-          } p-6 rounded-lg shadow-lg w-full`}
+            isDarkMode ? "bg-dark-bg" : "bg-light-bg"
+          } p-6 rounded-3xl border-2 w-full`}
         >
-          <h2 className="text-lg font-bold text-primary mb-3 border-b-2 pb-2">
+          <h2 className="text-lg font-bold text-primary mb-3 border-b-2 pb-2 text-color3 ">
             Experience
           </h2>
-          <div className="flex flex-wrap justify-center gap-4">
+          <div className="flex flex-wrap justify-center gap-4 ">
             <motion.div
               className="w-full sm:w-1/2 md:w-full mb-4"
               initial={{ opacity: 0, scale: 0.95 }}
@@ -124,10 +122,10 @@ export default function CV({ isDarkMode }: CVProps) {
       >
         <section
           className={`${
-            isDarkMode ? "bg-dark-bg" : "bg-color-light"
-          } p-6 rounded-lg shadow-lg`}
+            isDarkMode ? "bg-dark-bg" : "bg-light-bg"
+          } p-6 rounded-3xl border-2`}
         >
-          <h2 className="text-lg font-bold text-primary mb-3 border-b-2 pb-2">Education</h2>
+          <h2 className="text-lg font-bold text-primary mb-3 border-b-2 pb-2 text-color3">Education</h2>
           <p className="text-base">
             <strong>Bachelor of Science in Computer Science</strong> <br />
             University of Technology | Graduated: May 2017
@@ -136,17 +134,17 @@ export default function CV({ isDarkMode }: CVProps) {
         </section>
         <section
           className={`${
-            isDarkMode ? "bg-dark-bg" : "bg-color-light"
-          } p-6 rounded-lg shadow-lg`}
+            isDarkMode ? "bg-dark-bg" : "bg-light-bgt"
+          } p-6 border-2 rounded-3xl`}
         >
-          <h2 className="text-lg font-bold text-primary mb-3 border-b-2 pb-2">Skills</h2>
+          <h2 className="text-lg font-bold text-primary mb-3 border-b-2 pb-2 text-color3">Skills</h2>
           <section id="skills-mostly">
-            <p>Most Commonly Used</p>
-            <SkillsMostlyUsed />
+            <p className="italic">Most Commonly Used</p>
+            <SkillsMostlyUsed isDarkMode={isDarkMode}/>
           </section>
           <section id="skills-less">
-            <p>Less Commonly Used</p>
-            <SkillsLessUsed />
+            <p className="italic">Less Commonly Used</p>
+            <SkillsLessUsed isDarkMode={isDarkMode} />
           </section>
         </section>
       </motion.div>

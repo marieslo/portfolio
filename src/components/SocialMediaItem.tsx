@@ -22,21 +22,21 @@ export default function SocialMediaItem({
       target="_blank"
       rel="noopener noreferrer"
       aria-label={alt}
-      className={`relative flex flex-col items-center justify-center p-2 box-border bg-opacity-20 backdrop-blur-3xl rounded-3xl font-bodytext ${
-        isDarkMode ? "bg-dark-bg text-dark-text" : "bg-light-bg text-dark-text"
-      }`}
+      className={`relative flex flex-col items-center justify-center p-2 border-2 box-border bg-opacity-20 backdrop-blur-3xl rounded-3xl font-bodytext bg-transparent ${isDarkMode ? "text-dark-text" : "text-light-text"} group transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg`}
     >
-      <div className="contact-icon-container flex flex-row items-center justify-center">
+      <div className="contact-icon-container flex flex-row items-center justify-center mb-2">
         <div className="icon-wrapper flex flex-row items-center justify-center">
           <img
-            className="contact-icon w-14 h-14"
+            className="contact-icon w-10 h-10"
             src={imgSrc}
             alt={alt}
           />
-          <QRCode size={50} value={href} className="ml-2" />
+          <QRCode size={32} value={href} className="ml-2" />
         </div>
       </div>
-      <span className="text-sm font-light">{name}</span>
+      <span className={`text-xs font-bodytext uppercase mt-1 ${isDarkMode ? "text-light-text" : "text-dark-text"}`}>
+        {name}
+      </span>
     </a>
   );
 }
