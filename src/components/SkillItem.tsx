@@ -14,9 +14,7 @@ export default function SkillItem({ skill, isDarkMode }: SkillItemProps) {
       } flex items-center justify-start group rounded-md pr-2`}
       style={{
         backgroundColor: "transparent",
-        boxShadow: isDarkMode
-          ? "0 4px 12px rgba(255, 255, 255, 0.2), 0 6px 24px rgba(255, 255, 255, 0.1)"
-          : "0 4px 12px rgba(0, 0, 0, 0.2), 0 6px 24px rgba(0, 0, 0, 0.1)",
+        border: "solid 1px",
       }}
     >
       <div className="relative flex items-center justify-center w-full">

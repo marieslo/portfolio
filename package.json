@@ -16,6 +16,7 @@
     "@mui/material": "^5.16.14",
     "create": "^0.3.0",
     "framer-motion": "^11.18.0",
+    "jspdf": "^2.5.2",
     "motion": "^11.16.1",
     "postcss-cli": "^11.0.0",
     "postcss-loader": "^8.1.1",
@@ -38,6 +39,7 @@
     "@types/node": "^22.13.1",
     "@types/react": "^18.3.18",
     "@types/react-dom": "^18.3.5",
+    "@types/react-scroll": "^1.8.10",
     "@types/three": "^0.171.0",
     "@vitejs/plugin-react": "^4.3.4",
     "autoprefixer": "^10.4.20",
@@ -58,6 +60,7 @@
     "typescript-eslint": "^8.18.2",
     "vite": "^6.1.0",
     "webpack": "^5.97.1",
+    "webpack-bundle-analyzer": "^4.10.2",
     "webpack-cli": "^6.0.1",
     "webpack-dev-server": "^5.2.0"
   }

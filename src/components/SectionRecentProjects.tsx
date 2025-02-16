@@ -71,7 +71,7 @@ export default function SectionRecentProjects({ projects, isDarkMode }: SectionR
             className="group relative w-full rounded-3xl shadow-md overflow-hidden"
           >
             <Card
-              className={`rounded-3xl shadow-md overflow-hidden ${
+              className={`rounded-3xl shadow-md overflow-hidden border ${
                 isDarkMode ? "bg-dark-card" : "bg-light-card"
               }`}
               sx={{ position: "relative", height: 400 }}
@@ -87,7 +87,7 @@ export default function SectionRecentProjects({ projects, isDarkMode }: SectionR
               }}
             />
               <div
-                className={`absolute bottom-0 left-0 w-full p-4 font-sans text-center transform translate-y-full transition-transform duration-300 group-hover:translate-y-0 bg-opacity-10 backdrop-blur-md rounded-3xl ${
+                className={`absolute bottom-0 left-0 w-full p-4 text-center transform translate-y-full border-t transition-transform duration-300 group-hover:translate-y-0 bg-opacity-10 backdrop-blur-md rounded-3xl ${
                   isDarkMode ? "bg-dark-bg text-dark-text" : "bg-light-bg text-light-text"
                 }`}
               >
@@ -115,7 +115,7 @@ export default function SectionRecentProjects({ projects, isDarkMode }: SectionR
                         backgroundColor: "transparent",
                         padding: "8px 16px",
                         fontSize: "14px",
-                        border: "2px",
+                        border: "1px",
                         borderRadius: "30px",
                         borderColor: "#fe4a49",
                         fontWeight: 200,

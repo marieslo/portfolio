@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "../public/style.scss";
-import projects from "./data/projects.json";
+import projects from "../public/data/projects.json";
 
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -30,10 +30,11 @@ export default function App() {
     setIsDarkMode((prev) => !prev);
     const newTheme = !isDarkMode ? "dark" : "light";
     localStorage.setItem("theme", newTheme);
+    const html = document.documentElement;
     if (newTheme === "dark") {
-      document.documentElement.classList.add("dark");
+      html.classList.add("dark");
     } else {
-      document.documentElement.classList.remove("dark");
+      html.classList.remove("dark");
     }
   };
 
@@ -66,7 +67,7 @@ export default function App() {
                   visible: { opacity: 1, scale: 1, transition: { duration: 0.3 } },
                 }}
                 key="aboutme"
-                className={`bg-opacity-30 backdrop-blur-md shadow-lg ${isDarkMode ? 'bg-dark-bg text-light-text' : 'bg-light-bg text-dark-text'} rounded-3xl`}
+                className={` backdrop-blur-md shadow-lg bg-color2 ${isDarkMode ? ' text-light-text' : 'text-dark-text'} rounded-3xl`}
               >
                 <div
                   className="px-6 py-4 flex justify-between items-center cursor-pointer"
@@ -75,8 +76,8 @@ export default function App() {
                   <h1 className="font-header font-thin tracking-tight text-center uppercase">
                     About Me
                   </h1>
-                  <span className="material-icons text-color2">
-                    {isAboutMeOpen ? "expand_less" : "expand_more"}
+                  <span className={`material-icons-outlined ${isDarkMode ? 'text-light-text' : 'text-dark-text'}`}>
+                    {isAboutMeOpen ? "keyboard_arrow_up" : "keyboard_arrow_down"}
                   </span>
                 </div>
                 <AnimatePresence>
@@ -103,7 +104,7 @@ export default function App() {
                   visible: { opacity: 1, scale: 1, transition: { duration: 0.3 } },
                 }}
                 key="projects"
-                className={`w-full bg-opacity-30 backdrop-blur-md border-b border-[#0000001a] shadow-lg rounded-3xl ${isDarkMode ? 'bg-dark-bg text-light-text' : 'bg-light-bg text-dark-text'}`}
+                className={`w-full bg-backdrop-blur-md border-b border-[#0000001a] shadow-lg rounded-3xl  bg-color2 ${isDarkMode ? ' text-light-text' : 'text-dark-text'}`}
               >
                 <div
                   className="px-6 py-4 flex justify-between items-center cursor-pointer"
@@ -112,8 +113,8 @@ export default function App() {
                   <h1 className="font-header font-thin tracking-tight text-center uppercase">
                     Recent Projects
                   </h1>
-                  <span className="material-icons text-color2">
-                    {isProjectsOpen ? "expand_less" : "expand_more"}
+                  <span className={`material-icons-outlined ${isDarkMode ? 'text-light-text' : 'text-dark-text'}`}>
+                    {isProjectsOpen ? "keyboard_arrow_up" : "keyboard_arrow_down"}
                   </span>
                 </div>
                 <AnimatePresence>
@@ -140,7 +141,7 @@ export default function App() {
                   visible: { opacity: 1, scale: 1, transition: { duration: 0.3 } },
                 }}
                 key="connect"
-                className={`w-full bg-opacity-30 backdrop-blur-md border-b border-[#0000001a] shadow-lg rounded-3xl ${isDarkMode ? 'bg-dark-bg text-light-text' : 'bg-light-bg text-dark-text'}`}
+                className={`w-full backdrop-blur-md border-b border-[#0000001a] shadow-lg rounded-3xl  bg-color2 ${isDarkMode ? ' text-light-text' : 'text-dark-text'}}`}
               >
                 <div
                   className="px-6 py-4 flex justify-between items-center cursor-pointer"
@@ -149,8 +150,8 @@ export default function App() {
                   <h1 className="font-header font-thin tracking-tight text-center uppercase">
                     Contacts
                   </h1>
-                  <span className="material-icons text-color2">
-                    {isConnectOpen ? "expand_less" : "expand_more"}
+                  <span className={`material-icons-outlined ${isDarkMode ? 'text-light-text' : 'text-dark-text'}`}>
+                    {isConnectOpen ? "keyboard_arrow_up" : "keyboard_arrow_down"}
                   </span>
                 </div>
                 <AnimatePresence>

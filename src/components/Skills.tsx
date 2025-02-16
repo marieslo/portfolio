@@ -6,11 +6,11 @@ interface Skill {
   icon: string;
 }
 
-interface SkillsMostlyUsedProps {
+interface SkillsProps {
   isDarkMode: boolean;
 }
 
-export default function SkillsMostlyUsed({ isDarkMode }: SkillsMostlyUsedProps) {
+export default function Skills({ isDarkMode }: SkillsProps) {
   const skillsMostly: Skill[] = [
     { name: "JavaScript", icon: "javascript" },
     { name: "React", icon: "react" },
