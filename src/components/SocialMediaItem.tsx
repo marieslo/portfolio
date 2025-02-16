@@ -22,19 +22,19 @@ export default function SocialMediaItem({
       target="_blank"
       rel="noopener noreferrer"
       aria-label={alt}
-      className={`relative flex flex-col items-center justify-center p-2 border-2 box-border bg-opacity-20 backdrop-blur-3xl rounded-3xl font-bodytext bg-transparent ${isDarkMode ? "text-dark-text" : "text-light-text"} group transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg`}
+      className={`relative flex flex-col items-center justify-center p-2  box-border bg-opacity-20 backdrop-blur-3xl rounded-3xl font-bodytext bg-transparent ${isDarkMode ? "text-dark-text" : "text-light-text"} group transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg`}
     >
-      <div className="contact-icon-container flex flex-row items-center justify-center mb-2">
+      <div className="contact-icon-container flex flex-row items-center justify-center">
         <div className="icon-wrapper flex flex-row items-center justify-center">
           <img
             className="contact-icon w-10 h-10"
             src={imgSrc}
             alt={alt}
           />
-          <QRCode size={32} value={href} className="ml-2" />
+          <QRCode size={36} value={href} className="ml-1 ransition-transform duration-300 ease-in-out transform hover:scale-150 border-2 border-white rounded-sm" />
         </div>
       </div>
-      <span className={`text-xs font-bodytext uppercase mt-1 ${isDarkMode ? "text-light-text" : "text-dark-text"}`}>
+      <span className={`text-xs font-bodytext uppercase ${isDarkMode ? "text-light-text" : "text-dark-text"}`}>
         {name}
       </span>
     </a>

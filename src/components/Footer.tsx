@@ -7,13 +7,13 @@ interface FooterProps {
 export default function Footer({ isDarkMode }: FooterProps) {
   return (
     <div
-      className={`fixed bottom-0 w-full flex items-end justify-between z-50 bg-transparent ${
+      className={`w-full flex items-end justify-between z-50 bg-transparent ${
         isDarkMode ?  "text-light-text" : "text-dark-text"
-      } bg-opacity-30 backdrop-blur-md font-header text-xs font-thin tracking-tight px-6 py-1 shadow-[0_-4px_6px_0_rgba(0,0,0,0.3)]`}
+      } font-header text-xs font-thin tracking-tight px-6 py-1`}
     >
       <div className="flex flex-col">
         <span>
-        <div className="list-disc list-inside pl-5">
+        <div className="list-disc list-inside">
           Icons provided by: &nbsp;&nbsp;
             <span>
               <a
@@ -29,7 +29,7 @@ export default function Footer({ isDarkMode }: FooterProps) {
         </span>
 
         <span>
-          <div className="list-disc list-inside pl-5">
+          <div className="list-disc list-inside">
             <span>
               <a
                 href="https://skillicons.dev"
@@ -45,7 +45,7 @@ export default function Footer({ isDarkMode }: FooterProps) {
         </span>
 
         <span>
-          <div className="list-disc list-inside pl-5">
+          <div className="list-disc list-inside">
             <span>
               <a
                 href="https://fonts.google.com/icons"
@@ -60,7 +60,7 @@ export default function Footer({ isDarkMode }: FooterProps) {
           </div>
         </span>
       </div>
-      <div className="flex flex-col sm:flex-row">
+      <div className="flex flex-col sm:flex-row justify-end items-end">
         <span>&copy; 2018 - {new Date().getFullYear()}&nbsp;</span>
         <span>Marie Slovokhotov.&nbsp;</span>
         <span>All rights reserved</span>
