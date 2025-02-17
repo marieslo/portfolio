@@ -67,13 +67,13 @@ export default function App() {
                   visible: { opacity: 1, scale: 1, transition: { duration: 0.3 } },
                 }}
                 key="aboutme"
-                className={` backdrop-blur-md shadow-lg bg-color2 ${isDarkMode ? ' text-light-text' : 'text-dark-text'} rounded-3xl`}
+                className={` backdrop-blur-md bg-opacity-30 shadow-lg bg-color2 ${isDarkMode ? ' text-light-text' : 'text-dark-text'} rounded-3xl`}
               >
                 <div
                   className="px-6 py-4 flex justify-between items-center cursor-pointer"
                   onClick={() => toggleSection("aboutme")}
                 >
-                  <h1 className="font-header font-thin tracking-tight text-center uppercase">
+                  <h1 className={`${isDarkMode ? 'text-light-text' : 'text-dark-text'} font-header font-thin tracking-tight text-center uppercase`}>
                     About Me
                   </h1>
                   <span className={`material-icons-outlined ${isDarkMode ? 'text-light-text' : 'text-dark-text'}`}>
@@ -83,7 +83,7 @@ export default function App() {
                 <AnimatePresence>
                   {isAboutMeOpen && (
                     <motion.div
-                      className={`bg-opacity-40 backdrop-blur-md rounded-b-3xl ${isDarkMode ? 'bg-dark-bg text-light-text' : 'bg-light-bg text-dark-text'}`}
+                      className={`bg-opacity-60 backdrop-blur-md rounded-b-3xl ${isDarkMode ? 'bg-dark-bg text-light-text' : 'bg-light-bg text-dark-text'}`}
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       exit={{ opacity: 0 }}
@@ -104,13 +104,13 @@ export default function App() {
                   visible: { opacity: 1, scale: 1, transition: { duration: 0.3 } },
                 }}
                 key="projects"
-                className={`w-full bg-backdrop-blur-md border-b border-[#0000001a] shadow-lg rounded-3xl  bg-color2 ${isDarkMode ? ' text-light-text' : 'text-dark-text'}`}
+                className={` backdrop-blur-md bg-opacity-30 shadow-lg bg-color2 ${isDarkMode ? ' text-light-text' : 'text-dark-text'} rounded-3xl`}
               >
                 <div
                   className="px-6 py-4 flex justify-between items-center cursor-pointer"
                   onClick={() => toggleSection("projects")}
                 >
-                  <h1 className="font-header font-thin tracking-tight text-center uppercase">
+                        <h1 className={`${isDarkMode ? 'text-light-text' : 'text-dark-text'} font-header font-thin tracking-tight text-center uppercase`}>
                     Recent Projects
                   </h1>
                   <span className={`material-icons-outlined ${isDarkMode ? 'text-light-text' : 'text-dark-text'}`}>
@@ -120,7 +120,7 @@ export default function App() {
                 <AnimatePresence>
                   {isProjectsOpen && (
                     <motion.div
-                      className={`p-2 bg-opacity-40 backdrop-blur-md ${isDarkMode ? 'bg-dark-bg text-light-text' : 'bg-light-bg text-dark-text'} rounded-b-3xl`}
+                      className={`p-2 bg-opacity-60 backdrop-blur-md ${isDarkMode ? 'bg-dark-bg text-light-text' : 'bg-light-bg text-dark-text'} rounded-b-3xl`}
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       exit={{ opacity: 0 }}
@@ -141,13 +141,13 @@ export default function App() {
                   visible: { opacity: 1, scale: 1, transition: { duration: 0.3 } },
                 }}
                 key="connect"
-                className={`w-full backdrop-blur-md border-b border-[#0000001a] shadow-lg rounded-3xl  bg-color2 ${isDarkMode ? ' text-light-text' : 'text-dark-text'}}`}
+                className={`w-full backdrop-blur-md bg-opacity-30 border-b border-[#0000001a] shadow-lg rounded-3xl  bg-color2 ${isDarkMode ? ' text-light-text' : 'text-dark-text'}}`}
               >
                 <div
                   className="px-6 py-4 flex justify-between items-center cursor-pointer"
                   onClick={() => toggleSection("connect")}
                 >
-                  <h1 className="font-header font-thin tracking-tight text-center uppercase">
+                                  <h1 className={`${isDarkMode ? 'text-light-text' : 'text-dark-text'} font-header font-thin tracking-tight text-center uppercase`}>
                     Contacts
                   </h1>
                   <span className={`material-icons-outlined ${isDarkMode ? 'text-light-text' : 'text-dark-text'}`}>
@@ -157,7 +157,7 @@ export default function App() {
                 <AnimatePresence>
                   {isConnectOpen && (
                     <motion.div
-                      className={`px-6 py-4 bg-opacity-40 backdrop-blur-md ${isDarkMode ? 'bg-dark-bg text-light-text' : 'bg-light-bg text-dark-text'} rounded-b-3xl`}
+                      className={`px-6 py-4 bg-opacity-60 backdrop-blur-md ${isDarkMode ? 'bg-dark-bg text-light-text' : 'bg-light-bg text-dark-text'} rounded-b-3xl`}
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       exit={{ opacity: 0 }}

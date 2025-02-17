@@ -9,7 +9,7 @@ export default function Footer({ isDarkMode }: FooterProps) {
     <div
       className={`w-full flex items-end justify-between z-50 bg-transparent ${
         isDarkMode ?  "text-light-text" : "text-dark-text"
-      } font-header text-xs font-thin tracking-tight px-6 py-1`}
+      } font-bodytext text-sm tracking-tight px-6 py-1`}
     >
       <div className="flex flex-col">
         <span>
@@ -61,7 +61,7 @@ export default function Footer({ isDarkMode }: FooterProps) {
         </span>
       </div>
       <div className="flex flex-col sm:flex-row justify-end items-end">
-        <span>&copy; 2018 - {new Date().getFullYear()}&nbsp;</span>
+        <span>&copy; 2022 - {new Date().getFullYear()}&nbsp;</span>
         <span>Marie Slovokhotov.&nbsp;</span>
         <span>All rights reserved</span>
       </div>

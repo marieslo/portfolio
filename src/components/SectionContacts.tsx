@@ -21,7 +21,7 @@ export default function SectionContacts({ isDarkMode }: SectionContactsProps) {
     <div className={`w-full mx-auto text-center bg-transparent ${isDarkMode ? "text-light-text" : "text-dark-text"}`}>
       
       <div className="mb-6 flex flex-col justify-center items-center">
-        <h2 className="text-lg font-bold text-primary uppercase mb-3 border-b pb-2 text-color3">{`Take a look at my code`}</h2>
+        <h2 className="text-md font-header font-bold uppercase mb-3 border-b pb-2 text-color3">{`Take a look at my code`}</h2>
         <div className="flex justify-center items-center p-4 flex-wrap gap-4 rounded-3xl w-max">
           {contactLinks1.map(({ href, imgSrc, alt, name }, idx) => (
             <SocialMediaItem
@@ -36,7 +36,7 @@ export default function SectionContacts({ isDarkMode }: SectionContactsProps) {
         </div>
       </div>
       <div className="flex flex-col justify-center items-center">
-        <h2 className="text-lg font-bold text-primary uppercase mb-3 border-b pb-2 text-color3">{`Let's be in touch`}</h2>
+        <h2 className="text-md font-header font-bold uppercase mb-3 border-b pb-2 text-color3">{`Let's be in touch`}</h2>
         <div className="flex justify-center items-center p-4 flex-wrap gap-4 rounded-3xl w-max">
           {contactLinks2.map(({ href, imgSrc, alt, name }, idx) => (
             <SocialMediaItem

@@ -16,28 +16,28 @@ export default function Header({ isDarkMode, toggleDarkMode }: HeaderProps) {
 
   return (
     <div
-      className={`fixed flex flex-row items-center justify-between top-0 left-0 z-50 w-full border-b border-[#0000001a] shadow-[0_4px_6px_0_rgba(0,0,0,0.3)] bg-opacity-30 backdrop-blur-md font-header font-thin text-sm tracking-tight px-6 py-2 ${
+      className={`fixed flex flex-row items-center justify-between top-0 left-0 z-50 w-full border-b border-[#0000001a] shadow-[0_4px_6px_0_rgba(0,0,0,0.3)] bg-opacity-30 backdrop-blur-md font-bodytext font-thintracking-tight px-6 py-2 ${
         isDarkMode ? "bg-dark-bg text-light-text" : "bg-light-bg text-dark-text"
       }`}
     >
-      <div className="flex flex-col gap-1 text-color3 uppercase">
-        <h2 className="text-lg font-extrabold">
+      <div className="flex flex-col gap-1 font-header text-color3 uppercase">
+        <h2 className="font-header font-bold">
           <Link to="aboutme" smooth={true} duration={500}>
             Marie Slovokhotov
           </Link>
         </h2>
-        <div className="text-lg font-thin uppercase flex-1" style={{ width: "100%" }}>
+        <div className="font-thin uppercase flex-1" style={{ width: "100%" }}>
           Full Stack Developer
         </div>
       </div>
-      <div className="hidden lg:flex p-2 gap-4 center">
+      <div className="hidden lg:flex p-2 gap-6 center font-subheader text-color3">
         <Link
           to="aboutme"
           smooth={true}
           duration={500}
           className="cursor-pointer hover:text-color-dark"
         >
-          About Me
+          about me
         </Link>
         <Link
           to="projects"
@@ -45,7 +45,7 @@ export default function Header({ isDarkMode, toggleDarkMode }: HeaderProps) {
           duration={500}
           className="cursor-pointer hover:text-color-dark"
         >
-          Recent Projects
+          recent projects
         </Link>
         <Link
           to="connect"
@@ -53,7 +53,7 @@ export default function Header({ isDarkMode, toggleDarkMode }: HeaderProps) {
           duration={500}
           className="cursor-pointer hover:text-color-dark"
         >
-          Contacts
+          contacts
         </Link>
       </div>
       <motion.div

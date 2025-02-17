@@ -9,12 +9,11 @@ interface SkillItemProps {
 export default function SkillItem({ skill, isDarkMode }: SkillItemProps) {
   return (
     <div
-      className={`skill-item relative text-center font-bodytext ${
+      className={`skill-item relative text-center font-subheader ${
         isDarkMode ? "text-dark-text" : "text-light-text"
       } flex items-center justify-start group rounded-md pr-2`}
       style={{
         backgroundColor: "transparent",
-        border: "solid 1px",
       }}
     >
       <div className="relative flex items-center justify-center w-full">
@@ -27,7 +26,8 @@ export default function SkillItem({ skill, isDarkMode }: SkillItemProps) {
               target.style.display = "none"; 
             }}
           />
-          <span className="text-md">{skill}</span>
+          <span className="text-base ml-1">{skill}
+          </span>
         </div>
       </div>
     </div>

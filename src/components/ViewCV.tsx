@@ -7,12 +7,11 @@ export default function ViewCV () {
             href="/Marie_Slovokhotov_CV.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="relative inline-block px-6 py-3 text-color3 border border-color3 rounded-3xl shadow-lg overflow-hidden group transition-all duration-300 transform hover:shadow-2xl"
+            className="relative inline-block text-color3 overflow-hidden group transition-all duration-300 transform hover:underline font-subheader font-semibold text-base"
             >
             <span className="absolute inset-0 w-full h-full bg-transparent transition-all"></span>
             <strong className="relative z-10 flex items-center gap-2">
-                <span className="material-icons-outlined">open_in_new</span>
-                View my CV
+            View full CV<span className="material-icons-outlined">description</span>
             </strong>
             </a>
     </section>
