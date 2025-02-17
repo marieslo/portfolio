@@ -24,7 +24,7 @@ export default function Skills({ isDarkMode }: SkillsProps) {
   return (
     <div id="skills-mostly" className="skills-section bg-transparent">
       <div className="max-w-screen-xl mx-auto text-center">
-        <div className="skills-grid flex flex-wrap justify-start gap-4 p-4">
+        <div className="skills-grid flex flex-wrap justify-start gap-2 p-4">
           {skillsMostly.map((skill, index) => (
             <SkillItem
               key={index}

@@ -10,7 +10,7 @@ interface SectionAboutMeProps {
 export default function SectionAboutMe({ isDarkMode }: SectionAboutMeProps) {
   return (
     <motion.div
-      className={`grid grid-cols-1 md:grid-cols-2 gap-6 p-6 min-h-screen items-start font-thin font-bodytext bg-transparent ${isDarkMode ?  "text-light-text" : "text-dark-text"}`}
+      className={`grid grid-cols-1 md:grid-cols-2 gap-6 p-6 min-h-screen items-start font-bodytext bg-transparent ${isDarkMode ?  "text-light-text" : "text-dark-text"}`}
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
@@ -26,26 +26,28 @@ export default function SectionAboutMe({ isDarkMode }: SectionAboutMeProps) {
               isDarkMode ? "bg-dark-bg text-light-text" : "bg-light-bg text-dark-text"
             } p-6 rounded-3xl border w-full pb-0`}
           >
-            <h2 className="text-lg font-bold text-primary uppercase mb-3 border-b pb-2 text-color3">
-              Professional Summary
-            </h2>
             <div className="flex flex-col md:flex-row gap-4 justify-between">
               <div className="flex-1 text-base leading-6 tracking-tight relative gap-2">
-                <div className="absolute -left-4 top-12 transform -translate-y-1/2 text-9xl font-bold text-color3">“</div>
-                <div className="ml-16">
+                
+                <div className="ml-8 font-subheader text-base leading-8 mb-4">
+                <span className="text-7xl font-quote font-bold text-color3" style={{ fontStyle: 'normal' }}>“</span>
                 Experienced Full Stack Developer with 5+ years of expertise in
                 building scalable web applications using modern technologies like
-                React, Node.js, and MongoDB. Adept at problem-solving and
+                React, Node.js, and MongoDB. 
+                <ViewCV/>   Adept at problem-solving and
                 collaborating with cross-functional teams to deliver high-quality
                 solutions.
-                Experienced Full Stack Developer with 5+ years of expertise in
-                building scalable web applications using modern technologies like
-                React, Node.js, and MongoDB. Adept at problem-solving and
-                collaborating with cross-functional teams to deliver high-quality
-                solutions.
+                <span className="text-4xl font-bold font-quote text-color3" style={{ fontStyle: 'normal' }}>
+                  ”</span>
                 </div>
-                <span className="absolute -right-2 bottom-30 text-4xl font-bold text-color3">”</span>
-                <ViewCV/>
+                {/* <img 
+                  width="64" 
+                  height="64" 
+                  src="https://img.icons8.com/laces/64/right3.png" 
+                  alt="right3"
+                  style={{ filter: 'invert(27%) sepia(72%) saturate(2480%) hue-rotate(340deg) brightness(90%) contrast(80%)' }} 
+                /> */}
+          
               </div>
               <div className="flex-shrink-0 mx-auto md:ml-auto">
                 <motion.img
@@ -68,7 +70,7 @@ export default function SectionAboutMe({ isDarkMode }: SectionAboutMeProps) {
                   isDarkMode ? "bg-dark-bg" : "bg-light-bg"
                 } p-6 rounded-3xl border w-full`}
               >
-                <h2 className="text-lg font-bold text-primary mb-3 border-b pb-2 text-color3 ">
+                <h2 className="text-md font-header font-bold text-primary mb-3 border-b pb-2 text-color3">
                   Experience
                 </h2>
                 <div className="flex flex-wrap justify-center gap-4 ">
@@ -133,7 +135,7 @@ export default function SectionAboutMe({ isDarkMode }: SectionAboutMeProps) {
             isDarkMode ? "bg-dark-bg" : "bg-light-bg"
           } p-6 rounded-3xl border`}
         >
-          <h2 className="text-lg font-bold text-primary mb-3 border-b pb-2 text-color3">Education</h2>
+          <h2 className="text-md font-header font-bold text-primary mb-3 border-b pb-2 text-color3">Education</h2>
           <p className="text-base">
             <strong>Bachelor of Science in Computer Science</strong> <br />
             University of Technology | Graduated: May 2017
@@ -145,7 +147,7 @@ export default function SectionAboutMe({ isDarkMode }: SectionAboutMeProps) {
             isDarkMode ? "bg-dark-bg" : "bg-light-bg"
           } p-6 border rounded-3xl`}
         >
-          <h2 className="text-lg font-bold text-primary mb-3 border-b pb-2 text-color3">Skills</h2>
+          <h2 className="text-md font-header font-bold text-primary mb-3 border-b pb-2 text-color3">Skills</h2>
           <section >
             <Skills isDarkMode={isDarkMode}/>
           </section>

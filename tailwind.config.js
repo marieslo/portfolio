@@ -6,23 +6,25 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        color1: '#D08C60',
-        color2: '#A47148', 
-        color3: '#B9375E', 
-        'light-bg': '#F3D5B5',
-        'dark-bg': '#0b2027',
+        color1: '#b8b8ff',
+        color2: '#2b2d42', 
+        color3: '#4895ef', 
+        'light-bg': '#eef0f2',
+        'dark-bg': '#2d3142',
         'dark-text': '#353535',
         'light-text': '#fffcf2',
       },
       fontFamily: {
-        header: ['"Unbounded"', 'serif'],
-        bodytext: ['"Prompt"', 'serif'],
+        header: ['Unbounded', 'serif'],
+        subheader: ['Courier Prime', 'serif'],
+        quote: ['Montagu Slab', 'serif'],
+        bodytext: ['Funnel Display', 'serif'],
       },
       borderRadius: {
         DEFAULT: '2rem',
       },
       borderColor: {
-        DEFAULT: '#D08C60',
+        DEFAULT: '#748cab',
       },
     },
   },
