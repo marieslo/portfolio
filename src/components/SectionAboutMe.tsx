@@ -23,13 +23,13 @@ export default function SectionAboutMe({ isDarkMode }: SectionAboutMeProps) {
         >
         <section
             className={`${
-              isDarkMode ? "bg-dark-bg text-light-text" : "bg-light-bg text-dark-text"
+              isDarkMode ? "bg-dark-bg text-light-text" : "bg-light-bg text-dark-text "
             } p-6 rounded-3xl border w-full pb-0`}
           >
             <div className="flex flex-col md:flex-row gap-4 justify-between">
               <div className="flex-1 text-base leading-6 tracking-tight relative gap-2">
                 
-                <div className="ml-8 font-subheader text-base leading-8 mb-4">
+                <div className="ml-8 font-subheader leading-8 mb-4 italic">
                 <span className="text-7xl font-quote font-bold text-color3" style={{ fontStyle: 'normal' }}>“</span>
                 Experienced Full Stack Developer with 5+ years of expertise in
                 building scalable web applications using modern technologies like
@@ -60,7 +60,7 @@ export default function SectionAboutMe({ isDarkMode }: SectionAboutMeProps) {
           </section>
         </motion.div>
             <motion.div
-              className="md:col-span-1 flex flex-col justify-start items-center"
+              className="md:col-span-1 flex flex-col justify-start items-center text-sm"
               initial={{ opacity: 0, x: -100 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
@@ -111,21 +111,21 @@ export default function SectionAboutMe({ isDarkMode }: SectionAboutMeProps) {
                         </div>
                   <div className="mt-8">
                     <strong>Achievements</strong>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      <div className="flex items-center gap-4">
-                        <span className="material-icons-outlined text-color3 text-4xl">star</span>
-                        <p className="text-base">Built a scalable web app with 1M+ users</p>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm">
+                      <div className="flex items-center gap-4 ">
+                        <span className="material-icons-outlined text-color3 text-2xl">star</span>
+                        <p>Built a scalable web app with 1M+ users</p>
                       </div>
                       <div className="flex items-center gap-4">
-                        <span className="material-icons-outlined text-color3 text-4xl">code</span>
-                        <p className="text-base">Contributed to open-source projects</p>
+                        <span className="material-icons-outlined text-color3 text-2xl">code</span>
+                        <p >Contributed to open-source projects</p>
                       </div>
                     </div>
                 </div>
               </section>
          </motion.div>
       <motion.div
-        className="md:col-span-1 flex flex-col justify-start gap-6"
+        className="md:col-span-1 flex flex-col justify-start gap-6 text-sm"
         initial={{ opacity: 0, x: 100 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5, delay: 1 }}
@@ -136,11 +136,10 @@ export default function SectionAboutMe({ isDarkMode }: SectionAboutMeProps) {
           } p-6 rounded-3xl border`}
         >
           <h2 className="text-md font-header font-bold text-primary mb-3 border-b pb-2 text-color3">Education</h2>
-          <p className="text-base">
+          <p>
             <strong>Bachelor of Science in Computer Science</strong> <br />
             University of Technology | Graduated: May 2017
           </p>
-          <div>IMAGES OF CERTIFICATES</div>
         </section>
         <section
           className={`${
