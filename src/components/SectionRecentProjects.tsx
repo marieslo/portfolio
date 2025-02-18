@@ -1,7 +1,6 @@
 import React from "react";
-import { Card, CardMedia, Button } from "@mui/material";
+import { Card, CardMedia, Button, CardActions, CardContent } from "@mui/material";
 import { motion } from "framer-motion";
-import SkillItem from "./SkillItem";
 
 type Project = {
   id: number;
@@ -68,26 +67,37 @@ export default function SectionRecentProjects({ projects, isDarkMode }: SectionR
           <motion.div
             key={project.id}
             variants={cardVariants}
-            className="group relative w-full  border rounded-3xl shadow-md overflow-hidden"
+            className="group relative w-full border rounded-3xl shadow-md overflow-hidden"
           >
             <Card
-              className={`${
-                isDarkMode ? "bg-dark-card" : "bg-light-card"
-              }`}
-              sx={{ position: "relative", height: 400 }}
+              sx={{
+                position: "relative",
+                height: 360,
+                display: "flex",
+                flexDirection: "column",
+              }}
             >
-              <div
-                className={`w-full p-4 text-center border-b ${
-                  isDarkMode ? "bg-dark-bg text-light-text" : "bg-light-bg text-darkt-text"
+              <CardMedia
+                sx={{ height: "60%" }}
+                image={project.imageUrl}
+                alt={project.name ?? "Project Image"}
+                component="img"
+              />
+              <CardContent 
+              className={`font-bodytext px-6 py-2 ${
+                isDarkMode ? "bg-dark-bg text-light-text" : "bg-light-bg text-dark-text"
                 }`}
-              >
+              sx={{ flexGrow: 1 }}>
                 {project.name && (
-                  <div className="font-header text-color-dark mb-2 bg-color3">
+                  <h3 className="text-color3 font-bold mb-2">
                     {project.name}
-                  </div>
+                  </h3>
                 )}
-                {project.skills.length > 0 && (
-                  <div className="flex justify-center items-center gap-4 mb-2 font-bodytext">
+              <p style={{ fontSize: "12px" }} className="font-thin">
+                {project.description}
+              </p>
+                {/* {project.skills.length > 0 && (
+                  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 mt-2">
                     {project.skills.map((skill, index) => (
                       <SkillItem
                         key={index}
@@ -97,108 +107,67 @@ export default function SectionRecentProjects({ projects, isDarkMode }: SectionR
                       />
                     ))}
                   </div>
-                )}
-              </div>
-              <CardMedia
-                component="img"
-                image={project.imageUrl}
-                alt={project.name ?? "Project Image"}
-                className="w-full h-full object-cover group-hover:filter-none filter grayscale"
-                sx={{
-                  objectFit: "cover",
-                  height: "100%",
-                  transition: "filter 0.03s ease",
-                }}
-              />
-              <div
-                className={`absolute bottom-0 left-0 w-full p-4 text-center transform translate-y-full border-t transition-transform duration-300 group-hover:translate-y-0 bg-opacity-10 backdrop-blur-md rounded-b-3xl ${
-                  isDarkMode ? "bg-dark-bg text-dark-text" : "bg-light-bg text-light-text"
-                }`}
-              >
-                <div className="flex justify-center gap-2 mt-4 font-bodytext opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                )} */}
+              </CardContent>
+              <CardActions
+                  sx={{
+                    position: "absolute",
+                    bottom: 0,
+                    left: 0,
+                    width: "100%",
+                    justifyContent: "start",
+                    display: "flex",
+                    flexDirection: "row",
+                  }}
+                >
                   {project.appUrl && (
                     <Button
                       sx={{
-                        backgroundColor: "transparent",
-                        padding: "8px 16px",
-                        fontSize: "14px",
-                        border: "1px",
-                        borderRadius: "30px",
-                        borderColor: "#fe4a49",
-                        fontWeight: 200,
+                        textTransform: "uppercase",
+                        fontSize: "12px",
+                        color: "#4895ef",
+                        textAlign: "start",
                         display: "flex",
-                        alignItems: "center",
-                        gap: "8px",
-                        transition: "background-color 0.3s ease, transform 0.3s ease",
-                        color: "#fff",
-                        boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
-                        "&:hover": {
-                          backgroundColor: "#00bcd4",
-                          transform: "translateY(-2px)",
-                        },
-                        "& img": {
-                          width: "20px",
-                          height: "20px",
-                        },
-                        "&:focus": {
-                          outline: "none",
-                        },
+                        gap: "10px",
+                        justifyContent: "flex-start",
                       }}
                       href={project.appUrl}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      View App
                       <img
-                        width="20"
-                        height="20"
-                        src="https://img.icons8.com/glyph-neue/64/domain.png"
+                        src="https://img.icons8.com/glyph-neue/4895ef/64/domain.png"
                         alt="domain"
+                        style={{ width: "18px", height: "18px", marginLeft: "6px" }}
                       />
+                      View App
                     </Button>
                   )}
                   {project.codeUrl && (
                     <Button
                       sx={{
-                        backgroundColor: "fe4a49",
-                        padding: "8px 16px",
-                        fontSize: "14px",
-                        borderRadius: "30px",
-                        fontWeight: 200,
+                        textTransform: "uppercase",
+                        fontSize: "12px",
+                        color: "#4895ef",
                         display: "flex",
-                        alignItems: "center",
-                        gap: "30px",
-                        transition: "background-color 0.3s ease, transform 0.3s ease",
-                        color: "#fff",
-                        border: "none",
-                        boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
-                        "&:hover": {
-                          backgroundColor: "#00bcd4",
-                          transform: "translateY(-2px)",
-                        },
-                        "& img": {
-                          width: "20px",
-                          height: "20px",
-                        },
-                        "&:focus": {
-                          outline: "none",
-                        },
+                        gap: "10px",
+                        justifyContent: "flex-start",
                       }}
                       href={project.codeUrl}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      View Code
                       <img
-                        width="20"
-                        height="20"
-                        src="https://img.icons8.com/pastel-glyph/64/code--v2.png"
+                        src="https://img.icons8.com/pastel-glyph/4895ef/64/code--v2.png"
                         alt="code"
+                        style={{ width: "18px", height: "18px", marginLeft: "6px" }}
                       />
+                      View Code
                     </Button>
                   )}
-                </div>
-              </div>
+                </CardActions>
+
+  
             </Card>
           </motion.div>
         ))}

@@ -83,7 +83,7 @@ export default function Header({ isDarkMode, toggleDarkMode }: HeaderProps) {
 
   return (
     <div
-      className={`fixed flex flex-row items-start justify-between top-0 left-0 z-50 w-full border-b border-[#0000001a] shadow-[0_4px_6px_0_rgba(0,0,0,0.3)] bg-opacity-30 backdrop-blur-md font-bodytext font-thintracking-tight px-6 py-2 ${
+      className={`fixed flex flex-row items-start justify-between top-0 left-0 z-50 w-full border-b border-[#0000001a] shadow-[0_4px_6px_0_rgba(0,0,0,0.3)] bg-opacity-30 backdrop-blur-md font-bodytext font-thin tracking-tight px-6 py-2 ${
         isDarkMode ? "bg-dark-bg text-light-text" : "bg-light-bg text-dark-text"
       }`}
     >

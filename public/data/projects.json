@@ -23,7 +23,7 @@
       "name": "Chat Application",
       "description": "A real-time chat application using WebSockets for instant communication.",
       "skills": ["Socket.IO", "Node.js", "React", "SCSS"],
-      "appUrl": null,
+      "appUrl": "https://example-ecommerce.com",
       "codeUrl": "https://github.com/user/chat-app"
     }
   ]  
