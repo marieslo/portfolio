@@ -1,12 +1,14 @@
 import React from "react";
 
 interface SkillItemProps {
-  name: string;
   skill: string;
   isDarkMode: boolean;
 }
 
 export default function SkillItem({ skill, isDarkMode }: SkillItemProps) {
+  const colorCode = isDarkMode ? "03071e" : "8d99ae";
+  const badgeUrl = `https://img.shields.io/badge/${skill}-%23${colorCode}.svg?style=for-the-badge&logo=${skill.toLowerCase()}&logoColor=white`;
+
   return (
     <div
       className={`skill-item relative text-center font-subheader ${
@@ -17,20 +19,18 @@ export default function SkillItem({ skill, isDarkMode }: SkillItemProps) {
       }}
     >
       <div className="relative flex items-center justify-center w-max">
-        <div className={`flex items-center gap-1 ${isDarkMode ? "text-light-text" : "text-dark-text"}`}>
+        <div
+          className={`flex items-center gap-1 ${isDarkMode ? "text-light-text" : "text-dark-text"}`}
+        >
           <img
-            src={`https://skillicons.dev/icons?i=${skill}`}
-            className="w-10 h-10"
+            src={badgeUrl}
+            className="text-sm"
             onError={(e) => {
               const target = e.target as HTMLImageElement;
-              target.style.display = "none"; 
+              target.style.display = "none";
             }}
+            alt={`${skill}`}
           />
-          <span
-            className={`text-sm ml-1 text-color1`}
-          >
-            {skill}
-          </span>
         </div>
       </div>
     </div>

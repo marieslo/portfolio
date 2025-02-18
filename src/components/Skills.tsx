@@ -28,7 +28,6 @@ export default function Skills({ isDarkMode }: SkillsProps) {
           {skillsMostly.map((skill, index) => (
             <SkillItem
               key={index}
-              name={skill.name}
               skill={skill.icon}
               isDarkMode={isDarkMode}
             />
