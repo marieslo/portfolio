@@ -57,43 +57,7 @@ export default function App() {
         <main>
           <Container>
             <Box className="space-y-8 rounded-b-3xl">
-              <motion.div
-                id="aboutme"
-                initial="hidden"
-                animate="visible"
-                exit="hidden"
-                variants={{
-                  hidden: { opacity: 0, scale: 0.8 },
-                  visible: { opacity: 1, scale: 1, transition: { duration: 0.3 } },
-                }}
-                key="aboutme"
-                className={` backdrop-blur-md bg-opacity-30 shadow-lg bg-color2 ${isDarkMode ? ' text-light-text' : 'text-dark-text'} rounded-3xl`}
-              >
-                <div
-                  className="px-6 py-4 flex justify-between items-center cursor-pointer"
-                  onClick={() => toggleSection("aboutme")}
-                >
-                  <h1 className={`${isDarkMode ? 'text-light-text' : 'text-dark-text'} font-header font-thin tracking-tight text-center uppercase`}>
-                    About Me
-                  </h1>
-                  <span className={`material-icons-outlined ${isDarkMode ? 'text-light-text' : 'text-dark-text'}`}>
-                    {isAboutMeOpen ? "keyboard_arrow_up" : "keyboard_arrow_down"}
-                  </span>
-                </div>
-                <AnimatePresence>
-                  {isAboutMeOpen && (
-                    <motion.div
-                      className={`bg-opacity-60 backdrop-blur-md rounded-b-3xl ${isDarkMode ? 'bg-dark-bg text-light-text' : 'bg-light-bg text-dark-text'}`}
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      exit={{ opacity: 0 }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      <SectionAboutMe isDarkMode={isDarkMode} />
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </motion.div>
+           
               <motion.div
                 id="projects"
                 initial="hidden"
@@ -127,6 +91,43 @@ export default function App() {
                       transition={{ duration: 0.3 }}
                     >
                       <SectionRecentProjects projects={projects} isDarkMode={isDarkMode} />
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
+              <motion.div
+                id="aboutme"
+                initial="hidden"
+                animate="visible"
+                exit="hidden"
+                variants={{
+                  hidden: { opacity: 0, scale: 0.8 },
+                  visible: { opacity: 1, scale: 1, transition: { duration: 0.3 } },
+                }}
+                key="aboutme"
+                className={` backdrop-blur-md bg-opacity-30 shadow-lg bg-color2 ${isDarkMode ? ' text-light-text' : 'text-dark-text'} rounded-3xl`}
+              >
+                <div
+                  className="px-6 py-4 flex justify-between items-center cursor-pointer"
+                  onClick={() => toggleSection("aboutme")}
+                >
+                  <h1 className={`${isDarkMode ? 'text-light-text' : 'text-dark-text'} font-header font-thin tracking-tight text-center uppercase`}>
+                    About Me
+                  </h1>
+                  <span className={`material-icons-outlined ${isDarkMode ? 'text-light-text' : 'text-dark-text'}`}>
+                    {isAboutMeOpen ? "keyboard_arrow_up" : "keyboard_arrow_down"}
+                  </span>
+                </div>
+                <AnimatePresence>
+                  {isAboutMeOpen && (
+                    <motion.div
+                      className={`bg-opacity-60 backdrop-blur-md rounded-b-3xl ${isDarkMode ? 'bg-dark-bg text-light-text' : 'bg-light-bg text-dark-text'}`}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <SectionAboutMe isDarkMode={isDarkMode} />
                     </motion.div>
                   )}
                 </AnimatePresence>

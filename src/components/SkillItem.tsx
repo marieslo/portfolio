@@ -11,7 +11,7 @@ export default function SkillItem({ skill, isDarkMode }: SkillItemProps) {
     <div
       className={`skill-item relative text-center font-subheader ${
         isDarkMode ? "text-dark-text" : "text-light-text"
-      } flex items-center justify-start group rounded-md pr-2`}
+      } flex items-center justify-start group rounded-lg pr-2 border`}
       style={{
         backgroundColor: "transparent",
       }}
@@ -20,7 +20,7 @@ export default function SkillItem({ skill, isDarkMode }: SkillItemProps) {
         <div className={`flex items-center gap-1 ${isDarkMode ? "text-light-text" : "text-dark-text"}`}>
           <img
             src={`https://skillicons.dev/icons?i=${skill}`}
-            className="w-10 h-10"
+            className="w-12 h-12"
             onError={(e) => {
               const target = e.target as HTMLImageElement;
               target.style.display = "none"; 
