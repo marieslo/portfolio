@@ -68,31 +68,21 @@ export default function SectionRecentProjects({ projects, isDarkMode }: SectionR
           <motion.div
             key={project.id}
             variants={cardVariants}
-            className="group relative w-full rounded-3xl shadow-md overflow-hidden"
+            className="group relative w-full  border rounded-3xl shadow-md overflow-hidden"
           >
             <Card
-              className={`rounded-3xl shadow-md overflow-hidden border ${
+              className={`${
                 isDarkMode ? "bg-dark-card" : "bg-light-card"
               }`}
               sx={{ position: "relative", height: 400 }}
             >
-              <CardMedia
-              component="img"
-              image={project.imageUrl}
-              alt={project.name ?? "Project Image"}
-              className="w-full h-full object-cover rounded-3xl"
-              sx={{
-                objectFit: "cover", 
-                height: "100%",
-              }}
-            />
               <div
-                className={`absolute bottom-0 left-0 w-full p-4 text-center transform translate-y-full border-t transition-transform duration-300 group-hover:translate-y-0 bg-opacity-10 backdrop-blur-md rounded-3xl ${
-                  isDarkMode ? "bg-dark-bg text-dark-text" : "bg-light-bg text-light-text"
+                className={`w-full p-4 text-center border-b ${
+                  isDarkMode ? "bg-dark-bg text-light-text" : "bg-light-bg text-darkt-text"
                 }`}
               >
                 {project.name && (
-                  <div className="font-header text-color-dark mb-2">
+                  <div className="font-header text-color-dark mb-2 bg-color3">
                     {project.name}
                   </div>
                 )}
@@ -108,6 +98,23 @@ export default function SectionRecentProjects({ projects, isDarkMode }: SectionR
                     ))}
                   </div>
                 )}
+              </div>
+              <CardMedia
+                component="img"
+                image={project.imageUrl}
+                alt={project.name ?? "Project Image"}
+                className="w-full h-full object-cover group-hover:filter-none filter grayscale"
+                sx={{
+                  objectFit: "cover",
+                  height: "100%",
+                  transition: "filter 0.03s ease",
+                }}
+              />
+              <div
+                className={`absolute bottom-0 left-0 w-full p-4 text-center transform translate-y-full border-t transition-transform duration-300 group-hover:translate-y-0 bg-opacity-10 backdrop-blur-md rounded-b-3xl ${
+                  isDarkMode ? "bg-dark-bg text-dark-text" : "bg-light-bg text-light-text"
+                }`}
+              >
                 <div className="flex justify-center gap-2 mt-4 font-bodytext opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   {project.appUrl && (
                     <Button
