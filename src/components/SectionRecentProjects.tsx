@@ -1,6 +1,7 @@
 import React from "react";
-import { Card, CardMedia, Button, CardActions, CardContent } from "@mui/material";
+import { Card, CardMedia, CardActions, CardContent, Link } from "@mui/material";
 import { motion } from "framer-motion";
+
 
 type Project = {
   id: number;
@@ -60,7 +61,7 @@ export default function SectionRecentProjects({ projects, isDarkMode }: SectionR
       variants={containerVariants}
       initial="hidden"
       animate="visible"
-      className={`carousel-container bg-transparent ${isDarkMode ? "text-dark-text" : "text-light-text"}`}
+      className={`carousel-container bg-transparent text-xs sm:text-sm  w-full ${isDarkMode ? "text-dark-text" : "text-light-text"}`}
     >
       <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-4 justify-center items-center">
         {projects.map((project) => (
@@ -89,7 +90,7 @@ export default function SectionRecentProjects({ projects, isDarkMode }: SectionR
                 }`}
               sx={{ flexGrow: 1 }}>
                 {project.name && (
-                  <h3 className="text-color3 font-bold mb-2">
+                  <h3 className="text-color3 font-bold mb-2 uppercase">
                     {project.name}
                   </h3>
                 )}
@@ -121,7 +122,7 @@ export default function SectionRecentProjects({ projects, isDarkMode }: SectionR
                   }}
                 >
                   {project.appUrl && (
-                    <Button
+                    <Link
                       sx={{
                         textTransform: "uppercase",
                         fontSize: "12px",
@@ -141,10 +142,10 @@ export default function SectionRecentProjects({ projects, isDarkMode }: SectionR
                         style={{ width: "18px", height: "18px", marginLeft: "6px" }}
                       />
                       View App
-                    </Button>
+                    </Link>
                   )}
                   {project.codeUrl && (
-                    <Button
+                    <Link
                       sx={{
                         textTransform: "uppercase",
                         fontSize: "12px",
@@ -163,7 +164,7 @@ export default function SectionRecentProjects({ projects, isDarkMode }: SectionR
                         style={{ width: "18px", height: "18px", marginLeft: "6px" }}
                       />
                       View Code
-                    </Button>
+                    </Link>
                   )}
                 </CardActions>
 

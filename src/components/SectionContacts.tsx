@@ -15,7 +15,7 @@ export default function SectionContacts({ isDarkMode }: SectionContactsProps) {
 
   return (
     <div className={`w-full mx-auto text-center bg-transparent ${isDarkMode ? "text-light-text" : "text-dark-text"}`}>
-      <div className="mb-6 flex flex-col justify-center items-center">
+      <div className="flex flex-col justify-center items-center">
       </div>
       <div className="flex justify-center items-center p-4 flex-wrap gap-6 w-full">
         {contactLinks.map(({ href, imgSrc, alt, name }, idx) => (
