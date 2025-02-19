@@ -38,7 +38,7 @@ export default function Footer({ isDarkMode }: FooterProps) {
         </span>
       </div>
       <div className="flex flex-col sm:flex-row justify-end items-end">
-        <span>&copy; {new Date().getFullYear()}&nbsp;</span>
+        <span>&copy; 2022 - {new Date().getFullYear()}&nbsp;</span>
         <span>Marie Slovokhotov</span>
       </div>
     </div>
