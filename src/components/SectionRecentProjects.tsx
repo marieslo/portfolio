@@ -129,9 +129,9 @@ export default function SectionRecentProjects({ projects, isDarkMode }: SectionR
                   overflowY: "auto",
                 }}
               >
-                <p style={{ fontSize: "14px", lineHeight: "1.6" }} className="font-thin mb-4">
+                <div style={{ fontSize: "14px", lineHeight: "1.6" }} className="font-thin mb-4">
                   {project.description}
-                </p>
+                </div>
               </CardContent>
               <CardActions
                 sx={{

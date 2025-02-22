@@ -40,15 +40,16 @@ const Menu = ({ isDarkMode, toggleDarkMode }: { isDarkMode: boolean; toggleDarkM
 export default function Header({ isDarkMode, toggleDarkMode }: HeaderProps) {
   return (
     <div
-      className={`fixed flex flex-col sm:flex-row md:items-center md:justify-between top-0 left-0 z-50 w-full border-b border-[#0000001a] shadow-[0_4px_6px_0_rgba(0,0,0,0.3)] bg-opacity-30 backdrop-blur-md font-bodytext font-thin tracking-tight px-6 py-2 ${
-        isDarkMode ? "bg-dark-bg text-light-text" : "bg-light-bg text-dark-text"
-      }`}
+    className={`fixed flex flex-col sm:flex-row md:items-center md:justify-between top-0 left-0 z-50 w-full border-b border-[#0000001a] shadow-[0_4px_6px_0_rgba(0,0,0,0.3)] bg-opacity-80 backdrop-blur-md backdrop-filter font-bodytext font-thin tracking-tight px-6 py-2 ${
+      isDarkMode ? "bg-dark-bg text-light-text" : "bg-light-bg text-dark-text"
+    }`}
+    
     >
       <div>
         <Menu isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
       </div>
       <div className="flex flex-col gap-0 text-center">
-        <h2 className="font-header font-bold text-xl">
+        <h2 className="font-header font-bold text-lg">
           Marie Slovokhotov
         </h2>
         <div className="flex items-center justify-center w-full">
@@ -57,7 +58,7 @@ export default function Header({ isDarkMode, toggleDarkMode }: HeaderProps) {
           <hr className="flex-1 border-t-1 border-color3 mx-1" />
         </div>
         <div className="font-thin text-xs sm:text-sm uppercase w-full">
-          Full Stack Developer
+        From idea to finished project
         </div>
       </div>
      

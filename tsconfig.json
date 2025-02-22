@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+      "strict": true,
+      "esModuleInterop": true,
+      "skipLibCheck": true,
+      "target": "ES6",
+      "moduleResolution": "node",
+      "lib": ["ESNext", "DOM"]
+    },
+    "include": [
+      "node_modules/cypress",
+      "cypress/**/*.js"
+    ]
+  }  
