@@ -31,7 +31,7 @@ export default function SocialMediaItem({
             src={imgSrc}
             alt={alt}
           />
-          <QRCode size={36} value={href} className="ml-1 ransition-transform duration-300 ease-in-out transform hover:scale-150 border-2 border-white rounded-sm" />
+          <QRCode size={36} value={href} className="ml-1 border-2 border-white rounded-sm" />
         </div>
       </div>
       <span className={`text-xs font-bodytext uppercase ${isDarkMode ? "text-light-text" : "text-dark-text"}`}>

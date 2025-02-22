@@ -1,7 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Skills from "./Skills";
-import ViewCV from "./ViewCV";
 
 interface SectionAboutMeProps {
   isDarkMode: boolean;
@@ -34,7 +33,7 @@ export default function SectionAboutMe({ isDarkMode }: SectionAboutMeProps) {
                 Experienced Full Stack Developer with 5+ years of expertise in
                 building scalable web applications using modern technologies like
                 React, Node.js, and MongoDB. 
-                <ViewCV/>   Adept at problem-solving and
+                Adept at problem-solving and
                 collaborating with cross-functional teams to deliver high-quality
                 solutions.
                 <span className="text-4xl font-bold font-quote text-color3" style={{ fontStyle: 'normal' }}>
