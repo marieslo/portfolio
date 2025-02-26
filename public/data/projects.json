@@ -2,28 +2,21 @@
   {
     "id": 1,
     "imageUrls": ["/mockpics/image1.png", "/mockpics/image2.png", "/mockpics/image3.png"],
-    "name": "Portfolio Website",
-    "description": "A responsive portfolio website built with React, TypeScript, and SCSS.A responsive portfolio website built with React, TypeScript, and SCSS.",
-    "skills": ["React", "TypeScript", "SCSS"],
+    "name": "Pet Adoption Platform",
+    "description": "A responsive website using Websocket",
+    "skills": ["React", "JavaScript", "Node", "Express", "MongoDB", "Jest"],
     "appUrl": "https://example-portfolio.com",
-    "codeUrl": "https://github.com/user/portfolio"
+    "codeUrlFrontend": "https://github.com/user/portfolio",
+    "codeUrlBackend": "https://github.com/user/portfolio"
   },
   {
     "id": 2,
     "imageUrls": ["/mockpics/image2.png", "/mockpics/image1.png", "/mockpics/image3.png"],
-    "name": "E-Commerce Platform",
+    "name": "BillBoard Platform",
     "description": "A full-stack e-commerce platform with features like product listing, cart, and payment integration.",
-    "skills": ["Node.js", "Express", "MongoDB", "React"],
+    "skills": ["Vue", "Django", "Python", "Postgress", "Cypress"],
     "appUrl": "https://example-ecommerce.com",
-    "codeUrl": "https://github.com/user/ecommerce-platform"
-  },
-  {
-    "id": 3,
-    "imageUrls": ["/mockpics/image3.png", "/mockpics/image2.png", "/mockpics/image1.png"],
-    "name": "Chat Application",
-    "description": "A real-time chat application using WebSockets for instant communication.",
-    "skills": ["Socket.IO", "Node.js", "React", "SCSS"],
-    "appUrl": "https://example-ecommerce.com",
-    "codeUrl": "https://github.com/user/chat-app"
+    "codeUrlFrontend": "https://github.com/user/portfolio",
+    "codeUrlBackend": "https://github.com/user/portfolio"
   }
 ]

@@ -7,10 +7,10 @@ type SectionContactsProps = {
 
 export default function SectionContacts({ isDarkMode }: SectionContactsProps) {
   const contactLinks = [
-    { href: "https://github.com/marieslo", imgSrc: "https://img.icons8.com/ios-filled/4895ef/50/github.png", alt: "GitHub", name: "GitHub" },
-    { href: "https://www.linkedin.com/in/marie-slovokhotov/", imgSrc: "https://img.icons8.com/ios-filled/4895ef/50/linkedin.png", alt: "LinkedIn", name: "LinkedIn" },
-    { href: "https://t.me/marieslo", imgSrc: "https://img.icons8.com/ios-filled/4895ef/50/telegram.png", alt: "Telegram", name: "Telegram" },
-    { href: "mailto:maria.slovohotova@gmail.com", imgSrc: "https://img.icons8.com/ios-filled/4895ef/50/apple-mail.png", alt: "Email", name: "Email" },
+    { href: "https://github.com/marieslo", imgSrc: "https://img.icons8.com/ios-filled/7692ff/50/github.png", alt: "GitHub", name: "GitHub" },
+    { href: "https://www.linkedin.com/in/marie-slovokhotov/", imgSrc: "https://img.icons8.com/ios-filled/7692ff/50/linkedin.png", alt: "LinkedIn", name: "LinkedIn" },
+    { href: "https://t.me/marieslo", imgSrc: "https://img.icons8.com/ios-filled/7692ff/50/telegram.png", alt: "Telegram", name: "Telegram" },
+    { href: "mailto:maria.slovohotova@gmail.com", imgSrc: "https://img.icons8.com/ios-filled/7692ff/50/apple-mail.png", alt: "Email", name: "Email" },
   ];
 
   return (

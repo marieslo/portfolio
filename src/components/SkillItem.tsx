@@ -6,14 +6,13 @@ interface SkillItemProps {
 }
 
 export default function SkillItem({ skill, isDarkMode }: SkillItemProps) {
-  const colorCode = isDarkMode ? "03071e" : "8d99ae";
-  const badgeUrl = `https://img.shields.io/badge/${skill}-%23${colorCode}.svg?style=for-the-badge&logo=${skill.toLowerCase()}&logoColor=white`;
+  const badgeUrl = `https://img.shields.io/badge/${skill}-%23a0c4ff.svg?style=for-the-badge&logo=${skill.toLowerCase()}&logoColor=white`;
 
   return (
     <div
       className={`skill-item relative text-center font-subheader ${
         isDarkMode ? "text-dark-text" : "text-light-text"
-      } flex items-center justify-start pr-2 rounded-xl bg-opacity-30 backdrop-blur-md font-bodytext`}
+      } flex items-center justify-start pr-2 bg-opacity-30 backdrop-blur-md font-bodytext`}
       style={{
         backgroundColor: "transparent",
       }}
