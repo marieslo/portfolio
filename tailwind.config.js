@@ -6,17 +6,17 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        color1: '#b8b8ff',
+        color1: '#3772ff',
         color2: '#2b2d42', 
-        color3: '#4895ef', 
-        'light-bg': '#eef0f2',
-        'dark-bg': '#2d3142',
+        color3: '#7692ff', 
+        'light-bg': '#f7f4ea',
+        'dark-bg': '#343A40',
         'dark-text': '#353535',
-        'light-text': '#fffcf2',
+        'light-text': '#f7f4ea',
       },
       fontFamily: {
         header: ['Unbounded', 'serif'],
-        subheader: ['Courier Prime', 'serif'],
+        subheader: ['Anonymous Pro', 'serif'],
         quote: ['Montagu Slab', 'serif'],
         bodytext: ['Funnel Display', 'serif'],
       },

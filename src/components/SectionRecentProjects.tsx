@@ -1,7 +1,9 @@
 import React from "react";
-import { Card, CardMedia, CardActions, CardContent, Link } from "@mui/material";
+import { Card, CardMedia, CardActions, CardContent, Tooltip } from "@mui/material";
 import { motion } from "framer-motion";
 import Carousel from "react-material-ui-carousel";
+import ProjectLink from "./ProjectLink";
+import SkillItem from "./SkillItem";
 
 type Project = {
   id: number;
@@ -10,7 +12,8 @@ type Project = {
   description: string;
   skills: string[];
   appUrl: string | null;
-  codeUrl: string | null;
+  codeUrlFrontend: string | null;
+  codeUrlBackend: string | null;
 };
 
 type SectionRecentProjectsProps = {
@@ -63,7 +66,7 @@ export default function SectionRecentProjects({ projects, isDarkMode }: SectionR
       animate="visible"
       className={`carousel-container bg-transparent text-xs sm:text-sm w-full ${isDarkMode ? "text-dark-text" : "text-light-text"}`}
     >
-      <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-4 justify-center items-center">
+      <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-6 p-4 justify-center items-center mx-auto">
         {projects.map((project) => (
           <motion.div
             key={project.id}
@@ -75,7 +78,8 @@ export default function SectionRecentProjects({ projects, isDarkMode }: SectionR
                 position: "relative",
                 display: "flex",
                 flexDirection: "column",
-                height: 400,
+                height: 450,
+                transition: "transform 0.3s ease-in-out",
               }}
             >
               <CardContent
@@ -85,14 +89,97 @@ export default function SectionRecentProjects({ projects, isDarkMode }: SectionR
                 sx={{
                   flexGrow: 1,
                   padding: "8px 16px",
+                  display: "flex",
+                  flexDirection: "row",
+                  justifyContent: "space-between",
+                  alignItems: "center",
                 }}
               >
                 {project.name && (
-                  <h3 className="text-color3 font-bold text-md mb-2 uppercase">
-                    {project.name}
-                  </h3>
+                  <Tooltip
+                    title={
+                      <div
+                        style={{
+                          maxWidth: "100%",
+                          fontSize: "14px",
+                          whiteSpace: "pre-wrap",
+                          overflowWrap: "break-word",
+                        }}
+                      >
+                        {project.description}
+                      </div>
+                    }
+                    placement="bottom-start"
+                    arrow
+                    enterDelay={300}
+                    leaveDelay={200}
+                    PopperProps={{
+                      modifiers: [
+                        {
+                          name: "preventOverflow",
+                          options: {
+                            boundary: "viewport",
+                          },
+                        },
+                      ],
+                    }}
+                  >
+                    <h3 className="text-color3 font-bold uppercase cursor-pointer">
+                      {project.name}
+                    </h3>
+                  </Tooltip>
                 )}
+
+                <CardActions
+                  sx={{
+                    bottom: 0,
+                    left: 0,
+                    width: "50%",
+                    justifyContent: "end",
+                    display: "flex",
+                    flexDirection: "row",
+                    gap: "10px",
+                  }}
+                >
+                  {project.appUrl && (
+                    <ProjectLink
+                      href={project.appUrl}
+                      text="View App"
+                      iconSrc="https://img.icons8.com/glyph-neue/7692ff/64/domain.png"
+                      altText="domain"
+                      variant="link"
+                    />
+                  )}
+
+                  {(project.codeUrlFrontend || project.codeUrlBackend) && (
+                    <ProjectLink
+                      text="View Code"
+                      iconSrc="https://img.icons8.com/pastel-glyph/7692ff/64/code--v2.png"
+                      altText="domain"
+                      variant="button"
+                      menuItems={[
+                        {
+                          label: "frontend",
+                          onClick: () => {
+                            if (project.codeUrlFrontend) {
+                              window.open(project.codeUrlFrontend, "_blank");
+                            }
+                          },
+                        },
+                        {
+                          label: "backend",
+                          onClick: () => {
+                            if (project.codeUrlBackend) {
+                              window.open(project.codeUrlBackend, "_blank");
+                            }
+                          },
+                        },
+                      ]}
+                    />
+                  )}
+                </CardActions>
               </CardContent>
+
               <CardMedia sx={{ height: "60%" }}>
                 <Carousel
                   autoPlay={false}
@@ -101,6 +188,9 @@ export default function SectionRecentProjects({ projects, isDarkMode }: SectionR
                     style: {
                       visibility: "hidden",
                     },
+                  }}
+                  sx={{
+                    position: "relative",
                   }}
                 >
                   {project.imageUrls.map((imageUrl, index) => (
@@ -118,81 +208,31 @@ export default function SectionRecentProjects({ projects, isDarkMode }: SectionR
                   ))}
                 </Carousel>
               </CardMedia>
+
               <CardContent
                 className={`font-bodytext px-6 py-2 z-10 bg-opacity-30 backdrop-blur-md mt-2 ${
                   isDarkMode ? "bg-dark-bg text-light-text" : "bg-light-bg text-dark-text"
                 }`}
                 sx={{
                   flexGrow: 1,
-                  paddingBottom: "60px", 
+                  paddingBottom: "60px",
                   maxHeight: "120px",
                   overflowY: "auto",
+                  transition: "transform 0.3s ease-in-out",
                 }}
               >
-                <div style={{ fontSize: "14px", lineHeight: "1.6" }} className="font-thin mb-4">
-                  {project.description}
-                </div>
+                {project.skills.length > 0 && (
+                  <div className="flex gap-2 flex-wrap">
+                    {project.skills.map((skill, index) => (
+                      <SkillItem
+                        key={index}
+                        skill={skill}
+                        isDarkMode={isDarkMode}
+                      />
+                    ))}
+                  </div>
+                )}
               </CardContent>
-              <CardActions
-                sx={{
-                  position: "absolute",
-                  bottom: 0,
-                  left: 0,
-                  width: "100%",
-                  justifyContent: "start",
-                  display: "flex",
-                  flexDirection: "row",
-                  zIndex: 10,
-                  padding: "10px",
-                  gap: "10px",
-                }}
-              >
-                {project.appUrl && (
-                  <Link
-                    sx={{
-                      textTransform: "uppercase",
-                      fontSize: "12px",
-                      color: "#4895ef",
-                      textAlign: "start",
-                      display: "flex",
-                      gap: "10px",
-                      justifyContent: "flex-start",
-                    }}
-                    href={project.appUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <img
-                      src="https://img.icons8.com/glyph-neue/4895ef/64/domain.png"
-                      alt="domain"
-                      style={{ width: "18px", height: "18px", marginLeft: "6px" }}
-                    />
-                    View App
-                  </Link>
-                )}
-                {project.codeUrl && (
-                  <Link
-                    sx={{
-                      textTransform: "uppercase",
-                      fontSize: "12px",
-                      color: "#4895ef",
-                      display: "flex",
-                      gap: "10px",
-                      justifyContent: "flex-start",
-                    }}
-                    href={project.codeUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <img
-                      src="https://img.icons8.com/pastel-glyph/4895ef/64/code--v2.png"
-                      alt="code"
-                      style={{ width: "18px", height: "18px", marginLeft: "6px" }}
-                    />
-                    View Code
-                  </Link>
-                )}
-              </CardActions>
             </Card>
           </motion.div>
         ))}

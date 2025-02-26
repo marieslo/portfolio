@@ -28,11 +28,15 @@ const Menu = ({ isDarkMode, toggleDarkMode }: { isDarkMode: boolean; toggleDarkM
       className={`flex items-center cursor-pointer ${isDarkMode ? "text-light-text" : "text-dark-text"}`}
       onClick={toggleDarkMode}
     >
-      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.3 }}>
-        <span className="material-icons-outlined">
-          {isDarkMode ? "light_mode" : "dark_mode"}
-        </span>
-      </motion.div>
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.3 }}>
+          <span
+            className="material-icons-outlined"
+            style={{ fontSize: '16px' }}
+          >
+            {isDarkMode ? "light_mode" : "dark_mode"}
+          </span>
+        </motion.div>
+
     </div>
   </div>
 );
@@ -40,10 +44,9 @@ const Menu = ({ isDarkMode, toggleDarkMode }: { isDarkMode: boolean; toggleDarkM
 export default function Header({ isDarkMode, toggleDarkMode }: HeaderProps) {
   return (
     <div
-    className={`fixed flex flex-col sm:flex-row md:items-center md:justify-between top-0 left-0 z-50 w-full border-b border-[#0000001a] shadow-[0_4px_6px_0_rgba(0,0,0,0.3)] bg-opacity-80 backdrop-blur-md backdrop-filter font-bodytext font-thin tracking-tight px-6 py-2 ${
+    className={`fixed flex flex-col sm:flex-row items-center md:justify-between top-0 left-0 z-50 w-full border-b border-[#0000001a] shadow-[0_4px_6px_0_rgba(0,0,0,0.3)] font-bodytext font-thin tracking-tight px-6 py-2 ${
       isDarkMode ? "bg-dark-bg text-light-text" : "bg-light-bg text-dark-text"
     }`}
-    
     >
       <div>
         <Menu isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />

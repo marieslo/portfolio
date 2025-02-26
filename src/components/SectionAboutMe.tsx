@@ -23,32 +23,27 @@ export default function SectionAboutMe({ isDarkMode }: SectionAboutMeProps) {
         <section
             className={`${
               isDarkMode ? "bg-dark-bg text-light-text" : "bg-light-bg text-dark-text "
-            } p-6 rounded-3xl border w-full pb-0`}
+            } p-6 rounded-3xl border w-full pb-0 align-bottom`}
           >
             <div className="flex flex-col md:flex-row gap-4 justify-between">
               <div className="flex-1 text-base leading-6 tracking-tight relative gap-2">
                 
-                <div className="ml-8 font-subheader leading-8 mb-4 italic">
-                <span className="text-7xl font-quote font-bold text-color3" style={{ fontStyle: 'normal' }}>“</span>
-                Experienced Full Stack Developer with 5+ years of expertise in
-                building scalable web applications using modern technologies like
-                React, Node.js, and MongoDB. 
-                Adept at problem-solving and
-                collaborating with cross-functional teams to deliver high-quality
-                solutions.
-                <span className="text-4xl font-bold font-quote text-color3" style={{ fontStyle: 'normal' }}>
-                  ”</span>
-                </div>
-                {/* <img 
-                  width="64" 
-                  height="64" 
-                  src="https://img.icons8.com/laces/64/right3.png" 
-                  alt="right3"
-                  style={{ filter: 'invert(27%) sepia(72%) saturate(2480%) hue-rotate(340deg) brightness(90%) contrast(80%)' }} 
-                /> */}
-          
+              <div className="ml-8 font-subheader leading-6 mb-4 text-md">
+              <span className="text-7xl font-quote font-bold text-color3" style={{ fontStyle: 'normal' }}>“</span>
+              <span>Hello! Nice to see you here!</span>
+              <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I'm currently working on my own app and growing as a developer. Before that, I built some studying and real webapps by myself and with international teams. These are some of my pet projects above where I am sharpening my skills and trying them out.    
+              <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Previously, I analyzed and managed budgets for job boards, which helped me hone skills such as organizing time, costs, and coworkers coordination efficiently. I spent a period of several years assisting top management. It helped me develop my leadership skills.    
+              <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Outside of work, I'm learning new technologies, art and design, foreign languages, and delving deeper into computer science. I'm always excited to take on new challenges and continue to grow. 
+              <br />
+              <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Feel free to contact me - let's create something great together!</span>
+              <span className="absolute text-4xl font-bold font-quote text-color3" style={{ fontStyle: 'normal' }}>
+              &nbsp;”</span>
+            </div>
               </div>
-              <div className="flex-shrink-0 mx-auto md:ml-auto">
+              <div className="flex-shrink-0 mx-auto ml-auto">
                 <motion.img
                   src="/images/Marie_photo.png"
                   alt="Marie"
@@ -86,22 +81,22 @@ export default function SectionAboutMe({ isDarkMode }: SectionAboutMeProps) {
                             <div className="flex items-center gap-4 relative">
                               <div className="w-4 h-4 bg-color3 rounded-full border  border-white absolute -left-2 top-1/2 transform -translate-y-1/2 z-10"></div>
                               <div className="pl-8">
-                                <strong>2018 - Present</strong>
-                                <p>Full Stack Developer at HSE</p>
+                                <strong>Jun 2024 - Present</strong>
+                                <p>Freelance Full Stack Developer</p>
                               </div>
                             </div>
                             <div className="flex items-center gap-4 relative">
                               <div className="w-4 h-4 bg-color3 rounded-full border border-white absolute -left-2 top-1/2 transform -translate-y-1/2 z-10"></div>
                               <div className="pl-8">
-                                <strong>2016 - 2018</strong>
-                                <p>Junior Developer at ABC Tech</p>
+                                <strong>Mar 2024 - May 2024</strong>
+                                <p>Junior Full Stack Developer at <strong>Eloo</strong></p>
                               </div>
                             </div>
                             <div className="flex items-center gap-4 relative">
                               <div className="w-4 h-4 bg-color3 rounded-full border border-white absolute -left-2 top-1/2 transform -translate-y-1/2 z-10"></div>
                               <div className="pl-8">
-                                <strong>2015</strong>
-                                <p>Intern at XYZ Corp</p>
+                                <strong>Nov 2015 - Oct 2023</strong>
+                                <div>PA to CEO /  Analyst / Job Board Manager at <a href="https://www.ancor.ru" target="_blank" rel="noopener noreferrer" className="hover:underline"><strong>ANCOR</strong></a></div>
                               </div>
                             </div>
                           </div>
@@ -120,6 +115,11 @@ export default function SectionAboutMe({ isDarkMode }: SectionAboutMeProps) {
                         <p >Contributed to open-source projects</p>
                       </div>
                     </div>
+                    <div className="flex items-center gap-4">
+                        <span className="material-icons-outlined text-color3 text-2xl">file</span>
+                        <p >  I have recommendations</p>
+                      </div>
+                  
                 </div>
               </section>
          </motion.div>
@@ -136,8 +136,18 @@ export default function SectionAboutMe({ isDarkMode }: SectionAboutMeProps) {
         >
           <h2 className="text-md font-header font-bold text-primary mb-3 border-b pb-2 text-color3">Education</h2>
           <p>
-            <strong>Bachelor of Science in Computer Science</strong> <br />
-            University of Technology | Graduated: May 2017
+            <strong>Full-Stack Development</strong> <br />
+            Israel Tech challenge | March 2024
+          </p>
+          <br/>
+          <p>
+            <strong>Python Programming (Backend Developer)</strong> <br />
+            Skillfactory | October 2022
+          </p>
+          <br/>
+          <p>
+          <strong>Stock market and investing (Bachelor of Economics)</strong> <br />
+            Higher School of Economics | July 2020
           </p>
         </section>
         <section

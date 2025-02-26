@@ -22,7 +22,7 @@ export default function SocialMediaItem({
       target="_blank"
       rel="noopener noreferrer"
       aria-label={alt}
-      className={`relative flex flex-col items-center justify-center p-2  box-border bg-opacity-20 backdrop-blur-3xl rounded-3xl font-bodytext bg-transparent ${isDarkMode ? "text-dark-text" : "text-light-text"} group transition-all duration-300 ease-in-out `}
+      className={`relative flex flex-col items-center justify-center p-2  box-border bg-opacity-20 backdrop-blur-3xl rounded-xl font-bodytext bg-transparent ${isDarkMode ? "text-dark-text" : "text-light-text"} group transition-all duration-300 ease-in-out `}
     >
       <div className="contact-icon-container flex flex-row items-center justify-center">
         <div className="icon-wrapper flex flex-row items-center justify-center">

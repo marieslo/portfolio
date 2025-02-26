@@ -3,6 +3,7 @@
 @use 'tailwindcss/utilities' as *;
 
 @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Funnel+Display:wght@300..800&family=Lexend+Peta:wght@100..900&family=Montagu+Slab:opsz,wght@16..144,100..700&family=Unbounded:wght@200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 html {
   background-color:theme('colors.light-bg');
@@ -28,7 +29,6 @@ main {
   background: 
     radial-gradient(circle, theme('colors.color1') 5%, transparent 5%) 0 0,
     radial-gradient(circle, theme('colors.color1') 5%, transparent 5%) 10px 10px;
-  
   background-size: 20px 20px;
   background-attachment: fixed;
   background-color: transparent;
