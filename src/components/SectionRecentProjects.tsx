@@ -1,9 +1,10 @@
-import React from "react";
-import { Card, CardMedia, CardActions, CardContent, Tooltip } from "@mui/material";
+import React, { useState } from "react";
+import { Card, CardMedia, CardActions, CardContent, Tooltip, Modal} from "@mui/material";
 import { motion } from "framer-motion";
 import Carousel from "react-material-ui-carousel";
 import ProjectLink from "./ProjectLink";
 import SkillItem from "./SkillItem";
+
 
 type Project = {
   id: number;
@@ -59,6 +60,25 @@ const cardVariants = {
 };
 
 export default function SectionRecentProjects({ projects, isDarkMode }: SectionRecentProjectsProps) {
+  const [open, setOpen] = useState(false);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [currentImageIndex, setCurrentImageIndex] = useState<number | null>(null);
+  const [currentProject, setCurrentProject] = useState<Project | null>(null);
+
+  const handleOpen = (project: Project, imageUrl: string, index: number) => {
+    setCurrentProject(project);
+    setSelectedImage(imageUrl);
+    setCurrentImageIndex(index);
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+    setSelectedImage(null);
+    setCurrentImageIndex(null);
+    setCurrentProject(null);
+  };
+
   return (
     <motion.div
       variants={containerVariants}
@@ -83,9 +103,7 @@ export default function SectionRecentProjects({ projects, isDarkMode }: SectionR
               }}
             >
               <CardContent
-                className={`font-bodytext ${
-                  isDarkMode ? "bg-dark-bg text-light-text" : "bg-light-bg text-dark-text"
-                }`}
+                className={`font-bodytext ${isDarkMode ? "bg-dark-bg text-light-text" : "bg-light-bg text-dark-text"}`}
                 sx={{
                   flexGrow: 1,
                   padding: "8px 16px",
@@ -97,30 +115,14 @@ export default function SectionRecentProjects({ projects, isDarkMode }: SectionR
               >
                 {project.name && (
                   <Tooltip
-                    title={
-                      <div
-                        style={{
-                          maxWidth: "100%",
-                          fontSize: "14px",
-                          whiteSpace: "pre-wrap",
-                          overflowWrap: "break-word",
-                        }}
-                      >
-                        {project.description}
-                      </div>
-                    }
+                    title={<div style={{ maxWidth: "100%", fontSize: "14px", whiteSpace: "pre-wrap", overflowWrap: "break-word" }}>{project.description}</div>}
                     placement="bottom-start"
                     arrow
                     enterDelay={300}
                     leaveDelay={200}
                     PopperProps={{
                       modifiers: [
-                        {
-                          name: "preventOverflow",
-                          options: {
-                            boundary: "viewport",
-                          },
-                        },
+                        { name: "preventOverflow", options: { boundary: "viewport" } },
                       ],
                     }}
                   >
@@ -142,15 +144,8 @@ export default function SectionRecentProjects({ projects, isDarkMode }: SectionR
                   }}
                 >
                   {project.appUrl && (
-                    <ProjectLink
-                      href={project.appUrl}
-                      text="View App"
-                      iconSrc="https://img.icons8.com/glyph-neue/7692ff/64/domain.png"
-                      altText="domain"
-                      variant="link"
-                    />
+                    <ProjectLink href={project.appUrl} text="View App" iconSrc="https://img.icons8.com/glyph-neue/7692ff/64/domain.png" altText="domain" variant="link" />
                   )}
-
                   {(project.codeUrlFrontend || project.codeUrlBackend) && (
                     <ProjectLink
                       text="View Code"
@@ -158,22 +153,8 @@ export default function SectionRecentProjects({ projects, isDarkMode }: SectionR
                       altText="domain"
                       variant="button"
                       menuItems={[
-                        {
-                          label: "frontend",
-                          onClick: () => {
-                            if (project.codeUrlFrontend) {
-                              window.open(project.codeUrlFrontend, "_blank");
-                            }
-                          },
-                        },
-                        {
-                          label: "backend",
-                          onClick: () => {
-                            if (project.codeUrlBackend) {
-                              window.open(project.codeUrlBackend, "_blank");
-                            }
-                          },
-                        },
+                        { label: "frontend", onClick: () => { if (project.codeUrlFrontend) window.open(project.codeUrlFrontend, "_blank"); }},
+                        { label: "backend", onClick: () => { if (project.codeUrlBackend) window.open(project.codeUrlBackend, "_blank"); }},
                       ]}
                     />
                   )}
@@ -184,35 +165,24 @@ export default function SectionRecentProjects({ projects, isDarkMode }: SectionR
                 <Carousel
                   autoPlay={false}
                   navButtonsAlwaysVisible={true}
-                  indicatorIconButtonProps={{
-                    style: {
-                      visibility: "hidden",
-                    },
-                  }}
-                  sx={{
-                    position: "relative",
-                  }}
+                  indicatorIconButtonProps={{ style: { visibility: "hidden" } }}
+                  sx={{ position: "relative" }}
                 >
                   {project.imageUrls.map((imageUrl, index) => (
-                    <img
-                      key={index}
-                      src={imageUrl}
-                      alt={`${project.name}-image-${index}`}
-                      style={{
-                        width: "100%",
-                        height: "400px",
-                        objectFit: "cover",
-                        zIndex: 1,
-                      }}
-                    />
+                    <div key={index} style={{ position: "relative" }}>
+                      <img
+                        src={imageUrl}
+                        alt={`${project.name}-image-${index}`}
+                        style={{ width: "100%", height: "400px", objectFit: "cover", zIndex: 1 }}
+                        onClick={() => handleOpen(project, imageUrl, index)} // Fullscreen on image click
+                      />
+                    </div>
                   ))}
                 </Carousel>
               </CardMedia>
 
               <CardContent
-                className={`font-bodytext px-6 py-2 z-10 bg-opacity-30 backdrop-blur-md mt-2 ${
-                  isDarkMode ? "bg-dark-bg text-light-text" : "bg-light-bg text-dark-text"
-                }`}
+                className={`font-bodytext px-6 py-2 z-10 bg-opacity-30 backdrop-blur-md mt-2 ${isDarkMode ? "bg-dark-bg text-light-text" : "bg-light-bg text-dark-text"}`}
                 sx={{
                   flexGrow: 1,
                   paddingBottom: "60px",
@@ -224,11 +194,7 @@ export default function SectionRecentProjects({ projects, isDarkMode }: SectionR
                 {project.skills.length > 0 && (
                   <div className="flex gap-2 flex-wrap">
                     {project.skills.map((skill, index) => (
-                      <SkillItem
-                        key={index}
-                        skill={skill}
-                        isDarkMode={isDarkMode}
-                      />
+                      <SkillItem key={index} skill={skill} isDarkMode={isDarkMode} />
                     ))}
                   </div>
                 )}
@@ -237,6 +203,44 @@ export default function SectionRecentProjects({ projects, isDarkMode }: SectionR
           </motion.div>
         ))}
       </div>
+
+      <Modal open={open} onClose={handleClose}>
+        <div
+          className="fixed inset-0 bg-black bg-opacity-90 flex justify-center items-center p-4"
+          onClick={handleClose} // Close the modal when clicking outside the image
+        >
+          <div className="relative w-full max-w-4xl" onClick={(e) => e.stopPropagation()}>
+            {/* Fullscreen Modal Carousel */}
+            {currentProject?.imageUrls && (
+              <Carousel
+                index={currentImageIndex || 0}
+                autoPlay={false}
+                navButtonsAlwaysVisible={true}
+                indicatorIconButtonProps={{ style: { visibility: "hidden" } }}
+                onChange={(index) => {
+                  if (index !== undefined) {
+                    setCurrentImageIndex(index);
+                    setSelectedImage(currentProject.imageUrls[index]);
+                  }
+                }}
+                sx={{
+                  position: "relative",
+                }}
+              >
+                {currentProject.imageUrls.map((imageUrl, index) => (
+                  <div key={index} style={{ position: "relative" }}>
+                    <img
+                      src={imageUrl}
+                      alt={`${currentProject?.name}-image-${index}`}
+                      style={{ height: "90vh", borderRadius: '30px', objectFit: "cover", zIndex: 1 }}
+                    />
+                  </div>
+                ))}
+              </Carousel>
+            )}
+          </div>
+        </div>
+      </Modal>
     </motion.div>
   );
 }
