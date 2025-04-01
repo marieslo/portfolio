@@ -16,7 +16,7 @@
     "name": "Pet Adoption (personal study project)",
     "description": "The aim of this platform is to enable users to sign up, search for, and adopt pets",
     "skills": ["React", "Node", "Express", "Javascript", "MongoDB"],
-    "appUrl": "pet-adoption-fe.netlify.app", 
+    "appUrl": null, 
     "codeUrlFrontend": "https://github.com/marieslo/pet_adoption_fe",
     "codeUrlBackend": "https://github.com/marieslo/pet_adoption_be"
   },
