@@ -5,6 +5,7 @@
     "name": "Pet Adoption (personal study project)",
     "description": "The aim of this platform is to enable users to sign up, search for, and adopt pets",
     "skills": ["React", "Node", "Express", "Javascript", "MongoDB"],
+    "appUrl": null, 
     "codeUrlFrontend": "https://github.com/marieslo/pet_adoption_fe",
     "codeUrlBackend": "https://github.com/marieslo/pet_adoption_be"
   },
@@ -14,7 +15,9 @@
     "name": "Thot (real freelance project, for universities only)",
     "description": "A full-stack project that helps students prepare for exams and allows teachers to view their course results",
     "skills": ["React", "Node", "Express", "Typescript", "MongoDB"],
-    "appUrl": "https://dojoapp.tech"
+    "appUrl": "https://dojoapp.tech",
+    "codeUrlFrontend": null,
+    "codeUrlBackend": null
   },
   {
     "id": 3,
@@ -22,6 +25,7 @@
     "name": "EventListener (group study project)",
     "description": "A group full-stack project. A platform for the creation and hosting of local face-to-face events",
     "skills": ["Next", "Nest", "Typescript", "MongoDB"],
+    "appUrl": null, 
     "codeUrlFrontend": "https://github.com/marieslo/EventListener_FE",
     "codeUrlBackend": "https://github.com/marieslo/EventListener_BE"
   },
@@ -31,6 +35,8 @@
     "name": "Boostore (personal study project)",
     "description": "A full-stack e-commerce platform with features like product listing, cart, and mock payment integration",
     "skills": ["Django", "Python", "jQuery", "Postgress"],
+    "appUrl": null, 
+    "codeUrlFrontend": null,
     "codeUrlBackend": "https://github.com/marieslo/bookstore"
   }
 ]
