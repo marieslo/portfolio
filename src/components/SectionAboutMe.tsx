@@ -47,7 +47,7 @@ export default function SectionAboutMe({ isDarkMode }: SectionAboutMeProps) {
               </div>
               <div className="flex-shrink-0 mx-auto ml-auto">
                 <motion.img
-                  src="/images/Marie_photo.png"
+                  src="https://res.cloudinary.com/nkwjho4xf/image/upload/v1743533313/portfolio/Marie_photo_yvul7u.png"
                   alt="Marie"
                   className="w-56 h-56 rounded-lg object-contain filter grayscale"
                 />
