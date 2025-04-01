@@ -9,7 +9,7 @@ interface SectionAboutMeProps {
 export default function SectionAboutMe({ isDarkMode }: SectionAboutMeProps) {
   return (
     <motion.div
-      className={`grid grid-cols-1 md:grid-cols-2 gap-6 p-6 min-h-screen items-start font-bodytext bg-transparent ${isDarkMode ?  "text-light-text" : "text-dark-text"}`}
+      className={`grid grid-cols-1 md:grid-cols-2 gap-6 p-6 tems-start font-bodytext bg-transparent ${isDarkMode ?  "text-light-text" : "text-dark-text"}`}
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
@@ -26,7 +26,9 @@ export default function SectionAboutMe({ isDarkMode }: SectionAboutMeProps) {
             } p-6 rounded-3xl border w-full pb-0 align-bottom`}
           >
             <div className="flex flex-col md:flex-row gap-4 justify-between">
-              <div className="flex-1 text-base leading-6 tracking-tight relative gap-2">
+              <div 
+              className="flex-1 text-base leading-6 tracking-tight relative gap-2"
+              >
                 
               <div className="ml-8 font-subheader leading-6 mb-4 text-md">
               <span className="text-7xl font-quote font-bold text-color3" style={{ fontStyle: 'normal' }}>“</span>
@@ -53,7 +55,7 @@ export default function SectionAboutMe({ isDarkMode }: SectionAboutMeProps) {
             </div>
           </section>
         </motion.div>
-            <motion.div
+            {/* <motion.div
               className="md:col-span-1 flex flex-col justify-start items-center text-sm"
               initial={{ opacity: 0, x: -100 }}
               animate={{ opacity: 1, x: 0 }}
@@ -160,7 +162,7 @@ export default function SectionAboutMe({ isDarkMode }: SectionAboutMeProps) {
             <Skills isDarkMode={isDarkMode}/>
           </section>
         </section>
-      </motion.div>
+      </motion.div> */}
     </motion.div>
   );
 }
