@@ -61,7 +61,7 @@ export default function Header({ isDarkMode, toggleDarkMode }: HeaderProps) {
           <hr className="flex-1 border-t-1 border-color3 mx-1" />
         </div>
         <div className="font-thin text-xs sm:text-sm uppercase w-full">
-        From idea to finished project
+        Full-Stack Developer | IT Project Manager
         </div>
       </div>
      

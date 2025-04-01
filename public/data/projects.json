@@ -1,22 +1,36 @@
 [
   {
     "id": 1,
-    "imageUrls": ["/mockpics/image1.png", "/mockpics/image2.png", "/mockpics/image3.png"],
-    "name": "Pet Adoption Platform",
-    "description": "A responsive website using Websocket",
-    "skills": ["React", "JavaScript", "Node", "Express", "MongoDB", "Jest"],
-    "appUrl": "https://example-portfolio.com",
-    "codeUrlFrontend": "https://github.com/user/portfolio",
-    "codeUrlBackend": "https://github.com/user/portfolio"
+    "imageUrls": ["/images/pet_adoption/1.png", "/images/pet_adoption/2.png", "/images/pet_adoption/3.png", "/images/pet_adoption/4.png", "/images/pet_adoption/5.png", "/images/pet_adoption/6.png","/images/pet_adoption/7.png", "/images/pet_adoption/8.png", "/images/pet_adoption/9.png", "/images/pet_adoption/10.png"],
+    "name": "Pet Adoption (personal study project)",
+    "description": "The aim of this platform is to enable users to sign up, search for, and adopt pets",
+    "skills": ["React", "Node", "Express", "Javascript", "MongoDB"],
+    "codeUrlFrontend": "https://github.com/marieslo/pet_adoption_fe",
+    "codeUrlBackend": "https://github.com/marieslo/pet_adoption_be"
   },
   {
     "id": 2,
-    "imageUrls": ["/mockpics/image2.png", "/mockpics/image1.png", "/mockpics/image3.png"],
-    "name": "BillBoard Platform",
-    "description": "A full-stack e-commerce platform with features like product listing, cart, and payment integration.",
-    "skills": ["Vue", "Django", "Python", "Postgress", "Cypress"],
-    "appUrl": "https://example-ecommerce.com",
-    "codeUrlFrontend": "https://github.com/user/portfolio",
-    "codeUrlBackend": "https://github.com/user/portfolio"
+    "imageUrls": [ "/images/thot/0.png",  "/images/thot/1.png", "/images/thot/2.png", "/images/thot/3.png", "/images/thot/4.png", "/images/thot/5.png", "/images/thot/6.png","/images/thot/7.png", "/images/thot/9.png", "/images/thot/10.png", "/images/thot/11.png", "/images/thot/12.png"],
+    "name": "Thot (real freelance project, for universities only)",
+    "description": "A full-stack project that helps students prepare for exams and allows teachers to view their course results",
+    "skills": ["React", "Node", "Express", "Typescript", "MongoDB"],
+    "appUrl": "https://dojoapp.tech"
+  },
+  {
+    "id": 3,
+    "imageUrls": ["/images/event_listener/1.png", "/images/event_listener/2.png", "/images/event_listener/3.png", "/images/event_listener/4.png", "/images/event_listener/5.png", "/images/event_listener/6.png","/images/event_listener/7.png", "/images/event_listener/8.png"],
+    "name": "EventListener (group study project)",
+    "description": "A group full-stack project. A platform for the creation and hosting of local face-to-face events",
+    "skills": ["Next", "Nest", "Typescript", "MongoDB"],
+    "codeUrlFrontend": "https://github.com/marieslo/EventListener_FE",
+    "codeUrlBackend": "https://github.com/marieslo/EventListener_BE"
+  },
+  {
+    "id": 4,
+    "imageUrls": ["/images/bookstore/1.png", "/images/bookstore/2.png", "/images/bookstore/3.png", "/images/bookstore/4.png", "/images/bookstore/5.png"],
+    "name": "Boostore (personal study project)",
+    "description": "A full-stack e-commerce platform with features like product listing, cart, and mock payment integration",
+    "skills": ["Django", "Python", "jQuery", "Postgress"],
+    "codeUrlBackend": "https://github.com/marieslo/bookstore"
   }
 ]

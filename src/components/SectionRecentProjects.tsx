@@ -161,19 +161,22 @@ export default function SectionRecentProjects({ projects, isDarkMode }: SectionR
                 </CardActions>
               </CardContent>
 
-              <CardMedia sx={{ height: "60%" }}>
+              <CardMedia   sx={{
+                height: "60%",
+                backgroundColor: isDarkMode ? "#343A40" : "#f7f4ea", 
+              }}>
                 <Carousel
                   autoPlay={false}
                   navButtonsAlwaysVisible={true}
                   indicatorIconButtonProps={{ style: { visibility: "hidden" } }}
-                  sx={{ position: "relative" }}
+                  sx={{ position: "relative", backgroundColor: isDarkMode ? "#343A40" : "#f7f4ea",  }}
                 >
                   {project.imageUrls.map((imageUrl, index) => (
                     <div key={index} style={{ position: "relative" }}>
                       <img
                         src={imageUrl}
                         alt={`${project.name}-image-${index}`}
-                        style={{ width: "100%", height: "400px", objectFit: "cover", zIndex: 1 }}
+                        style={{ width: "100%", height: "400px", objectFit: "contain", objectPosition: "top", zIndex: 1 }}
                         onClick={() => handleOpen(project, imageUrl, index)} // Fullscreen on image click
                       />
                     </div>
@@ -232,7 +235,7 @@ export default function SectionRecentProjects({ projects, isDarkMode }: SectionR
                     <img
                       src={imageUrl}
                       alt={`${currentProject?.name}-image-${index}`}
-                      style={{ height: "90vh", borderRadius: '30px', objectFit: "cover", zIndex: 1 }}
+                      style={{ height: "90vh", borderRadius: '30px', objectFit: "contain", zIndex: 1 }}
                     />
                   </div>
                 ))}
